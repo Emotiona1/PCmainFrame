@@ -27,13 +27,14 @@
 
       .chat-page {
         width: 100%;
-        height: 100%;
+        min-height: 100%;
         display: grid;
         grid-template-rows: 1fr auto;
       }
 
       .history {
         padding: 24px;
+        min-height: 0;
         overflow-y: auto;
       }
 
@@ -189,16 +190,6 @@
             <span class="bubble__meta">10:25</span>
           </div>
           <div class="avatar avatar--right">我</div>
-        </div>
-
-        <div class="row row--left">
-          <div class="avatar avatar--left">咪</div>
-          <div class="bubble bubble--left">
-            <p class="bubble__text">
-              可以先从电源、连接线、温度、清洁四个方面检查。如果你需要，我也可以按设备型号帮你整理成一份维护清单。
-            </p>
-            <span class="bubble__meta">10:26</span>
-          </div>
         </div>
       </div>
 
