@@ -1,12 +1,13 @@
 import React from 'react';
+import { WEBVIEW_SRC } from '../config/webview';
 
-function ChatWebview({ src }) {
+function ChatWebview({ src = WEBVIEW_SRC }) {
   return (
-    <iframe
+    <webview
       className="chat-panel__webview"
       title="chat-webview"
       src={src}
-      loading="lazy"
+      allowpopups="false"
     />
   );
 }

@@ -1,4 +1,5 @@
-import MyAgentWebview from './MyAgentWebview';
+const MyAgentWebview = require('./MyAgentWebview').default;
 
-export default MyAgentWebview;
-export { MyAgentWebview };
+module.exports = MyAgentWebview;
+module.exports.default = MyAgentWebview;
+module.exports.MyAgentWebview = MyAgentWebview;

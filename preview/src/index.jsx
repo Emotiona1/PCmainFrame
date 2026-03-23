@@ -10,7 +10,7 @@ function PreviewApp() {
         <p className="preview-hero__eyebrow">MyAgentWebview Preview</p>
         <h1 className="preview-hero__title">本地组件预览宿主</h1>
         <p className="preview-hero__description">
-          这个页面只用于本地查看组件效果，不参与最终交付。最终交付物仍然是
+          这个页面只用于本地查看 Electron webview 组件效果，不参与最终交付。最终交付物仍然是
           <code>dist/myAgentWebview/index.js</code>。
         </p>
         <div className="preview-hero__notes">

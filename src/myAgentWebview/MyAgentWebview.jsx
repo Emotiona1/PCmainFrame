@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
-import { WEBVIEW_SRC } from './config/webview';
 import './styles/global.css';
 import './styles/chat.css';
 
@@ -17,7 +16,7 @@ function MyAgentWebview() {
       <div className="page">
         <div className="chat-shell">
           <HeaderArtifact {...headerData} />
-          <ChatWorkspace webviewSrc={WEBVIEW_SRC} />
+          <ChatWorkspace />
         </div>
       </div>
     </div>
