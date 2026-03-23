@@ -8,6 +8,7 @@
 - 源码统一收敛到 `src/myAgentWebview`
 - 构建产物统一输出到 `dist/myAgentWebview`
 - 组件对外采用 CommonJS 方式引入
+- 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
 
 ## 环境要求
 
@@ -93,3 +94,34 @@ createRoot(document.getElementById('root')).render(
 - 当前组件包已经把样式一起打进 bundle，导入组件即可看到样式
 - 组件外层会自带自己的样式作用域，不会去依赖宿主页面的 `body` 或 `#root`
 - 组件内部默认读取 `src/myAgentWebview/config/webview.js` 里的 `WEBVIEW_SRC`
+
+## 复制到别的 webpack5 项目时怎么做
+
+如果你当前的业务项目已经有自己的 webpack5 打包逻辑，建议这样接：
+
+1. 保留原来的 `webpack.config.js` 不变
+2. 新增一个独立的 `webpack.myAgentWebview.config.js`
+3. 把 `src/myAgentWebview` 目录复制到宿主项目里
+4. 给组件单独加一个构建命令，例如：
+
+```json
+{
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "build:myAgentWebview": "webpack --config webpack.myAgentWebview.config.js",
+    "build:all": "npm run build && npm run build:myAgentWebview"
+  }
+}
+```
+
+5. 宿主项目通过 CommonJS 引入组件：
+
+```jsx
+const MyAgentWebview = require('./dist/myAgentWebview/index.js');
+```
+
+这个方式的好处是：
+
+- 你原来的页面打包逻辑不会被改动
+- `myAgentWebview` 组件可以单独升级和构建
+- 最终产物还是保持为 `dist/myAgentWebview/index.js`
