@@ -9,7 +9,7 @@
 - 构建产物统一输出到 `dist/myAgentWebview`
 - 组件对外采用 CommonJS 方式引入
 - 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
-- 下半区使用 Electron 的 `<webview>` 标签，并内置最简单的 HTML
+- 下半区使用 Electron 的 `<webview>` 标签，HTML 已拆到 `src/myAgentWebview/webview/chat.html`
 
 ## 环境要求
 
@@ -46,7 +46,8 @@ npm run verify
 
 - `src/myAgentWebview/index.jsx`：对外导出入口
 - `src/myAgentWebview/MyAgentWebview.jsx`：主组件
-- `src/myAgentWebview/config/webview.js`：默认 webview HTML 内容
+- `src/myAgentWebview/config/webview.js`：读取并导出默认 webview 地址
+- `src/myAgentWebview/webview/chat.html`：webview 渲染的聊天页面 HTML
 
 ## 打包结果
 
@@ -54,7 +55,7 @@ npm run verify
 - `dist/preview` 为本地预览产物，不建议作为交付物
 - `examples/host-react` 为宿主接入示例目录
 
-如果你后续要切换 webview 里的 HTML 内容，只需要修改 `src/myAgentWebview/config/webview.js` 里的 `WEBVIEW_SRC`。
+如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/myAgentWebview/webview/chat.html`。
 
 ## CommonJS 引入示例
 

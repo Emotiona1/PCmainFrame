@@ -5,9 +5,8 @@ import './styles/global.css';
 import './styles/chat.css';
 
 const headerData = {
-  name: '张晓宇',
-  signature: '让沟通更简单',
-  status: '在线',
+  name: '小咪',
+  signature: '可一站式获取产品维护知识',
 };
 
 function MyAgentWebview() {

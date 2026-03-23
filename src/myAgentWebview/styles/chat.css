@@ -22,7 +22,6 @@
 .myAgentWebview .chat-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 22px 28px;
   border-bottom: 1px solid rgba(148, 163, 184, 0.16);
@@ -30,13 +29,20 @@
 }
 
 .myAgentWebview .chat-header__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.myAgentWebview .chat-header__topline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
 }
 
 .myAgentWebview .chat-header__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
   min-width: 0;
 }
 
@@ -52,24 +58,25 @@
   font-size: 14px;
 }
 
-.myAgentWebview .chat-header__status {
+.myAgentWebview .chat-header__inline-status {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 6px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.1);
   color: #047857;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1;
   white-space: nowrap;
 }
 
-.myAgentWebview .chat-header__status-dot {
-  width: 10px;
-  height: 10px;
+.myAgentWebview .chat-header__inline-status-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
 }
 
 .myAgentWebview .chat-panel {
