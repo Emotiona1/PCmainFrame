@@ -1,0 +1,212 @@
+.page {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.chat-shell {
+  width: min(1120px, 100%);
+  min-height: min(860px, calc(100vh - 48px));
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(20px);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  background: linear-gradient(90deg, rgba(17, 24, 39, 0.03), transparent);
+}
+
+.chat-header__identity {
+  min-width: 0;
+}
+
+.chat-header__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chat-header__name {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.chat-header__signature {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.chat-header__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.chat-header__status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.15);
+}
+
+.chat-panel {
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.18)),
+    linear-gradient(135deg, rgba(229, 231, 235, 0.55) 0%, rgba(243, 244, 246, 0.18) 100%);
+}
+
+.chat-panel > * {
+  width: 100%;
+  height: 100%;
+}
+
+.chat-panel__mock {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 0;
+  padding: 0;
+}
+
+.chat-panel__history {
+  padding: 28px;
+  overflow-y: auto;
+}
+
+.chat-bubble-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.chat-bubble-row--contact {
+  justify-content: flex-start;
+}
+
+.chat-bubble-row--me {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  max-width: min(74%, 640px);
+  padding: 14px 16px 12px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+.chat-bubble-row--contact .chat-bubble {
+  background: white;
+  border-bottom-left-radius: 6px;
+}
+
+.chat-bubble-row--me .chat-bubble {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.chat-bubble__text {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 15px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-bubble__time {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+.chat-panel__composer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.chat-panel__input {
+  width: 100%;
+  resize: none;
+  border: 1px solid rgba(148, 163, 184, 0.38);
+  border-radius: 18px;
+  padding: 16px 18px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.chat-panel__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.chat-panel__button {
+  min-width: 110px;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.25);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 12px;
+  }
+
+  .chat-shell {
+    min-height: calc(100vh - 24px);
+    border-radius: 18px;
+  }
+
+  .chat-header {
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chat-panel__history {
+    padding: 18px;
+  }
+
+  .chat-panel__composer {
+    padding: 16px 16px 18px;
+  }
+
+  .chat-bubble {
+    max-width: 88%;
+  }
+}
