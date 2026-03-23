@@ -9,6 +9,7 @@
 - 构建产物统一输出到 `dist/myAgentWebview`
 - 组件对外采用 CommonJS 方式引入
 - 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
+- 当前导出的 `MyAgentWebview` 是一个最小测试组件，便于先验证宿主容器接入是否正常
 
 ## 环境要求
 
@@ -45,15 +46,12 @@ npm run verify
 
 - `src/myAgentWebview/index.jsx`：对外导出入口
 - `src/myAgentWebview/MyAgentWebview.jsx`：主组件
-- `src/myAgentWebview/config/webview.js`：下半区 HTML 地址配置
 
 ## 打包结果
 
 - `dist/myAgentWebview/index.js`
 - `dist/preview` 为本地预览产物，不建议作为交付物
 - `examples/host-react` 为宿主接入示例目录
-
-如果你后续要切换真实聊天页面，只需要修改 `src/myAgentWebview/config/webview.js` 里的 `WEBVIEW_SRC`。
 
 ## CommonJS 引入示例
 
@@ -62,7 +60,7 @@ npm run verify
 ```jsx
 const React = require('react');
 const { createRoot } = require('react-dom/client');
-const MyAgentWebview = require('pc-chat-web');
+const MyAgentWebview = require('pc-chat-web').default;
 
 function App() {
   return React.createElement(
@@ -80,7 +78,7 @@ createRoot(document.getElementById('root')).render(React.createElement(App));
 ```jsx
 const React = require('react');
 const { createRoot } = require('react-dom/client');
-const MyAgentWebview = require('./dist/myAgentWebview/index.js');
+const MyAgentWebview = require('./dist/myAgentWebview/index.js').default;
 
 createRoot(document.getElementById('root')).render(
   React.createElement(MyAgentWebview),
@@ -93,7 +91,6 @@ createRoot(document.getElementById('root')).render(
 - 如果宿主项目也要直接渲染组件，还需要提供 `ReactDOM`
 - 当前组件包已经把样式一起打进 bundle，导入组件即可看到样式
 - 组件外层会自带自己的样式作用域，不会去依赖宿主页面的 `body` 或 `#root`
-- 组件内部默认读取 `src/myAgentWebview/config/webview.js` 里的 `WEBVIEW_SRC`
 
 ## 复制到别的 webpack5 项目时怎么做
 
@@ -117,7 +114,7 @@ createRoot(document.getElementById('root')).render(
 5. 宿主项目通过 CommonJS 引入组件：
 
 ```jsx
-const MyAgentWebview = require('./dist/myAgentWebview/index.js');
+const MyAgentWebview = require('./dist/myAgentWebview/index.js').default;
 ```
 
 这个方式的好处是：
