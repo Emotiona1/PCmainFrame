@@ -7,7 +7,6 @@
 - 保留你原本项目的 webpack 打包逻辑不变
 - 只额外增加一套 `myAgentWebview` 的独立构建
 - 最终组件包输出为 `dist/myAgentWebview/index.js`
-- 当前这版 `MyAgentWebview` 是一个最小测试组件，适合先验证容器接入
 
 ## 建议做法
 
@@ -40,16 +39,17 @@ webpack.myAgentWebview.config.js
 宿主项目编译完成后，可以这样引入：
 
 ```jsx
-const MyAgentWebview = require('./dist/myAgentWebview/index.js').default;
+const MyAgentWebview = require('./dist/myAgentWebview/index.js');
 ```
 
 如果你是通过包名发布后的方式引入，则直接：
 
 ```jsx
-const MyAgentWebview = require('pc-chat-web').default;
+const MyAgentWebview = require('pc-chat-web');
 ```
 
 ## 注意事项
 
 - 宿主项目需要自己提供 `React`
+- 如果你要切换 HTML 地址，只改 `src/myAgentWebview/config/webview.js` 里的 `WEBVIEW_SRC`
 - 这个组件包不会去改你原本项目的 webpack 入口，只是多加了一条独立构建链

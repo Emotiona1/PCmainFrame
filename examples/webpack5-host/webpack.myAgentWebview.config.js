@@ -9,6 +9,7 @@ module.exports = {
     publicPath: 'auto',
     library: {
       type: 'commonjs2',
+      export: 'default',
     },
     globalObject: 'this',
   },
