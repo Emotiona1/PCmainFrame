@@ -1,16 +1,28 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/myAgentWebview/index.jsx'),
   output: {
     path: path.resolve(__dirname, 'dist/myAgentWebview'),
-    filename: 'assets/js/[name].[contenthash:8].js',
+    filename: 'index.js',
     clean: true,
-    publicPath: '/',
+    publicPath: 'auto',
+    library: {
+      type: 'commonjs2',
+      export: 'default',
+    },
+    globalObject: 'this',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React',
+    },
   },
   module: {
     rules: [
@@ -26,21 +38,6 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
-    }),
-  ],
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'public'),
-    },
-    historyApiFallback: true,
-    host: '127.0.0.1',
-    port: 3000,
-    open: false,
-    hot: true,
   },
   devtool: 'source-map',
 };

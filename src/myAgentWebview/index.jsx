@@ -1,10 +1,4 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
-import './styles/global.css';
+import MyAgentWebview from './MyAgentWebview';
 
-createRoot(document.getElementById('myAgent-root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+export default MyAgentWebview;
+export { MyAgentWebview };

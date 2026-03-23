@@ -1,10 +1,10 @@
 import React from 'react';
-import ChatContentMock from './ChatContentMock';
+import ChatWebview from './ChatWebview';
 
-function ChatWorkspace() {
+function ChatWorkspace({ webviewSrc }) {
   return (
     <div className="chat-panel">
-      <ChatContentMock />
+      <ChatWebview src={webviewSrc || 'about:blank'} />
     </div>
   );
 }
