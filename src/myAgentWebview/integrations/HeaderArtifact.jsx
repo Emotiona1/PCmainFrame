@@ -34,12 +34,12 @@ function HeaderArtifact({ name, intro, onOpenSettings }) {
         <button
           className="chat-header__icon-button"
           type="button"
-          aria-label="切换"
-          onClick={handleSwitchClick}
+          aria-label="联系客服"
+          onClick={handleServiceClick}
         >
           <img
             className="chat-header__icon-image"
-            src={switchIcon}
+            src={kefuIcon}
             alt=""
             aria-hidden="true"
           />
@@ -47,12 +47,12 @@ function HeaderArtifact({ name, intro, onOpenSettings }) {
         <button
           className="chat-header__icon-button"
           type="button"
-          aria-label="联系客服"
-          onClick={handleServiceClick}
+          aria-label="切换"
+          onClick={handleSwitchClick}
         >
           <img
             className="chat-header__icon-image"
-            src={kefuIcon}
+            src={switchIcon}
             alt=""
             aria-hidden="true"
           />
