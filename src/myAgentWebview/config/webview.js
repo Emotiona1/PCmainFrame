@@ -1,21 +1,40 @@
 import xiaomiHtml from '../webview/xiaomi.html';
 import designHelperHtml from '../webview/design-helper.html';
 import codingExpertHtml from '../webview/coding-expert.html';
-import opsAssistantHtml from '../webview/ops-assistant.html';
-import serviceBotHtml from '../webview/service-bot.html';
+import localEmployeeHtml from '../webview/local-employee.html';
 
 const toDataUrl = (html) =>
   `data:text/html;charset=UTF-8,${encodeURIComponent(html)}`;
 
-export const WEBVIEW_SRC_BY_ASSISTANT_ID = {
+export const WORKSPACE_BY_ASSISTANT_ID = {
   xiaomi: toDataUrl(xiaomiHtml),
   'helper-pro': toDataUrl(designHelperHtml),
   'coding-expert': toDataUrl(codingExpertHtml),
-  'ops-assistant': toDataUrl(opsAssistantHtml),
-  'service-bot': toDataUrl(serviceBotHtml),
+  'local-employee': toDataUrl(localEmployeeHtml),
+  'base-employee': {
+    type: 'placeholder',
+    placeholderId: 'AIAssistantWeAgentContainter',
+  },
 };
 
-export const DEFAULT_WEBVIEW_SRC = WEBVIEW_SRC_BY_ASSISTANT_ID.xiaomi;
+export const DEFAULT_WORKSPACE = {
+  type: 'webview',
+  src: WORKSPACE_BY_ASSISTANT_ID.xiaomi,
+};
 
-export const getWebviewSrcByAssistantId = (assistantId) =>
-  WEBVIEW_SRC_BY_ASSISTANT_ID[assistantId] ?? DEFAULT_WEBVIEW_SRC;
+export const getWorkspaceByAssistantId = (assistantId) => {
+  const workspace = WORKSPACE_BY_ASSISTANT_ID[assistantId];
+
+  if (!workspace) {
+    return DEFAULT_WORKSPACE;
+  }
+
+  if (typeof workspace === 'string') {
+    return {
+      type: 'webview',
+      src: workspace,
+    };
+  }
+
+  return workspace;
+};

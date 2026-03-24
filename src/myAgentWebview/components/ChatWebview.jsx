@@ -1,12 +1,13 @@
 import React from 'react';
-import { DEFAULT_WEBVIEW_SRC } from '../config/webview';
+import { DEFAULT_WORKSPACE } from '../config/webview';
 
-function ChatWebview({ src = DEFAULT_WEBVIEW_SRC }) {
+function ChatWebview({ src = DEFAULT_WORKSPACE.src }) {
   return (
     <webview
       className="chat-panel__webview"
       title="chat-webview"
       src={src}
+      nodeintegration
       allowpopups="false"
     />
   );

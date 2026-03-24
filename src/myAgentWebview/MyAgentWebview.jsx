@@ -2,7 +2,7 @@ import React from 'react';
 import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
-import { getWebviewSrcByAssistantId } from './config/webview';
+import { getWorkspaceByAssistantId } from './config/webview';
 import './styles/global.css';
 import './styles/chat.css';
 
@@ -41,26 +41,26 @@ const assistants = [
     description: '专业的 Java 助手，代码编写能力较强。',
   },
   {
-    id: 'ops-assistant',
-    name: '运维助手',
-    avatar: '运',
-    assistantId: 'OPS-208',
-    intro: '适合设备巡检、故障排查和维护记录整理。',
-    product: '运维巡检平台',
-    owner: '运维支持组',
+    id: 'local-employee',
+    name: '本地员工助手',
+    avatar: '员',
+    assistantId: 'EMP-208',
+    intro: '可在本地环境提供常见流程支持和业务协助。',
+    product: '本地员工平台',
+    owner: '员工支持组',
     accountStatus: '运行中',
-    description: '适合设备巡检、故障排查和维护记录整理。',
+    description: '可在本地环境提供常见流程支持和业务协助。',
   },
   {
-    id: 'service-bot',
-    name: '服务顾问',
-    avatar: '服',
-    assistantId: 'CS-409',
-    intro: '可用于售后说明、工单流转和回复模板整理。',
-    product: '客服服务平台',
-    owner: '客户服务组',
+    id: 'base-employee',
+    name: '基座员工助手',
+    avatar: '基',
+    assistantId: 'BASE-409',
+    intro: '提供基座能力入口与通用员工接入支持。',
+    product: '员工基座平台',
+    owner: '平台基座组',
     accountStatus: '运行中',
-    description: '可用于售后说明、工单流转和回复模板整理。',
+    description: '提供基座能力入口与通用员工接入支持。',
   },
 ];
 
@@ -83,7 +83,7 @@ function MyAgentWebview() {
     assistants.find((assistant) => assistant.id === draftAssistantId) ??
     currentAssistant;
 
-  const currentWebviewSrc = getWebviewSrcByAssistantId(currentAssistant.id);
+  const currentWorkspace = getWorkspaceByAssistantId(currentAssistant.id);
 
   const openDrawer = () => {
     setDraftAssistantId(currentAssistant.id);
@@ -129,10 +129,7 @@ function MyAgentWebview() {
             name={currentAssistant.name}
             onOpenSettings={openDrawer}
           />
-          <ChatWorkspace
-            drawerOpen={isDrawerOpen}
-            webviewSrc={currentWebviewSrc}
-          />
+          <ChatWorkspace drawerOpen={isDrawerOpen} workspace={currentWorkspace} />
         </div>
         <AssistantDrawer
           open={isDrawerOpen}
