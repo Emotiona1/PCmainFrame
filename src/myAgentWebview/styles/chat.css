@@ -36,8 +36,19 @@
 
 .myAgentWebview .chat-header__identity {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.myAgentWebview .chat-header__brand-icon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: block;
+}
+
+.myAgentWebview .chat-header__text {
   min-width: 0;
 }
 
@@ -81,10 +92,21 @@
 .myAgentWebview .chat-header__settings-button {
   border: 0;
   padding: 0;
-  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
   color: #0f172a;
+  display: grid;
+  place-items: center;
   line-height: 0;
   cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.myAgentWebview .chat-header__icon-button:hover,
+.myAgentWebview .chat-header__settings-button:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .myAgentWebview .chat-header__icon-image {
@@ -455,6 +477,10 @@
   .myAgentWebview .chat-header {
     padding: 18px;
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .myAgentWebview .chat-header__identity {
     align-items: flex-start;
   }
 
