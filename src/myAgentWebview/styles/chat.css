@@ -85,15 +85,6 @@
   color: #0f172a;
   line-height: 0;
   cursor: pointer;
-  transition:
-    transform 0.18s ease,
-    opacity 0.18s ease;
-}
-
-.myAgentWebview .chat-header__icon-button:hover,
-.myAgentWebview .chat-header__settings-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.88;
 }
 
 .myAgentWebview .chat-header__icon-image {
