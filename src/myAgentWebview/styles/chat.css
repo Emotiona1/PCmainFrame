@@ -16,7 +16,7 @@
   grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.28);
-  border-radius: 24px;
+  border-radius: 0 0 24px 24px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
   backdrop-filter: blur(20px);
@@ -54,6 +54,9 @@
 
 .myAgentWebview .chat-header__actions {
   flex: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
   margin-left: auto;
   position: relative;
   z-index: 4;
@@ -61,56 +64,42 @@
 
 .myAgentWebview .chat-header__name {
   margin: 0;
-  font-size: 22px;
-  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .myAgentWebview .chat-header__signature {
   margin: 0;
   color: #64748b;
-  font-size: 14px;
-}
-
-.myAgentWebview .chat-header__inline-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(16, 185, 129, 0.1);
-  color: #047857;
   font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
+  font-weight: 400;
+  line-height: 20px;
 }
 
-.myAgentWebview .chat-header__inline-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
-}
-
+.myAgentWebview .chat-header__icon-button,
 .myAgentWebview .chat-header__settings-button {
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  border-radius: 999px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.86);
+  border: 0;
+  padding: 0;
+  background: transparent;
   color: #0f172a;
-  font-size: 14px;
-  font-weight: 600;
+  line-height: 0;
   cursor: pointer;
   transition:
     transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-color 0.18s ease;
+    opacity 0.18s ease;
 }
 
+.myAgentWebview .chat-header__icon-button:hover,
 .myAgentWebview .chat-header__settings-button:hover {
-  border-color: rgba(59, 130, 246, 0.36);
-  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
   transform: translateY(-1px);
+  opacity: 0.88;
+}
+
+.myAgentWebview .chat-header__icon-image {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .myAgentWebview .chat-panel {
@@ -469,7 +458,7 @@
 
   .myAgentWebview .chat-shell {
     min-height: calc(100vh - 24px);
-    border-radius: 18px;
+    border-radius: 0 0 18px 18px;
   }
 
   .myAgentWebview .chat-header {
@@ -480,6 +469,7 @@
 
   .myAgentWebview .chat-header__actions {
     margin-left: 0;
+    gap: 20px;
   }
 
   .myAgentWebview .assistant-drawer__panel {
