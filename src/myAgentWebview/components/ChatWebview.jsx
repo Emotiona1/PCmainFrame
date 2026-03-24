@@ -1,7 +1,7 @@
 import React from 'react';
-import { WEBVIEW_SRC } from '../config/webview';
+import { DEFAULT_WEBVIEW_SRC } from '../config/webview';
 
-function ChatWebview({ src = WEBVIEW_SRC }) {
+function ChatWebview({ src = DEFAULT_WEBVIEW_SRC }) {
   return (
     <webview
       className="chat-panel__webview"

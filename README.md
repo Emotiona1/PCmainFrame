@@ -9,7 +9,7 @@
 - 构建产物统一输出到 `dist/myAgentWebview`
 - 组件对外采用 CommonJS 方式引入
 - 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
-- 下半区使用 Electron 的 `<webview>` 标签，HTML 已拆到 `src/myAgentWebview/webview/chat.html`
+- 下半区使用 Electron 的 `<webview>` 标签，当前已经拆成 5 个独立 HTML 文件，并按助手切换
 
 ## 环境要求
 
@@ -46,8 +46,8 @@ npm run verify
 
 - `src/myAgentWebview/index.jsx`：对外导出入口
 - `src/myAgentWebview/MyAgentWebview.jsx`：主组件
-- `src/myAgentWebview/config/webview.js`：读取并导出默认 webview 地址
-- `src/myAgentWebview/webview/chat.html`：webview 渲染的聊天页面 HTML
+- `src/myAgentWebview/config/webview.js`：读取并导出助手到 webview HTML 的映射
+- `src/myAgentWebview/webview/*.html`：webview 渲染的 5 个聊天页面 HTML
 
 ## 最新结构
 
@@ -77,7 +77,11 @@ npm run verify
 │       │   ├── chat.css
 │       │   └── global.css
 │       └── webview
-│           └── chat.html
+│           ├── coding-expert.html
+│           ├── design-helper.html
+│           ├── ops-assistant.html
+│           ├── service-bot.html
+│           └── xiaomi.html
 ├── preview
 │   ├── index.html
 │   ├── chat-panel.html
@@ -93,7 +97,7 @@ npm run verify
 ## 当前交互
 
 - 头部区域显示助手名称、已连接状态和设置按钮
-- 下半区是 Electron 的 `<webview>` 聊天页面
+- 下半区是 Electron 的 `<webview>` 聊天页面，切换助手时会切到对应 HTML
 - 点击 `设置` 后，先展示当前助手简介页
 - 简介页顶部是独立白色卡片，包含头像、名称、ID
 - 简介页中部是独立白色卡片，分别展示助手简介、产品归属、责任人、账号状态
@@ -109,7 +113,7 @@ npm run verify
 - `examples/host-react` 为宿主接入示例目录
 - `examples/webpack5-host` 为复制到其他 webpack5 项目时的配置模板
 
-如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/myAgentWebview/webview/chat.html`。
+如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/myAgentWebview/webview/*.html` 和 `src/myAgentWebview/config/webview.js` 里的映射关系。
 
 ## CommonJS 引入示例
 

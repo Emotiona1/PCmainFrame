@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
+import { getWebviewSrcByAssistantId } from './config/webview';
 import './styles/global.css';
 import './styles/chat.css';
 
@@ -82,6 +83,8 @@ function MyAgentWebview() {
     assistants.find((assistant) => assistant.id === draftAssistantId) ??
     currentAssistant;
 
+  const currentWebviewSrc = getWebviewSrcByAssistantId(currentAssistant.id);
+
   const openDrawer = () => {
     setDraftAssistantId(currentAssistant.id);
     setIsDrawerOpen(true);
@@ -126,7 +129,10 @@ function MyAgentWebview() {
             name={currentAssistant.name}
             onOpenSettings={openDrawer}
           />
-          <ChatWorkspace drawerOpen={isDrawerOpen} />
+          <ChatWorkspace
+            drawerOpen={isDrawerOpen}
+            webviewSrc={currentWebviewSrc}
+          />
         </div>
         <AssistantDrawer
           open={isDrawerOpen}

@@ -1,10 +1,10 @@
 import React from 'react';
 import ChatWebview from './ChatWebview';
 
-function ChatWorkspace({ drawerOpen }) {
+function ChatWorkspace({ drawerOpen, webviewSrc }) {
   return (
     <div className={`chat-panel ${drawerOpen ? 'chat-panel--drawer-open' : ''}`}>
-      {!drawerOpen ? <ChatWebview /> : null}
+      {!drawerOpen ? <ChatWebview src={webviewSrc} /> : null}
     </div>
   );
 }
