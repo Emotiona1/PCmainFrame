@@ -4,11 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
 .myAgentWebview .chat-shell {
-  width: min(1120px, 100%);
+  width: 100%;
   min-height: min(860px, calc(100vh - 48px));
   position: relative;
   isolation: isolate;
