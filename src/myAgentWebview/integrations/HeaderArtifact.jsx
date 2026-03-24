@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HeaderArtifact({ name, signature }) {
+function HeaderArtifact({ name, onOpenSettings }) {
   return (
     <header className="chat-header">
       <div className="chat-header__identity">
@@ -14,9 +14,16 @@ function HeaderArtifact({ name, signature }) {
             <span>已连接</span>
           </span>
         </div>
-        <div className="chat-header__meta">
-          <p className="chat-header__signature">{signature}</p>
-        </div>
+      </div>
+
+      <div className="chat-header__actions">
+        <button
+          className="chat-header__settings-button"
+          type="button"
+          onClick={onOpenSettings}
+        >
+          设置
+        </button>
       </div>
     </header>
   );

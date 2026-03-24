@@ -49,11 +49,65 @@ npm run verify
 - `src/myAgentWebview/config/webview.js`：读取并导出默认 webview 地址
 - `src/myAgentWebview/webview/chat.html`：webview 渲染的聊天页面 HTML
 
+## 最新结构
+
+```text
+/Users/hzy/Documents/New project
+├── README.md
+├── package.json
+├── package-lock.json
+├── babel.config.js
+├── webpack.config.js
+├── webpack.preview.config.js
+├── scripts
+│   └── verify-build.mjs
+├── src
+│   └── myAgentWebview
+│       ├── index.jsx
+│       ├── MyAgentWebview.jsx
+│       ├── config
+│       │   └── webview.js
+│       ├── components
+│       │   ├── AssistantDrawer.jsx
+│       │   ├── ChatWorkspace.jsx
+│       │   └── ChatWebview.jsx
+│       ├── integrations
+│       │   └── HeaderArtifact.jsx
+│       ├── styles
+│       │   ├── chat.css
+│       │   └── global.css
+│       └── webview
+│           └── chat.html
+├── preview
+│   ├── index.html
+│   ├── chat-panel.html
+│   └── src
+│       ├── index.jsx
+│       └── preview.css
+└── examples
+    └── webpack5-host
+        ├── README.md
+        └── webpack.myAgentWebview.config.js
+```
+
+## 当前交互
+
+- 头部区域显示助手名称、已连接状态和设置按钮
+- 下半区是 Electron 的 `<webview>` 聊天页面
+- 点击 `设置` 后，先展示当前助手简介页
+- 简介页顶部是独立白色卡片，包含头像、名称、ID
+- 简介页中部是独立白色卡片，分别展示助手简介、产品归属、责任人、账号状态
+- 简介页底部只有一个 `切换其他助理` 按钮
+- 点击 `切换其他助理` 后，进入助手选择页
+- 选择页支持切换助手，底部有 `取消选择` 和 `确认切换`
+- 抽屉顶部固定有 `X` 关闭按钮和客服图标按钮
+
 ## 打包结果
 
 - `dist/myAgentWebview/index.js`
 - `dist/preview` 为本地预览产物，不建议作为交付物
 - `examples/host-react` 为宿主接入示例目录
+- `examples/webpack5-host` 为复制到其他 webpack5 项目时的配置模板
 
 如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/myAgentWebview/webview/chat.html`。
 
