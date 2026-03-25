@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/weAgent/index.jsx'),
@@ -24,6 +25,19 @@ module.exports = {
       root: 'React',
     },
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/weAgent/ai-chat-viewer/dist/lib'),
+          to: path.resolve(__dirname, 'dist/weAgent'),
+          globOptions: {
+            ignore: ['**/index.js', '**/index.js.map', '**/index.d.ts'],
+          },
+        },
+      ],
+    }),
+  ],
   module: {
     rules: [
       {

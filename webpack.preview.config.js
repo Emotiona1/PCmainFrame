@@ -60,6 +60,13 @@ module.exports = {
           from: path.resolve(__dirname, 'preview/chat-panel.html'),
           to: path.resolve(__dirname, 'dist/preview/chat-panel.html'),
         },
+        {
+          from: path.resolve(__dirname, 'src/weAgent/ai-chat-viewer/dist/lib'),
+          to: path.resolve(__dirname, 'dist/preview'),
+          globOptions: {
+            ignore: ['**/index.js', '**/index.js.map', '**/index.d.ts'],
+          },
+        },
       ],
     }),
   ],

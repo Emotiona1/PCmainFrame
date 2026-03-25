@@ -1,4 +1,5 @@
 import React from 'react';
+import { SwitchAssistant } from '../ai-chat-viewer/dist/lib/index.js';
 
 function AssistantSelectView({
   assistants,
@@ -6,67 +7,50 @@ function AssistantSelectView({
   onSelectAssistant,
   onCancel,
   onConfirm,
-  onBackToDetail,
 }) {
+  const selectedIndex = assistants.findIndex(
+    (assistant) => assistant.id === selectedAssistantId,
+  );
+  const hostClassName = [
+    'assistant-select-host',
+    selectedIndex >= 0 ? `assistant-select-host--selected-${selectedIndex}` : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  React.useEffect(() => {
+    const handleSelect = (event) => {
+      const cardIndex = Number(event?.detail?.cardIndex);
+      if (!Number.isInteger(cardIndex) || cardIndex < 0 || cardIndex >= assistants.length) {
+        return;
+      }
+
+      onSelectAssistant(assistants[cardIndex].id);
+    };
+
+    const handleCancel = () => {
+      onCancel();
+    };
+
+    const handleConfirm = () => {
+      onConfirm();
+    };
+
+    window.addEventListener('weAgent:switch-assistant-select', handleSelect);
+    window.addEventListener('weAgent:switch-assistant-cancel', handleCancel);
+    window.addEventListener('weAgent:switch-assistant-confirm', handleConfirm);
+
+    return () => {
+      window.removeEventListener('weAgent:switch-assistant-select', handleSelect);
+      window.removeEventListener('weAgent:switch-assistant-cancel', handleCancel);
+      window.removeEventListener('weAgent:switch-assistant-confirm', handleConfirm);
+    };
+  }, [assistants, onCancel, onConfirm, onSelectAssistant]);
+
   return (
-    <>
-      <div className="assistant-drawer__header">
-        <h2 className="assistant-drawer__title">切换助理</h2>
-        <p className="assistant-drawer__subtitle">
-          选择一个助手后，点击确认切换即可应用到顶部区域。
-        </p>
-      </div>
-
-      <div className="assistant-drawer__content">
-        {assistants.map((assistant) => {
-          const checked = assistant.id === selectedAssistantId;
-
-          return (
-            <button
-              key={assistant.id}
-              type="button"
-              className={`assistant-card ${checked ? 'assistant-card--active' : ''}`}
-              onClick={() => onSelectAssistant(assistant.id)}
-            >
-              <div className="assistant-card__avatar" aria-hidden="true">
-                {assistant.avatar}
-              </div>
-              <div className="assistant-card__body">
-                <div className="assistant-card__head">
-                  <div className="assistant-card__name">{assistant.name}</div>
-                  <span className="assistant-card__mark">
-                    {checked ? '已选择' : '可切换'}
-                  </span>
-                </div>
-                <p className="assistant-card__description">
-                  {assistant.description}
-                </p>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="assistant-drawer__footer">
-        <button
-          className="assistant-drawer__button assistant-drawer__button--ghost"
-          type="button"
-          onClick={() => {
-            onBackToDetail();
-            onCancel();
-          }}
-        >
-          取消选择
-        </button>
-        <button
-          className="assistant-drawer__button assistant-drawer__button--primary"
-          type="button"
-          onClick={onConfirm}
-        >
-          确认切换
-        </button>
-      </div>
-    </>
+    <div className={hostClassName}>
+      <SwitchAssistant defaultSelectedAssistantId={selectedAssistantId} />
+    </div>
   );
 }
 
