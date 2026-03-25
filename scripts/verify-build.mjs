@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const outputDir = path.resolve('dist/myAgentWebview');
+const outputDir = path.resolve('dist/weAgent');
 const bundleFile = path.join(outputDir, 'index.js');
 
 if (!fs.existsSync(outputDir)) {

@@ -1,4 +1,4 @@
-.myAgentWebview .page {
+.weAgent .page {
   width: 100%;
   height: 100%;
   position: relative;
@@ -7,7 +7,7 @@
   background: #ffffff;
 }
 
-.myAgentWebview .chat-shell {
+.weAgent .chat-shell {
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -23,7 +23,7 @@
   backdrop-filter: none;
 }
 
-.myAgentWebview .chat-header {
+.weAgent .chat-header {
   position: relative;
   z-index: 3;
   display: flex;
@@ -35,36 +35,36 @@
   background: linear-gradient(90deg, rgba(17, 24, 39, 0.03), transparent);
 }
 
-.myAgentWebview .chat-header__identity {
+.weAgent .chat-header__identity {
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 0;
 }
 
-.myAgentWebview .chat-header__brand-icon {
+.weAgent .chat-header__brand-icon {
   width: 40px;
   height: 40px;
   flex: none;
   display: block;
 }
 
-.myAgentWebview .chat-header__text {
+.weAgent .chat-header__text {
   min-width: 0;
 }
 
-.myAgentWebview .chat-header__topline {
+.weAgent .chat-header__topline {
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 0;
 }
 
-.myAgentWebview .chat-header__meta {
+.weAgent .chat-header__meta {
   min-width: 0;
 }
 
-.myAgentWebview .chat-header__actions {
+.weAgent .chat-header__actions {
   flex: none;
   display: flex;
   align-items: center;
@@ -74,14 +74,14 @@
   z-index: 4;
 }
 
-.myAgentWebview .chat-header__name {
+.weAgent .chat-header__name {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
 }
 
-.myAgentWebview .chat-header__signature {
+.weAgent .chat-header__signature {
   margin: 0;
   color: #64748b;
   font-size: 12px;
@@ -89,8 +89,8 @@
   line-height: 20px;
 }
 
-.myAgentWebview .chat-header__icon-button,
-.myAgentWebview .chat-header__settings-button {
+.weAgent .chat-header__icon-button,
+.weAgent .chat-header__settings-button {
   border: 0;
   padding: 0;
   width: 32px;
@@ -105,18 +105,18 @@
   transition: background-color 0.18s ease;
 }
 
-.myAgentWebview .chat-header__icon-button:hover,
-.myAgentWebview .chat-header__settings-button:hover {
+.weAgent .chat-header__icon-button:hover,
+.weAgent .chat-header__settings-button:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.myAgentWebview .chat-header__icon-image {
+.weAgent .chat-header__icon-image {
   width: 20px;
   height: 20px;
   display: block;
 }
 
-.myAgentWebview .chat-panel {
+.weAgent .chat-panel {
   position: relative;
   z-index: 1;
   min-height: 0;
@@ -127,30 +127,30 @@
     linear-gradient(135deg, rgba(229, 231, 235, 0.55) 0%, rgba(243, 244, 246, 0.18) 100%);
 }
 
-.myAgentWebview .chat-panel__webview {
+.weAgent .chat-panel__webview {
   width: 100%;
   height: 100%;
   border: 0;
   background: transparent;
 }
 
-.myAgentWebview .chat-panel__assistant-container {
+.weAgent .chat-panel__assistant-container {
   width: 100%;
   height: 100%;
 }
 
-.myAgentWebview.myAgentWebview--drawer-layer {
+.weAgent.weAgent--drawer-layer {
   position: fixed;
   z-index: 2147483647;
 }
 
-.myAgentWebview.myAgentWebview--drawer-layer .assistant-drawer {
+.weAgent.weAgent--drawer-layer .assistant-drawer {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-@keyframes myAgentDrawerSlideIn {
+@keyframes weAgentDrawerSlideIn {
   from {
     opacity: 0;
     transform: translateX(12px);
@@ -162,11 +162,11 @@
   }
 }
 
-.myAgentWebview .assistant-drawer {
+.weAgent .assistant-drawer {
   pointer-events: auto;
 }
 
-.myAgentWebview .assistant-drawer__backdrop {
+.weAgent .assistant-drawer__backdrop {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -176,7 +176,7 @@
   backdrop-filter: blur(4px) saturate(1.1);
 }
 
-.myAgentWebview .assistant-drawer__panel {
+.weAgent .assistant-drawer__panel {
   position: absolute;
   top: 0;
   right: 0;
@@ -192,11 +192,11 @@
   box-shadow:
     -28px 0 60px rgba(15, 23, 42, 0.22),
     inset 1px 0 0 rgba(255, 255, 255, 0.6);
-  animation: myAgentDrawerSlideIn 0.22s ease-out;
+  animation: weAgentDrawerSlideIn 0.22s ease-out;
   will-change: transform, opacity;
 }
 
-.myAgentWebview .assistant-drawer__toolbar {
+.weAgent .assistant-drawer__toolbar {
   flex: none;
   display: flex;
   align-items: center;
@@ -206,7 +206,7 @@
   background: linear-gradient(180deg, rgba(234, 242, 255, 0.92), rgba(234, 242, 255, 0.78));
 }
 
-.myAgentWebview .assistant-drawer__icon-button {
+.weAgent .assistant-drawer__icon-button {
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 999px;
   width: 34px;
@@ -219,24 +219,24 @@
   cursor: pointer;
 }
 
-.myAgentWebview .assistant-drawer__icon-button--close {
+.weAgent .assistant-drawer__icon-button--close {
   font-size: 14px;
   line-height: 1;
 }
 
-.myAgentWebview .assistant-drawer__icon-button--service {
+.weAgent .assistant-drawer__icon-button--service {
   border-color: rgba(59, 130, 246, 0.22);
   color: #2563eb;
   font-size: 14px;
   line-height: 1;
 }
 
-.myAgentWebview .assistant-drawer__header {
+.weAgent .assistant-drawer__header {
   padding: 14px 14px 10px;
   border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
-.myAgentWebview .assistant-drawer__header--detail {
+.weAgent .assistant-drawer__header--detail {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -256,20 +256,20 @@
   text-align: center;
 }
 
-.myAgentWebview .assistant-drawer__title {
+.weAgent .assistant-drawer__title {
   margin: 0;
   font-size: 16px;
   line-height: 1.2;
 }
 
-.myAgentWebview .assistant-drawer__subtitle {
+.weAgent .assistant-drawer__subtitle {
   margin: 6px 0 0;
   color: #64748b;
   font-size: 12px;
   line-height: 1.5;
 }
 
-.myAgentWebview .assistant-detail__avatar {
+.weAgent .assistant-detail__avatar {
   flex: none;
   width: 52px;
   height: 52px;
@@ -283,26 +283,26 @@
   box-shadow: 0 14px 26px rgba(37, 99, 235, 0.18);
 }
 
-.myAgentWebview .assistant-detail__meta {
+.weAgent .assistant-detail__meta {
   min-width: 0;
   display: grid;
   gap: 4px;
   justify-items: center;
 }
 
-.myAgentWebview .assistant-detail__name {
+.weAgent .assistant-detail__name {
   margin: 0;
   font-size: 18px;
   line-height: 1.2;
 }
 
-.myAgentWebview .assistant-detail__id {
+.weAgent .assistant-detail__id {
   margin: 6px 0 0;
   color: #64748b;
   font-size: 12px;
 }
 
-.myAgentWebview .assistant-detail__content {
+.weAgent .assistant-detail__content {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -311,7 +311,7 @@
   gap: 12px;
 }
 
-.myAgentWebview .assistant-detail__block {
+.weAgent .assistant-detail__block {
   display: grid;
   gap: 8px;
   padding: 12px 14px;
@@ -323,27 +323,27 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-.myAgentWebview .assistant-detail__block--status {
+.weAgent .assistant-detail__block--status {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.myAgentWebview .assistant-detail__label {
+.weAgent .assistant-detail__label {
   color: #64748b;
   font-size: 12px;
   line-height: 1.2;
 }
 
-.myAgentWebview .assistant-detail__value {
+.weAgent .assistant-detail__value {
   color: #0f172a;
   font-size: 13px;
   line-height: 1.6;
   text-align: left;
 }
 
-.myAgentWebview .assistant-detail__status {
+.weAgent .assistant-detail__status {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
@@ -357,7 +357,7 @@
   width: auto;
 }
 
-.myAgentWebview .assistant-detail__status-dot {
+.weAgent .assistant-detail__status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -365,22 +365,23 @@
   box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.14);
 }
 
-.myAgentWebview .assistant-drawer__content {
+.weAgent .assistant-drawer__content {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  padding: 10px;
+  padding: 0 8px 8px;
   display: grid;
-  gap: 8px;
+  gap: 12px;
 }
 
-.myAgentWebview .assistant-card {
+.weAgent .assistant-card {
   width: 100%;
+  height: 72px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   border-radius: 16px;
-  padding: 12px;
+  padding: 0 12px;
   background:
     linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 1));
   text-align: left;
@@ -390,29 +391,26 @@
   cursor: pointer;
   transition:
     border-color 0.18s ease,
-    box-shadow 0.18s ease,
     transform 0.18s ease;
 }
 
-.myAgentWebview .assistant-card:hover {
+.weAgent .assistant-card:hover {
   border-color: rgba(59, 130, 246, 0.28);
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-.myAgentWebview .assistant-card--active {
+.weAgent .assistant-card--active {
   border-color: rgba(16, 185, 129, 0.42);
-  box-shadow: 0 14px 28px rgba(16, 185, 129, 0.14);
 }
 
-.myAgentWebview .assistant-card__head {
+.weAgent .assistant-card__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.myAgentWebview .assistant-card__avatar {
+.weAgent .assistant-card__avatar {
   flex: none;
   width: 34px;
   height: 34px;
@@ -423,21 +421,23 @@
   color: white;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.16);
+  box-shadow: none;
 }
 
-.myAgentWebview .assistant-card__body {
+.weAgent .assistant-card__body {
   flex: 1;
   min-width: 0;
+  display: grid;
+  gap: 2px;
 }
 
-.myAgentWebview .assistant-card__name {
+.weAgent .assistant-card__name {
   font-size: 15px;
   font-weight: 700;
   color: #0f172a;
 }
 
-.myAgentWebview .assistant-card__mark {
+.weAgent .assistant-card__mark {
   flex: none;
   padding: 3px 8px;
   border-radius: 999px;
@@ -447,19 +447,19 @@
   white-space: nowrap;
 }
 
-.myAgentWebview .assistant-card--active .assistant-card__mark {
+.weAgent .assistant-card--active .assistant-card__mark {
   background: rgba(16, 185, 129, 0.1);
   color: #047857;
 }
 
-.myAgentWebview .assistant-card__description {
-  margin: 4px 0 0;
+.weAgent .assistant-card__description {
+  margin: 0;
   color: #334155;
   font-size: 12px;
   line-height: 1.45;
 }
 
-.myAgentWebview .assistant-drawer__footer {
+.weAgent .assistant-drawer__footer {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
@@ -469,11 +469,11 @@
   flex-shrink: 0;
 }
 
-.myAgentWebview .assistant-drawer__footer--single {
+.weAgent .assistant-drawer__footer--single {
   grid-template-columns: 1fr;
 }
 
-.myAgentWebview .assistant-drawer__button {
+.weAgent .assistant-drawer__button {
   border-radius: 12px;
   padding: 11px 12px;
   border: 1px solid transparent;
@@ -483,34 +483,34 @@
   box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
 }
 
-.myAgentWebview .assistant-drawer__button--ghost {
+.weAgent .assistant-drawer__button--ghost {
   border-color: rgba(148, 163, 184, 0.3);
   background: white;
   color: #0f172a;
 }
 
-.myAgentWebview .assistant-drawer__button--primary {
+.weAgent .assistant-drawer__button--primary {
   background: linear-gradient(135deg, #1d4ed8, #2563eb);
   color: white;
 }
 
 @media (max-width: 768px) {
-  .myAgentWebview .chat-header {
+  .weAgent .chat-header {
     padding: 18px;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .myAgentWebview .chat-header__identity {
+  .weAgent .chat-header__identity {
     align-items: flex-start;
   }
 
-  .myAgentWebview .chat-header__actions {
+  .weAgent .chat-header__actions {
     margin-left: 0;
     gap: 20px;
   }
 
-  .myAgentWebview .assistant-drawer__panel {
+  .weAgent .assistant-drawer__panel {
     top: 0;
     right: 0;
     bottom: 0;
@@ -518,7 +518,7 @@
     min-width: 0;
   }
 
-  .myAgentWebview .assistant-card__avatar {
+  .weAgent .assistant-card__avatar {
     width: 34px;
     height: 34px;
   }

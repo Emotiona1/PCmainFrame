@@ -1,11 +1,11 @@
 {
-  "name": "pc-chat-web",
+  "name": "we-agent-web",
   "version": "1.0.0",
   "private": true,
   "description": "A simple PC chat front-end built with React and Webpack 5.",
-  "main": "dist/myAgentWebview/index.js",
+  "main": "dist/weAgent/index.js",
   "files": [
-    "dist/myAgentWebview",
+    "dist/weAgent",
     "README.md"
   ],
   "engines": {

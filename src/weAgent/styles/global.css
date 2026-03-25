@@ -1,0 +1,15 @@
+.weAgent,
+.weAgent * {
+  box-sizing: border-box;
+}
+
+.weAgent {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.weAgent button,
+.weAgent textarea {
+  font: inherit;
+}

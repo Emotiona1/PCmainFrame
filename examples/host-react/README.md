@@ -1,18 +1,18 @@
 # Host React Example
 
-这是一个最小宿主接入示例目录，演示如何在别的 React 项目里使用 `pc-chat-web` 组件包。
+这是一个最小宿主接入示例目录，演示如何在别的 React 项目里使用 `we-agent-web` 组件包。
 
 ## 接入方式
 
 ```jsx
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import MyAgentWebview from 'pc-chat-web';
+import WeAgentWebview from 'we-agent-web';
 
 function App() {
   return (
     <div style={{ width: 1200, height: 860 }}>
-      <MyAgentWebview />
+      <WeAgentWebview />
     </div>
   );
 }

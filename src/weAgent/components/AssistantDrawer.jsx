@@ -36,7 +36,7 @@ function AssistantDrawer({
 
   return createPortal(
     <div
-      className="myAgentWebview myAgentWebview--drawer-layer"
+      className="weAgent weAgent--drawer-layer"
       style={overlayStyle}
     >
       <div className="assistant-drawer" aria-hidden={!open}>

@@ -1,12 +1,12 @@
-# PC Chat Web
+# WeAgent Web
 
 一个轻量的 React + Webpack 5 聊天组件包。
 
 ## 项目定位
 
 - 对外只打包组件，不再输出 HTML 页面
-- 源码统一收敛到 `src/myAgentWebview`
-- 构建产物统一输出到 `dist/myAgentWebview`
+- 源码统一收敛到 `src/weAgent`
+- 构建产物统一输出到 `dist/weAgent`
 - 组件对外采用 CommonJS 方式引入
 - 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
 - 下半区使用 Electron 的 `<webview>` 标签，当前已经拆成 5 个独立 HTML 文件，并按助手切换
@@ -44,10 +44,10 @@ npm run verify
 
 ## 组件入口
 
-- `src/myAgentWebview/index.jsx`：对外导出入口
-- `src/myAgentWebview/MyAgentWebview.jsx`：主组件
-- `src/myAgentWebview/config/webview.js`：读取并导出助手到 webview HTML 的映射
-- `src/myAgentWebview/webview/*.html`：webview 渲染的 5 个聊天页面 HTML
+- `src/weAgent/index.jsx`：对外导出入口
+- `src/weAgent/WeAgentWebview.jsx`：主组件
+- `src/weAgent/config/webview.js`：读取并导出助手到 webview HTML 的映射
+- `src/weAgent/webview/*.html`：webview 渲染的 5 个聊天页面 HTML
 
 ## 最新结构
 
@@ -62,9 +62,9 @@ npm run verify
 ├── scripts
 │   └── verify-build.mjs
 ├── src
-│   └── myAgentWebview
+│   └── weAgent
 │       ├── index.jsx
-│       ├── MyAgentWebview.jsx
+│       ├── WeAgentWebview.jsx
 │       ├── config
 │       │   └── webview.js
 │       ├── components
@@ -91,7 +91,7 @@ npm run verify
 └── examples
     └── webpack5-host
         ├── README.md
-        └── webpack.myAgentWebview.config.js
+        └── webpack.weAgent.config.js
 ```
 
 ## 当前交互
@@ -108,12 +108,12 @@ npm run verify
 
 ## 打包结果
 
-- `dist/myAgentWebview/index.js`
+- `dist/weAgent/index.js`
 - `dist/preview` 为本地预览产物，不建议作为交付物
 - `examples/host-react` 为宿主接入示例目录
 - `examples/webpack5-host` 为复制到其他 webpack5 项目时的配置模板
 
-如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/myAgentWebview/webview/*.html` 和 `src/myAgentWebview/config/webview.js` 里的映射关系。
+如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/weAgent/webview/*.html` 和 `src/weAgent/config/webview.js` 里的映射关系。
 
 ## CommonJS 引入示例
 
@@ -122,13 +122,13 @@ npm run verify
 ```jsx
 const React = require('react');
 const { createRoot } = require('react-dom/client');
-const MyAgentWebview = require('pc-chat-web').default;
+const WeAgentWebview = require('we-agent-web').default;
 
 function App() {
   return React.createElement(
     'div',
     { style: { width: 1200, height: 860 } },
-    React.createElement(MyAgentWebview),
+    React.createElement(WeAgentWebview),
   );
 }
 
@@ -140,10 +140,10 @@ createRoot(document.getElementById('root')).render(React.createElement(App));
 ```jsx
 const React = require('react');
 const { createRoot } = require('react-dom/client');
-const MyAgentWebview = require('./dist/myAgentWebview/index.js').default;
+const WeAgentWebview = require('./dist/weAgent/index.js').default;
 
 createRoot(document.getElementById('root')).render(
-  React.createElement(MyAgentWebview),
+  React.createElement(WeAgentWebview),
 );
 ```
 
@@ -161,16 +161,16 @@ createRoot(document.getElementById('root')).render(
 如果你当前的业务项目已经有自己的 webpack5 打包逻辑，建议这样接：
 
 1. 保留原来的 `webpack.config.js` 不变
-2. 新增一个独立的 `webpack.myAgentWebview.config.js`
-3. 把 `src/myAgentWebview` 目录复制到宿主项目里
+2. 新增一个独立的 `webpack.weAgent.config.js`
+3. 把 `src/weAgent` 目录复制到宿主项目里
 4. 给组件单独加一个构建命令，例如：
 
 ```json
 {
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "build:myAgentWebview": "webpack --config webpack.myAgentWebview.config.js",
-    "build:all": "npm run build && npm run build:myAgentWebview"
+    "build:weAgent": "webpack --config webpack.weAgent.config.js",
+    "build:all": "npm run build && npm run build:weAgent"
   }
 }
 ```
@@ -178,11 +178,11 @@ createRoot(document.getElementById('root')).render(
 5. 宿主项目通过 CommonJS 引入组件：
 
 ```jsx
-const MyAgentWebview = require('./dist/myAgentWebview/index.js').default;
+const WeAgentWebview = require('./dist/weAgent/index.js').default;
 ```
 
 这个方式的好处是：
 
 - 你原来的页面打包逻辑不会被改动
-- `myAgentWebview` 组件可以单独升级和构建
-- 最终产物还是保持为 `dist/myAgentWebview/index.js`
+- `weAgent` 组件可以单独升级和构建
+- 最终产物还是保持为 `dist/weAgent/index.js`

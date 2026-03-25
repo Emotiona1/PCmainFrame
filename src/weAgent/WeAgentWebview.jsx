@@ -19,41 +19,8 @@ const assistants = [
     description: '产品维护知识入口，一站式查看常见问题与处理建议。',
   },
   {
-    id: 'helper-pro',
-    name: '设计小助手',
-    avatar: '设',
-    assistantId: 'DS-102',
-    intro: '设计师一枚，有专业设计能力，适合处理设计类咨询。',
-    product: '设计协作平台',
-    owner: '设计支持组',
-    accountStatus: '运行中',
-    description: '设计师一枚，有专业设计能力。',
-  },
-  {
-    id: 'coding-expert',
-    name: '编程专家',
-    avatar: '程',
-    assistantId: 'CODE-301',
-    intro: '专业的 Java 助手，代码编写能力较强。',
-    product: '研发知识平台',
-    owner: '开发支持组',
-    accountStatus: '运行中',
-    description: '专业的 Java 助手，代码编写能力较强。',
-  },
-  {
-    id: 'local-employee',
-    name: '本地员工助手',
-    avatar: '员',
-    assistantId: 'EMP-208',
-    intro: '可在本地环境提供常见流程支持和业务协助。',
-    product: '本地员工平台',
-    owner: '员工支持组',
-    accountStatus: '运行中',
-    description: '可在本地环境提供常见流程支持和业务协助。',
-  },
-  {
     id: 'base-employee',
-    name: '基座员工助手',
+    name: '员工助手',
     avatar: '基',
     assistantId: 'BASE-409',
     intro: '提供基座能力入口与通用员工接入支持。',
@@ -64,7 +31,7 @@ const assistants = [
   },
 ];
 
-function MyAgentWebview() {
+function WeAgentWebview() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [currentAssistantId, setCurrentAssistantId] = React.useState(
     assistants[0].id,
@@ -122,7 +89,7 @@ function MyAgentWebview() {
   }, [isDrawerOpen]);
 
   return (
-    <div className="myAgentWebview">
+    <div className="weAgent">
       <div className="page">
         <div ref={shellRef} className="chat-shell">
           <HeaderArtifact
@@ -148,4 +115,4 @@ function MyAgentWebview() {
   );
 }
 
-export default MyAgentWebview;
+export default WeAgentWebview;

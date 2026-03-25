@@ -46,7 +46,7 @@ module.exports = {
       {
         test: /\.html$/,
         type: 'asset/source',
-        include: path.resolve(__dirname, 'src/myAgentWebview/webview'),
+        include: path.resolve(__dirname, 'src/weAgent/webview'),
       },
     ],
   },

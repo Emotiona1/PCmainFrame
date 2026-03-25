@@ -1,10 +1,10 @@
 import React from 'react';
-import MyAgentWebview from '../../../src/myAgentWebview/MyAgentWebview';
+import WeAgentWebview from '../../../src/weAgent/WeAgentWebview';
 
 function App() {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <MyAgentWebview />
+      <WeAgentWebview />
     </div>
   );
 }

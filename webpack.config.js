@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/myAgentWebview/index.jsx'),
+  entry: path.resolve(__dirname, 'src/weAgent/index.jsx'),
   output: {
-    path: path.resolve(__dirname, 'dist/myAgentWebview'),
+    path: path.resolve(__dirname, 'dist/weAgent'),
     filename: 'index.js',
     clean: true,
     publicPath: 'auto',
@@ -57,7 +57,7 @@ module.exports = {
       {
         test: /\.html$/,
         type: 'asset/source',
-        include: path.resolve(__dirname, 'src/myAgentWebview/webview'),
+        include: path.resolve(__dirname, 'src/weAgent/webview'),
       },
     ],
   },
