@@ -1,5 +1,4 @@
 import xiaomiHtml from '../webview/xiaomi.html';
-import aiChatViewerHtml from '../webview/ai-chat-viewer.html';
 import designHelperHtml from '../webview/design-helper.html';
 import codingExpertHtml from '../webview/coding-expert.html';
 import localEmployeeHtml from '../webview/local-employee.html';
@@ -9,7 +8,10 @@ const toDataUrl = (html) =>
 
 export const WORKSPACE_BY_ASSISTANT_ID = {
   xiaomi: toDataUrl(xiaomiHtml),
-  'ai-chat-viewer': toDataUrl(aiChatViewerHtml),
+  'ai-chat-viewer': {
+    type: 'webview',
+    src: './src/weAgent/dist/index.html',
+  },
   'helper-pro': toDataUrl(designHelperHtml),
   'coding-expert': toDataUrl(codingExpertHtml),
   'local-employee': toDataUrl(localEmployeeHtml),
