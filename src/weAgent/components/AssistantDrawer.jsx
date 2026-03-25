@@ -29,9 +29,8 @@ function AssistantDrawer({
 
   const overlayStyle = {
     top: `${shellRect.top}px`,
-    left: `${shellRect.left}px`,
-    width: `${shellRect.width}px`,
     height: `${shellRect.height}px`,
+    right: '0px',
   };
 
   return createPortal(
