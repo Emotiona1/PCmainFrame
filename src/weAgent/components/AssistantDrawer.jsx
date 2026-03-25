@@ -40,13 +40,6 @@ function AssistantDrawer({
       style={overlayStyle}
     >
       <div className="assistant-drawer" aria-hidden={!open}>
-        <button
-          className="assistant-drawer__backdrop"
-          type="button"
-          aria-label="关闭设置抽屉"
-          onClick={onBackdropClick}
-        />
-
         <aside
           className="assistant-drawer__panel"
           role="dialog"

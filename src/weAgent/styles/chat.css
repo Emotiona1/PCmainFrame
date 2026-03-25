@@ -166,16 +166,6 @@
   pointer-events: auto;
 }
 
-.weAgent .assistant-drawer__backdrop {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.34), rgba(15, 23, 42, 0.24));
-  backdrop-filter: blur(4px) saturate(1.1);
-}
-
 .weAgent .assistant-drawer__panel {
   position: absolute;
   top: 0;
@@ -372,13 +362,15 @@
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   padding: 0 8px 8px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
 .weAgent .assistant-card {
   width: 100%;
   height: 72px;
+  margin-bottom: 12px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   border-radius: 16px;
   padding: 0 12px;
@@ -389,6 +381,8 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  user-select: none;
+  outline: none;
   transition:
     border-color 0.18s ease,
     transform 0.18s ease;
@@ -397,6 +391,11 @@
 .weAgent .assistant-card:hover {
   border-color: rgba(59, 130, 246, 0.28);
   transform: translateY(-1px);
+}
+
+.weAgent .assistant-card:focus-visible {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
 }
 
 .weAgent .assistant-card--active {

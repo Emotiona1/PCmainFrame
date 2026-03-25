@@ -6,16 +6,14 @@ function ChatWorkspace({ drawerOpen, workspace }) {
 
   return (
     <div className={`chat-panel ${drawerOpen ? 'chat-panel--drawer-open' : ''}`}>
-      {!drawerOpen ? (
-        isPlaceholder ? (
-          <div
-            id={workspace.placeholderId}
-            className="chat-panel__assistant-container"
-          />
-        ) : (
-          <ChatWebview src={workspace?.src} />
-        )
-      ) : null}
+      {isPlaceholder ? (
+        <div
+          id={workspace.placeholderId}
+          className="chat-panel__assistant-container"
+        />
+      ) : (
+        <ChatWebview src={workspace?.src} />
+      )}
     </div>
   );
 }
