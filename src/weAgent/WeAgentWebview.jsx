@@ -50,7 +50,12 @@ function WeAgentWebview() {
     assistants.find((assistant) => assistant.id === draftAssistantId) ??
     currentAssistant;
 
-  const currentWorkspace = getWorkspaceByAssistantId(currentAssistant.id);
+  // 预先把所有助手对应的工作区都算出来并常驻，
+  // 这样切换助手时只切换显示层，不会销毁已有 webview。
+  const workspaces = assistants.map((assistant) => ({
+    id: assistant.id,
+    workspace: getWorkspaceByAssistantId(assistant.id),
+  }));
 
   const openDrawer = () => {
     setDraftAssistantId(currentAssistant.id);
@@ -97,7 +102,11 @@ function WeAgentWebview() {
             intro={currentAssistant.intro}
             onOpenSettings={openDrawer}
           />
-          <ChatWorkspace drawerOpen={isDrawerOpen} workspace={currentWorkspace} />
+          <ChatWorkspace
+            drawerOpen={isDrawerOpen}
+            workspaces={workspaces}
+            activeAssistantId={currentAssistant.id}
+          />
         </div>
         <AssistantDrawer
           open={isDrawerOpen}

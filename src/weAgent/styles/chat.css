@@ -127,6 +127,25 @@
     linear-gradient(135deg, rgba(229, 231, 235, 0.55) 0%, rgba(243, 244, 246, 0.18) 100%);
 }
 
+.weAgent .chat-panel__workspace-stack {
+  /* 所有工作区都常驻在这一层，切换时只隐藏非活动层。 */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.weAgent .chat-panel__workspace-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.weAgent .chat-panel__workspace-layer--inactive {
+  display: none;
+}
+
 .weAgent .chat-panel__webview {
   width: 100%;
   height: 100%;
