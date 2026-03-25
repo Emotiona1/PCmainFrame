@@ -7,6 +7,8 @@ import kefuIcon from '../imgs/kefu.webp';
 function HeaderArtifact({ name, intro, onOpenSwitch, onOpenSettings }) {
 
   const handleServiceClick = () => {
+    // 后续在这里接真实的客服跳转逻辑
+    // eslint-disable-next-line no-console
     console.log('客服图标点击');
   };
 
