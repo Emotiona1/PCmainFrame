@@ -50,6 +50,15 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpe?g|gif|webp)$/i,
+        type: 'asset/inline',
+      },
+      {
+        test: /\.html$/,
+        type: 'asset/source',
+        include: path.resolve(__dirname, '../../src/myAgentWebview/webview'),
+      },
     ],
   },
   devtool: 'source-map',

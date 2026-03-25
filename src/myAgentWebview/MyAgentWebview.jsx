@@ -127,6 +127,7 @@ function MyAgentWebview() {
         <div ref={shellRef} className="chat-shell">
           <HeaderArtifact
             name={currentAssistant.name}
+            intro={currentAssistant.intro}
             onOpenSettings={openDrawer}
           />
           <ChatWorkspace drawerOpen={isDrawerOpen} workspace={currentWorkspace} />

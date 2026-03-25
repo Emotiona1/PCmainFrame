@@ -154,7 +154,7 @@ createRoot(document.getElementById('root')).render(
 - 当前组件包已经把样式一起打进 bundle，导入组件即可看到样式
 - 组件外层会自带自己的样式作用域，不会去依赖宿主页面的 `body` 或 `#root`
 - Electron 容器里需要开启 `webviewTag`
-- 如果 `webview` 里的页面要直接调用 `require` / `process`，还要给该 `<webview>` 单独开启 `nodeintegration`
+- 当前 `<webview>` 默认已开启 `nodeintegration`、`webpreferences="contextIsolation=false"` 和 `disablewebsecurity`
 
 ## 复制到别的 webpack5 项目时怎么做
 

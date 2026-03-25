@@ -8,6 +8,8 @@ function ChatWebview({ src = DEFAULT_WORKSPACE.src }) {
       title="chat-webview"
       src={src}
       nodeintegration
+      webpreferences="contextIsolation=false"
+      disablewebsecurity
       allowpopups="false"
     />
   );
