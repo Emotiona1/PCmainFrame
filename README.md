@@ -10,6 +10,7 @@
 - 组件对外采用 CommonJS 方式引入
 - 如果你要把这段代码复制到另一个 webpack5 项目里，建议新增一条独立的组件构建链，不要改原项目的打包入口
 - 下半区使用 Electron 的 `<webview>` 标签，当前已经拆成 5 个独立 HTML 文件，并按助手切换
+- 切换助手页和助手详情页当前接入了 `ai-chat-viewer` 的产物，宿主项目只负责监听它抛出的自定义事件并执行切换逻辑
 
 ## 环境要求
 
@@ -48,6 +49,7 @@ npm run verify
 - `src/weAgent/WeAgentWebview.jsx`：主组件
 - `src/weAgent/config/webview.js`：读取并导出助手到 webview HTML 的映射
 - `src/weAgent/webview/*.html`：webview 渲染的 5 个聊天页面 HTML
+- `src/weAgent/ai-chat-viewer/dist/lib/index.js`：本地拷贝的 `ai-chat-viewer` 组件产物，切换助手页和助手详情页直接从这里引入
 
 ## 最新结构
 
@@ -105,6 +107,12 @@ npm run verify
 - 点击 `切换其他助理` 后，进入助手选择页
 - 选择页支持切换助手，底部有 `取消选择` 和 `确认切换`
 - 抽屉顶部固定有 `X` 关闭按钮和客服图标按钮
+- 当前的“切换助手”交互通过 `ai-chat-viewer` 产物内部派发的自定义事件驱动，宿主侧监听以下事件：
+  - `weAgent:switch-assistant-select`
+  - `weAgent:switch-assistant-cancel`
+  - `weAgent:switch-assistant-confirm`
+- 宿主侧收到事件后，再把它映射到当前项目自己的 `onSelectAssistant / onCancel / onConfirm` 逻辑
+- 这样可以保持 `ai-chat-viewer` 的渲染产物不改动宿主业务逻辑，只做事件桥接联调
 
 ## 打包结果
 
@@ -112,6 +120,7 @@ npm run verify
 - `dist/preview` 为本地预览产物，不建议作为交付物
 - `examples/host-react` 为宿主接入示例目录
 - `examples/webpack5-host` 为复制到其他 webpack5 项目时的配置模板
+- `src/weAgent/ai-chat-viewer/dist/lib` 为当前项目使用的 `ai-chat-viewer` 本地产物拷贝目录，切换助手页和助手详情页都从这里读取
 
 如果你后续要切换 webview 里的 HTML 内容，优先修改 `src/weAgent/webview/*.html` 和 `src/weAgent/config/webview.js` 里的映射关系。
 
@@ -155,6 +164,7 @@ createRoot(document.getElementById('root')).render(
 - 组件外层会自带自己的样式作用域，不会去依赖宿主页面的 `body` 或 `#root`
 - Electron 容器里需要开启 `webviewTag`
 - 当前 `<webview>` 默认已开启 `nodeintegration`、`webpreferences="contextIsolation=false"` 和 `disablewebsecurity`
+- `ai-chat-viewer` 的 lib 产物需要和宿主项目使用同一份 `React`，否则可能出现 hooks 相关报错；当前仓库里的 lib 打包配置已将 `react` 设为外置依赖
 
 ## 复制到别的 webpack5 项目时怎么做
 
