@@ -62,12 +62,22 @@ function WeAgentWebview() {
     setIsDrawerOpen(true);
   };
 
+  // 员工助手命中时走这里，后续可以替换成真实的业务接入方法。
+  const methodA = React.useCallback(() => {
+    // eslint-disable-next-line no-console
+    console.log('methodA: 员工助手已切换');
+  }, []);
+
   const closeDrawer = () => {
     setIsDrawerOpen(false);
     setDraftAssistantId(currentAssistant.id);
   };
 
   const confirmSwitch = () => {
+    if (draftAssistant.id === 'base-employee') {
+      methodA();
+    }
+
     setCurrentAssistantId(draftAssistant.id);
     setIsDrawerOpen(false);
   };
