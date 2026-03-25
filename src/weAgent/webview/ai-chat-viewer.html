@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chat Viewer Loader</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(180deg, #f8fafc, #eef2f7);
+        color: #334155;
+      }
+
+      .status {
+        padding: 16px 20px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status">Loading AI Chat Viewer...</div>
+    <script>
+      const fs = require('fs');
+      const path = require('path');
+      const { pathToFileURL } = require('url');
+
+      const candidates = [
+        window.__WE_AGENT_DIST_DIR__,
+        path.resolve(process.cwd(), 'src', 'weAgent', 'dist'),
+        path.resolve(process.cwd(), '..', 'src', 'weAgent', 'dist'),
+        path.resolve(process.cwd(), 'dist'),
+        path.resolve(process.cwd(), '..', 'dist'),
+      ].filter(Boolean);
+
+      const targetFile = candidates
+        .map((dir) => path.join(dir, 'index.html'))
+        .find((file) => fs.existsSync(file));
+
+      if (!targetFile) {
+        document.querySelector('.status').textContent =
+          'src/weAgent/dist/index.html not found. Set window.__WE_AGENT_DIST_DIR__ or place dist under src/weAgent.';
+      } else {
+        const targetUrl = pathToFileURL(targetFile).href;
+        window.location.replace(targetUrl);
+      }
+    </script>
+  </body>
+</html>

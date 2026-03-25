@@ -29,6 +29,17 @@ const assistants = [
     accountStatus: '运行中',
     description: '提供基座能力入口与通用员工接入支持。',
   },
+  {
+    id: 'ai-chat-viewer',
+    name: 'AI Chat Viewer',
+    avatar: 'AI',
+    assistantId: 'AICV-001',
+    intro: 'Load src/weAgent/dist/index.html inside the existing Electron webview shell.',
+    product: 'AI Chat Viewer',
+    owner: 'Dist Bundle',
+    accountStatus: 'Running',
+    description: 'Bridge the bundled src/weAgent/dist/index.html page into the assistant workspace switcher.',
+  },
 ];
 
 function WeAgentWebview() {
