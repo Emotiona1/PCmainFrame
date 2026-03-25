@@ -61,6 +61,17 @@ const assistants = [
     accountStatus: '运行中',
     description: '可用于售后说明、工单流转和回复模板整理。',
   },
+  {
+    id: 'ai-chat-viewer',
+    name: 'AI Chat Viewer',
+    avatar: 'AI',
+    assistantId: 'AICV-001',
+    intro: 'Load dist/index.html inside the existing Electron webview shell.',
+    product: 'AI Chat Viewer',
+    owner: 'Dist Bundle',
+    accountStatus: 'Running',
+    description: 'Bridge the bundled dist/index.html page into the assistant workspace switcher.',
+  },
 ];
 
 function MyAgentWebview() {
