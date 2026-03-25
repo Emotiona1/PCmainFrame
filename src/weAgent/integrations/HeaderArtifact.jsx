@@ -4,10 +4,7 @@ import switchIcon from '../imgs/switch.webp';
 import settingIcon from '../imgs/setting.webp';
 import kefuIcon from '../imgs/kefu.webp';
 
-function HeaderArtifact({ name, intro, onOpenSettings }) {
-  const handleSwitchClick = () => {
-    console.log('切换图标点击');
-  };
+function HeaderArtifact({ name, intro, onOpenSwitch, onOpenSettings }) {
 
   const handleServiceClick = () => {
     console.log('客服图标点击');
@@ -48,7 +45,7 @@ function HeaderArtifact({ name, intro, onOpenSettings }) {
           className="chat-header__icon-button"
           type="button"
           aria-label="切换"
-          onClick={handleSwitchClick}
+          onClick={onOpenSwitch}
         >
           <img
             className="chat-header__icon-image"

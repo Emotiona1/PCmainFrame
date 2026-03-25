@@ -10,6 +10,7 @@ function AssistantDrawer({
   currentAssistant,
   assistants,
   selectedAssistantId,
+  initialViewMode = 'detail',
   onSelectAssistant,
   onCancel,
   onConfirm,
@@ -19,9 +20,9 @@ function AssistantDrawer({
 
   React.useEffect(() => {
     if (open) {
-      setViewMode('detail');
+      setViewMode(initialViewMode);
     }
-  }, [open]);
+  }, [open, initialViewMode]);
 
   if (!open || typeof document === 'undefined' || !shellRect) {
     return null;

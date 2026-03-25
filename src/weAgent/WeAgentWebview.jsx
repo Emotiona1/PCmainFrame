@@ -33,6 +33,7 @@ const assistants = [
 
 function WeAgentWebview() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [drawerInitialViewMode, setDrawerInitialViewMode] = React.useState('detail');
   const [currentAssistantId, setCurrentAssistantId] = React.useState(
     assistants[0].id,
   );
@@ -57,8 +58,9 @@ function WeAgentWebview() {
     workspace: getWorkspaceByAssistantId(assistant.id),
   }));
 
-  const openDrawer = () => {
+  const openDrawer = (viewMode = 'detail') => {
     setDraftAssistantId(currentAssistant.id);
+    setDrawerInitialViewMode(viewMode);
     setIsDrawerOpen(true);
   };
 
@@ -71,6 +73,7 @@ function WeAgentWebview() {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
     setDraftAssistantId(currentAssistant.id);
+    setDrawerInitialViewMode('detail');
   };
 
   const confirmSwitch = () => {
@@ -110,7 +113,8 @@ function WeAgentWebview() {
           <HeaderArtifact
             name={currentAssistant.name}
             intro={currentAssistant.intro}
-            onOpenSettings={openDrawer}
+            onOpenSwitch={() => openDrawer('select')}
+            onOpenSettings={() => openDrawer('detail')}
           />
           <ChatWorkspace
             drawerOpen={isDrawerOpen}
@@ -124,6 +128,7 @@ function WeAgentWebview() {
           currentAssistant={currentAssistant}
           assistants={assistants}
           selectedAssistantId={draftAssistant.id}
+          initialViewMode={drawerInitialViewMode}
           onSelectAssistant={setDraftAssistantId}
           onCancel={closeDrawer}
           onConfirm={confirmSwitch}
