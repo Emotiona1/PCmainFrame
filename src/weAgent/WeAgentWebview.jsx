@@ -3,6 +3,7 @@ import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
 import { getWorkspaceByAssistantId } from './config/webview';
+import { getCachedAssistantId, setCachedAssistantId } from './services/assistantStorage';
 import './styles/global.css';
 import './styles/chat.css';
 
@@ -34,12 +35,9 @@ const assistants = [
 function WeAgentWebview() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [drawerInitialViewMode, setDrawerInitialViewMode] = React.useState('detail');
-  const [currentAssistantId, setCurrentAssistantId] = React.useState(
-    assistants[0].id,
-  );
-  const [draftAssistantId, setDraftAssistantId] = React.useState(
-    assistants[0].id,
-  );
+  const [currentAssistantId, setCurrentAssistantId] = React.useState(null);
+  const [draftAssistantId, setDraftAssistantId] = React.useState(null);
+  const [isAssistantReady, setIsAssistantReady] = React.useState(false);
   const shellRef = React.useRef(null);
   const [shellRect, setShellRect] = React.useState(null);
 
@@ -50,6 +48,33 @@ function WeAgentWebview() {
   const draftAssistant =
     assistants.find((assistant) => assistant.id === draftAssistantId) ??
     currentAssistant;
+
+  React.useEffect(() => {
+    let isMounted = true;
+
+    const bootstrapAssistant = async () => {
+      const cachedAssistantId = await getCachedAssistantId();
+      const nextAssistantId = assistants.some(
+        (assistant) => assistant.id === cachedAssistantId,
+      )
+        ? cachedAssistantId
+        : assistants[0].id;
+
+      if (!isMounted) {
+        return;
+      }
+
+      setCurrentAssistantId(nextAssistantId);
+      setDraftAssistantId(nextAssistantId);
+      setIsAssistantReady(true);
+    };
+
+    bootstrapAssistant();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // 预先把所有助手对应的工作区都算出来并常驻，
   // 这样切换助手时只切换显示层，不会销毁已有 webview。
@@ -81,6 +106,7 @@ function WeAgentWebview() {
       methodA();
     }
 
+    void setCachedAssistantId(draftAssistant.id);
     setCurrentAssistantId(draftAssistant.id);
     setIsDrawerOpen(false);
   };
@@ -105,6 +131,10 @@ function WeAgentWebview() {
     window.addEventListener('resize', updateShellRect);
     return () => window.removeEventListener('resize', updateShellRect);
   }, [isDrawerOpen]);
+
+  if (!isAssistantReady) {
+    return null;
+  }
 
   return (
     <div className="weAgent">
