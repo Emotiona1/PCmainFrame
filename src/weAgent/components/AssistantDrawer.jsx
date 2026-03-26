@@ -16,6 +16,7 @@ function AssistantDrawer({
   onBackdropClick,
 }) {
   const [viewMode, setViewMode] = React.useState('detail');
+  const panelRef = React.useRef(null);
 
   React.useEffect(() => {
     if (open) {
@@ -32,10 +33,25 @@ function AssistantDrawer({
       onBackdropClick();
     };
 
+    const handleDocumentPointerDown = (event) => {
+      const panelElement = panelRef.current;
+      if (!panelElement) {
+        return;
+      }
+
+      if (panelElement.contains(event.target)) {
+        return;
+      }
+
+      handleClose();
+    };
+
     window.addEventListener('weAgent:assistant-close', handleClose);
+    document.addEventListener('pointerdown', handleDocumentPointerDown, true);
 
     return () => {
       window.removeEventListener('weAgent:assistant-close', handleClose);
+      document.removeEventListener('pointerdown', handleDocumentPointerDown, true);
     };
   }, [onBackdropClick, open]);
 
@@ -56,6 +72,7 @@ function AssistantDrawer({
     >
       <div className="assistant-drawer" aria-hidden={!open}>
         <aside
+          ref={panelRef}
           className="assistant-drawer__panel"
           role="dialog"
           aria-modal="true"
