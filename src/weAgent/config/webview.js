@@ -1,3 +1,4 @@
+const path = require('path');
 import xiaomiHtml from '../webview/xiaomi.html';
 import designHelperHtml from '../webview/design-helper.html';
 import codingExpertHtml from '../webview/coding-expert.html';
@@ -8,7 +9,7 @@ const toDataUrl = (html) =>
 
 export const WORKSPACE_BY_ASSISTANT_ID = {
   // 小咪助手切换到外部 CUI 产物 HTML，页面内容保持不变，只替换加载来源。
-  xiaomi: 'CUI/xiaomi/index.html',
+  xiaomi: path.join('CUI', 'xiaomi', 'index.html'),
   'helper-pro': toDataUrl(designHelperHtml),
   'coding-expert': toDataUrl(codingExpertHtml),
   'local-employee': toDataUrl(localEmployeeHtml),
