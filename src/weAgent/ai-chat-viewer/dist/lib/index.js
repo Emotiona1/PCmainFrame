@@ -89173,24 +89173,20 @@ const switchAssistant_SwitchAssistant = ({
     setSelectedAssistantId(defaultSelectedAssistantId);
   }, [defaultSelectedAssistantId]);
   const selectedAssistant = ASSISTANT_LIST.find(assistant => assistant.id === selectedAssistantId) ?? ASSISTANT_LIST[0];
-  const handleSelectAssistant = (assistant, index) => {
+  const handleSelectAssistant = assistant => {
     setSelectedAssistantId(assistant.id);
     dispatchAssistantEvent(SWITCH_ASSISTANT_SELECT_EVENT, {
-      assistant,
-      assistantId: assistant.id,
-      cardIndex: index
+      id: assistant.id
     });
   };
   const handleCancelSelect = () => {
     dispatchAssistantEvent(SWITCH_ASSISTANT_CANCEL_EVENT, {
-      assistant: selectedAssistant,
-      assistantId: selectedAssistant.id
+      id: selectedAssistant.id
     });
   };
   const handleConfirmSwitch = () => {
     dispatchAssistantEvent(SWITCH_ASSISTANT_CONFIRM_EVENT, {
-      assistant: selectedAssistant,
-      assistantId: selectedAssistant.id
+      id: selectedAssistant.id
     });
   };
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -89202,8 +89198,8 @@ const switchAssistant_SwitchAssistant = ({
       children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         className: "switch-assistant__list",
         children: ASSISTANT_LIST.map(assistant => /*#__PURE__*/(0,jsx_runtime.jsxs)("article", {
-          className: `switch-assistant__card${assistant.id === selectedAssistantId ? ' switch-assistant__card--selected' : ''}`,
-          onClick: () => handleSelectAssistant(assistant, ASSISTANT_LIST.findIndex(item => item.id === assistant.id)),
+          className: "switch-assistant__card",
+          onClick: () => handleSelectAssistant(assistant),
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             className: "switch-assistant__avatar",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {

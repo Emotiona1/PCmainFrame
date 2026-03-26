@@ -8,24 +8,27 @@ function AssistantSelectView({
   onCancel,
   onConfirm,
 }) {
-  const selectedIndex = assistants.findIndex(
-    (assistant) => assistant.id === selectedAssistantId,
+  const assistantIdMap = React.useMemo(
+    () => ({
+      'assistant-1': assistants[0]?.id,
+      'assistant-2': assistants[1]?.id,
+    }),
+    [assistants],
   );
-  const hostClassName = [
-    'assistant-select-host',
-    selectedIndex >= 0 ? `assistant-select-host--selected-${selectedIndex}` : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
 
   React.useEffect(() => {
     const handleSelect = (event) => {
-      const cardIndex = Number(event?.detail?.cardIndex);
-      if (!Number.isInteger(cardIndex) || cardIndex < 0 || cardIndex >= assistants.length) {
+      const assistantId = event?.detail?.id;
+      const mappedAssistantId =
+        assistants.some((assistant) => assistant.id === assistantId)
+          ? assistantId
+          : assistantIdMap[assistantId];
+
+      if (!mappedAssistantId) {
         return;
       }
 
-      onSelectAssistant(assistants[cardIndex].id);
+      onSelectAssistant(mappedAssistantId);
     };
 
     const handleCancel = () => {
@@ -45,10 +48,10 @@ function AssistantSelectView({
       window.removeEventListener('weAgent:switch-assistant-cancel', handleCancel);
       window.removeEventListener('weAgent:switch-assistant-confirm', handleConfirm);
     };
-  }, [assistants, onCancel, onConfirm, onSelectAssistant]);
+  }, [assistantIdMap, assistants, onCancel, onConfirm, onSelectAssistant]);
 
   return (
-    <div className={hostClassName}>
+    <div className="assistant-select-host">
       <SwitchAssistant defaultSelectedAssistantId={selectedAssistantId} />
     </div>
   );
