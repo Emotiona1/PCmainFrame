@@ -1,7 +1,7 @@
 import { Root } from 'react-dom/client';
 import App, { type AppProps } from '../App';
-import { AssistantDetail } from '../pages/assistantDetail';
-import { SwitchAssistant } from '../pages/switchAssistant';
+import AssistantDetail from '../pages/assistantDetail';
+import SwitchAssistant from '../pages/switchAssistant';
 import type { Message, MessagePart, StreamMessage, SessionMessage, SessionStatus, AgentStatus } from '../types';
 export type { AppProps, Message, MessagePart, StreamMessage, SessionMessage, SessionStatus, AgentStatus, };
 export { AssistantDetail, SwitchAssistant };

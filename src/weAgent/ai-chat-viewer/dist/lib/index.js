@@ -7,7 +7,7 @@
 		exports["AIChatViewer"] = factory(require("react"), require("react-dom/client"));
 	else
 		root["AIChatViewer"] = factory(root["React"], root["ReactDOM"]);
-})(self, function(__WEBPACK_EXTERNAL_MODULE__4012__, __WEBPACK_EXTERNAL_MODULE__2361__) {
+})(globalThis, function(__WEBPACK_EXTERNAL_MODULE__4012__, __WEBPACK_EXTERNAL_MODULE__2361__) {
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -185,7 +185,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  bo
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".assistant-detail {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: #f5f7fa;\n}\n.assistant-detail__content {\n  padding: 12px 16px 16px;\n  box-sizing: border-box;\n  flex: 1;\n  min-height: 0;\n  overflow-y: auto;\n}\n.assistant-detail__card {\n  width: 100%;\n  border-radius: 8px;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n.assistant-detail__card + .assistant-detail__card {\n  margin-top: 12px;\n}\n.assistant-detail__card--profile {\n  padding: 12px;\n}\n.assistant-detail__avatar {\n  width: 72px;\n  height: 72px;\n  margin: 0 auto;\n  border-radius: 19px;\n  overflow: hidden;\n}\n.assistant-detail__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.assistant-detail__name-row {\n  margin-top: 12px;\n  display: grid;\n  grid-template-columns: 1fr auto 1fr;\n  align-items: center;\n}\n.assistant-detail__name {\n  grid-column: 2;\n  justify-self: center;\n  color: #333333;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n}\n.assistant-detail__tag {\n  grid-column: 3;\n  justify-self: start;\n  width: 48px;\n  height: 16px;\n  margin-left: 8px;\n  border-radius: 8px;\n  background: #ebf0ff;\n  color: #3b70ff;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 12px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.assistant-detail__card--intro {\n  padding: 12px 12px 0;\n}\n.assistant-detail__section-title {\n  margin: 0;\n  color: #333333;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n.assistant-detail__section-desc {\n  margin: 8px 0 0;\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n.assistant-detail__card--org {\n  padding: 0 12px;\n}\n.assistant-detail__info-row {\n  width: 100%;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-sizing: border-box;\n}\n.assistant-detail__card--intro .assistant-detail__info-row {\n  margin-top: 12px;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.assistant-detail__card--org .assistant-detail__info-row + .assistant-detail__info-row {\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.assistant-detail__info-label {\n  color: #333333;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n.assistant-detail__info-value {\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/AssistantDetail.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,sBAAA;EACA,mBAAA;AACF;AAEA;EACE,uBAAA;EACA,sBAAA;EACA,OAAA;EACA,aAAA;EACA,gBAAA;AAAF;AAGA;EACE,WAAA;EACA,kBAAA;EACA,mBAAA;EACA,sBAAA;AADF;AAIA;EACE,gBAAA;AAFF;AAKA;EACE,aAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AALF;AAQA;EACE,gBAAA;EACA,aAAA;EACA,mCAAA;EACA,mBAAA;AANF;AASA;EACE,cAAA;EACA,oBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAPF;AAUA;EACE,cAAA;EACA,mBAAA;EACA,WAAA;EACA,YAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;AARF;AAWA;EACE,oBAAA;AATF;AAYA;EACE,SAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAVF;AAaA;EACE,eAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAXF;AAcA;EACE,eAAA;AAZF;AAeA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,sBAAA;AAbF;AAgBA;EACE,gBAAA;EACA,yCAAA;AAdF;AAiBA;EACE,yCAAA;AAfF;AAkBA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAhBF;AAmBA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAjBF","sourcesContent":[".assistant-detail {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: rgba(245, 247, 250, 1);\n}\n\n.assistant-detail__content {\n  padding: 12px 16px 16px;\n  box-sizing: border-box;\n  flex: 1;\n  min-height: 0;\n  overflow-y: auto;\n}\n\n.assistant-detail__card {\n  width: 100%;\n  border-radius: 8px;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n\n.assistant-detail__card + .assistant-detail__card {\n  margin-top: 12px;\n}\n\n.assistant-detail__card--profile {\n  padding: 12px;\n}\n\n.assistant-detail__avatar {\n  width: 72px;\n  height: 72px;\n  margin: 0 auto;\n  border-radius: 19px;\n  overflow: hidden;\n}\n\n.assistant-detail__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n\n.assistant-detail__name-row {\n  margin-top: 12px;\n  display: grid;\n  grid-template-columns: 1fr auto 1fr;\n  align-items: center;\n}\n\n.assistant-detail__name {\n  grid-column: 2;\n  justify-self: center;\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n}\n\n.assistant-detail__tag {\n  grid-column: 3;\n  justify-self: start;\n  width: 48px;\n  height: 16px;\n  margin-left: 8px;\n  border-radius: 8px;\n  background: rgba(235, 240, 255, 1);\n  color: rgba(59, 112, 255, 1);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 12px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.assistant-detail__card--intro {\n  padding: 12px 12px 0;\n}\n\n.assistant-detail__section-title {\n  margin: 0;\n  color: rgba(51, 51, 51, 1);\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n\n.assistant-detail__section-desc {\n  margin: 8px 0 0;\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n\n.assistant-detail__card--org {\n  padding: 0 12px;\n}\n\n.assistant-detail__info-row {\n  width: 100%;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-sizing: border-box;\n}\n\n.assistant-detail__card--intro .assistant-detail__info-row {\n  margin-top: 12px;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n\n.assistant-detail__card--org .assistant-detail__info-row + .assistant-detail__info-row {\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n\n.assistant-detail__info-label {\n  color: rgba(51, 51, 51, 1);\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n\n.assistant-detail__info-value {\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".assistant-detail {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: linear-gradient(90deg, #f3f8ff, #ffffff 100%);\n}\n.assistant-detail__content {\n  padding: 12px 16px 16px;\n  box-sizing: border-box;\n  flex: 1;\n  min-height: 0;\n  overflow-y: auto;\n}\n.assistant-detail__card {\n  width: 100%;\n  border-radius: 8px;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n.assistant-detail__card + .assistant-detail__card {\n  margin-top: 12px;\n}\n.assistant-detail__card--profile {\n  padding: 12px;\n}\n.assistant-detail__avatar {\n  width: 72px;\n  height: 72px;\n  margin: 0 auto;\n  border-radius: 19px;\n  overflow: hidden;\n}\n.assistant-detail__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.assistant-detail__name-row {\n  margin-top: 12px;\n  display: grid;\n  grid-template-columns: 1fr auto 1fr;\n  align-items: center;\n}\n.assistant-detail__name {\n  grid-column: 2;\n  justify-self: center;\n  color: #333333;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n}\n.assistant-detail__tag {\n  grid-column: 3;\n  justify-self: start;\n  width: 48px;\n  height: 16px;\n  margin-left: 8px;\n  border-radius: 8px;\n  background: #ebf0ff;\n  color: #3b70ff;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 12px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.assistant-detail__card--intro {\n  padding: 12px 12px 0;\n}\n.assistant-detail__section-title {\n  margin: 0;\n  color: #333333;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n.assistant-detail__section-desc {\n  margin: 8px 0 0;\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n.assistant-detail__card--org {\n  padding: 0 12px;\n}\n.assistant-detail__info-row {\n  width: 100%;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-sizing: border-box;\n}\n.assistant-detail__card--intro .assistant-detail__info-row {\n  margin-top: 12px;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.assistant-detail__card--org .assistant-detail__info-row + .assistant-detail__info-row {\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.assistant-detail__info-label {\n  color: #333333;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n.assistant-detail__info-value {\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/AssistantDetail.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,sBAAA;EACA,yDAAA;AACF;AAEA;EACE,uBAAA;EACA,sBAAA;EACA,OAAA;EACA,aAAA;EACA,gBAAA;AAAF;AAGA;EACE,WAAA;EACA,kBAAA;EACA,mBAAA;EACA,sBAAA;AADF;AAIA;EACE,gBAAA;AAFF;AAKA;EACE,aAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;EACA,cAAA;EACA,mBAAA;EACA,gBAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AALF;AAQA;EACE,gBAAA;EACA,aAAA;EACA,mCAAA;EACA,mBAAA;AANF;AASA;EACE,cAAA;EACA,oBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAPF;AAUA;EACE,cAAA;EACA,mBAAA;EACA,WAAA;EACA,YAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;AARF;AAWA;EACE,oBAAA;AATF;AAYA;EACE,SAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAVF;AAaA;EACE,eAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAXF;AAcA;EACE,eAAA;AAZF;AAeA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,sBAAA;AAbF;AAgBA;EACE,gBAAA;EACA,yCAAA;AAdF;AAiBA;EACE,yCAAA;AAfF;AAkBA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAhBF;AAmBA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAjBF","sourcesContent":[".assistant-detail {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: linear-gradient(90deg, rgba(243, 248, 255, 1), rgba(255, 255, 255, 1) 100%);\n}\n\n.assistant-detail__content {\n  padding: 12px 16px 16px;\n  box-sizing: border-box;\n  flex: 1;\n  min-height: 0;\n  overflow-y: auto;\n}\n\n.assistant-detail__card {\n  width: 100%;\n  border-radius: 8px;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n\n.assistant-detail__card + .assistant-detail__card {\n  margin-top: 12px;\n}\n\n.assistant-detail__card--profile {\n  padding: 12px;\n}\n\n.assistant-detail__avatar {\n  width: 72px;\n  height: 72px;\n  margin: 0 auto;\n  border-radius: 19px;\n  overflow: hidden;\n}\n\n.assistant-detail__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n\n.assistant-detail__name-row {\n  margin-top: 12px;\n  display: grid;\n  grid-template-columns: 1fr auto 1fr;\n  align-items: center;\n}\n\n.assistant-detail__name {\n  grid-column: 2;\n  justify-self: center;\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n}\n\n.assistant-detail__tag {\n  grid-column: 3;\n  justify-self: start;\n  width: 48px;\n  height: 16px;\n  margin-left: 8px;\n  border-radius: 8px;\n  background: rgba(235, 240, 255, 1);\n  color: rgba(59, 112, 255, 1);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 12px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.assistant-detail__card--intro {\n  padding: 12px 12px 0;\n}\n\n.assistant-detail__section-title {\n  margin: 0;\n  color: rgba(51, 51, 51, 1);\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n\n.assistant-detail__section-desc {\n  margin: 8px 0 0;\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n\n.assistant-detail__card--org {\n  padding: 0 12px;\n}\n\n.assistant-detail__info-row {\n  width: 100%;\n  height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-sizing: border-box;\n}\n\n.assistant-detail__card--intro .assistant-detail__info-row {\n  margin-top: 12px;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n\n.assistant-detail__card--org .assistant-detail__info-row + .assistant-detail__info-row {\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n\n.assistant-detail__info-label {\n  color: rgba(51, 51, 51, 1);\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 22px;\n}\n\n.assistant-detail__info-value {\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
 
@@ -204,7 +204,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".assistant-detail {\n  width: 100%;\n 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".assistant-page-header {\n  width: 100%;\n  height: 44px;\n  min-height: 44px;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n}\n.assistant-page-header__side {\n  width: 90px;\n  height: 44px;\n  flex-shrink: 0;\n}\n.assistant-page-header__side--left {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n}\n.assistant-page-header__icon-btn {\n  width: 24px;\n  height: 24px;\n  border: none;\n  background: transparent;\n  padding: 0;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n.assistant-page-header__icon-btn:first-child {\n  margin-left: 10px;\n}\n.assistant-page-header__icon-btn + .assistant-page-header__icon-btn {\n  margin-left: 16px;\n}\n.assistant-page-header__icon-img {\n  width: 24px;\n  height: 24px;\n  display: block;\n}\n.assistant-page-header__title {\n  flex: 1;\n  text-align: center;\n  color: #333333;\n  font-size: 16px;\n  font-weight: 400;\n  line-height: 22px;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/AssistantPageHeader.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EACA,sBAAA;AACF;AAEA;EACE,WAAA;EACA,YAAA;EACA,cAAA;AAAF;AAGA;EACE,aAAA;EACA,mBAAA;EACA,2BAAA;AADF;AAIA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,uBAAA;EACA,UAAA;EACA,eAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;AAFF;AAKA;EACE,iBAAA;AAHF;AAMA;EACE,iBAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;EACA,cAAA;AALF;AAQA;EACE,OAAA;EACA,kBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AANF","sourcesContent":[".assistant-page-header {\n  width: 100%;\n  height: 44px;\n  min-height: 44px;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n}\n\n.assistant-page-header__side {\n  width: 90px;\n  height: 44px;\n  flex-shrink: 0;\n}\n\n.assistant-page-header__side--left {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n}\n\n.assistant-page-header__icon-btn {\n  width: 24px;\n  height: 24px;\n  border: none;\n  background: transparent;\n  padding: 0;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.assistant-page-header__icon-btn:first-child {\n  margin-left: 10px;\n}\n\n.assistant-page-header__icon-btn + .assistant-page-header__icon-btn {\n  margin-left: 16px;\n}\n\n.assistant-page-header__icon-img {\n  width: 24px;\n  height: 24px;\n  display: block;\n}\n\n.assistant-page-header__title {\n  flex: 1;\n  text-align: center;\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 400;\n  line-height: 22px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".assistant-page-header {\n  width: 100%;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n.assistant-page-header__title {\n  color: #333333;\n  font-size: 16px;\n  font-weight: 400;\n  line-height: 22px;\n}\n.assistant-page-header--mobile {\n  height: 44px;\n  min-height: 44px;\n  display: flex;\n  align-items: center;\n}\n.assistant-page-header__side {\n  width: 90px;\n  height: 44px;\n  flex-shrink: 0;\n}\n.assistant-page-header__side--left {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n}\n.assistant-page-header__icon-btn {\n  width: 24px;\n  height: 24px;\n  border: none;\n  background: transparent;\n  padding: 0;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n.assistant-page-header__icon-btn:first-child {\n  margin-left: 10px;\n}\n.assistant-page-header__icon-btn + .assistant-page-header__icon-btn {\n  margin-left: 16px;\n}\n.assistant-page-header__icon-img {\n  width: 24px;\n  height: 24px;\n  display: block;\n}\n.assistant-page-header--mobile .assistant-page-header__title {\n  flex: 1;\n  text-align: center;\n}\n.assistant-page-header--pc {\n  height: 54px;\n  min-height: 54px;\n  padding: 11px 16px;\n  display: grid;\n  grid-template-columns: 32px 1fr 32px;\n  align-items: center;\n  gap: 0;\n}\n.assistant-page-header--pc .assistant-page-header__title {\n  text-align: center;\n}\n.assistant-page-header__pc-btn {\n  width: 32px;\n  height: 32px;\n  border: none;\n  padding: 0;\n  background: transparent;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n.assistant-page-header__pc-icon {\n  width: 20px;\n  height: 20px;\n  display: block;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/AssistantPageHeader.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,mBAAA;EACA,sBAAA;AACF;AAEA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAAF;AAGA;EACE,YAAA;EACA,gBAAA;EACA,aAAA;EACA,mBAAA;AADF;AAIA;EACE,WAAA;EACA,YAAA;EACA,cAAA;AAFF;AAKA;EACE,aAAA;EACA,mBAAA;EACA,2BAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,uBAAA;EACA,UAAA;EACA,eAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;AAJF;AAOA;EACE,iBAAA;AALF;AAQA;EACE,iBAAA;AANF;AASA;EACE,WAAA;EACA,YAAA;EACA,cAAA;AAPF;AAUA;EACE,OAAA;EACA,kBAAA;AARF;AAWA;EACE,YAAA;EACA,gBAAA;EACA,kBAAA;EACA,aAAA;EACA,oCAAA;EACA,mBAAA;EACA,MAAA;AATF;AAYA;EACE,kBAAA;AAVF;AAaA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,UAAA;EACA,uBAAA;EACA,eAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;AAXF;AAcA;EACE,WAAA;EACA,YAAA;EACA,cAAA;AAZF","sourcesContent":[".assistant-page-header {\n  width: 100%;\n  background: #ffffff;\n  box-sizing: border-box;\n}\n\n.assistant-page-header__title {\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 400;\n  line-height: 22px;\n}\n\n.assistant-page-header--mobile {\n  height: 44px;\n  min-height: 44px;\n  display: flex;\n  align-items: center;\n}\n\n.assistant-page-header__side {\n  width: 90px;\n  height: 44px;\n  flex-shrink: 0;\n}\n\n.assistant-page-header__side--left {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n}\n\n.assistant-page-header__icon-btn {\n  width: 24px;\n  height: 24px;\n  border: none;\n  background: transparent;\n  padding: 0;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.assistant-page-header__icon-btn:first-child {\n  margin-left: 10px;\n}\n\n.assistant-page-header__icon-btn + .assistant-page-header__icon-btn {\n  margin-left: 16px;\n}\n\n.assistant-page-header__icon-img {\n  width: 24px;\n  height: 24px;\n  display: block;\n}\n\n.assistant-page-header--mobile .assistant-page-header__title {\n  flex: 1;\n  text-align: center;\n}\n\n.assistant-page-header--pc {\n  height: 54px;\n  min-height: 54px;\n  padding: 11px 16px;\n  display: grid;\n  grid-template-columns: 32px 1fr 32px;\n  align-items: center;\n  gap: 0;\n}\n\n.assistant-page-header--pc .assistant-page-header__title {\n  text-align: center;\n}\n\n.assistant-page-header__pc-btn {\n  width: 32px;\n  height: 32px;\n  border: none;\n  padding: 0;\n  background: transparent;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.assistant-page-header__pc-icon {\n  width: 20px;\n  height: 20px;\n  display: block;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
 
@@ -261,7 +261,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".content {\n  flex: 1;\n  overflow-y: 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".footer-container {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 0;\n  background-color: #fafafa;\n  border-top: 1px solid #e0e0e0;\n  height: 36px;\n  width: 100%;\n  box-sizing: border-box;\n  position: sticky;\n  bottom: 0;\n  flex-shrink: 0;\n}\n.footer-container.footer-focused {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);\n}\n.footer-container.footer-pc.footer-focused {\n  padding: 0 12px;\n  margin-bottom: 12px;\n}\n.footer-container.footer-without-input {\n  justify-content: flex-end;\n}\n.footer-input {\n  flex: 1;\n  height: 36px;\n  padding: 0 12px;\n  border: 1px solid #d9d9d9;\n  border-radius: 4px;\n  font-size: 14px;\n  font-family: inherit;\n  background-color: #ffffff;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.footer-input:focus {\n  outline: none;\n  border-color: #1890ff;\n  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n}\n.footer-input:disabled {\n  background-color: #f5f5f5;\n  cursor: not-allowed;\n}\n.footer-input::placeholder {\n  color: #bfbfbf;\n}\n.send-icon-btn {\n  min-width: 72px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, #0d94ff 0%, #d051ff 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.send-icon-btn:hover:not(:disabled) {\n  background: linear-gradient(90deg, #18a8ff 0%, #e465ff 100%);\n}\n.send-icon-btn:active:not(:disabled) {\n  opacity: 0.9;\n}\n.send-icon {\n  width: 16px;\n  height: 16px;\n}\n.send-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n.stop-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: 1px solid #ff4d4f;\n  background: #fff;\n  color: #ff4d4f;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.stop-icon-btn:hover:not(:disabled) {\n  background-color: #ff4d4f;\n  color: #fff;\n}\n.stop-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n.regenerate-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, #0d94ff 0%, #d051ff 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 12px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.regenerate-icon-btn:hover:not(:disabled) {\n  background: linear-gradient(90deg, #18a8ff 0%, #e465ff 100%);\n}\n.regenerate-icon-btn:active:not(:disabled) {\n  opacity: 0.9;\n}\n.regenerate-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/Footer.less"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,mBAAA;EACA,QAAA;EACA,UAAA;EACA,yBAAA;EACA,6BAAA;EACA,YAAA;EACA,WAAA;EACA,sBAAA;EACA,gBAAA;EACA,SAAA;EACA,cAAA;AACF;AACE;EACE,eAAA;EACA,SAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,yCAAA;AACJ;AAEE;EACE,eAAA;EACA,mBAAA;AAAJ;AAGE;EACE,yBAAA;AADJ;AAKA;EACE,OAAA;EACA,YAAA;EACA,eAAA;EACA,yBAAA;EACA,kBAAA;EACA,eAAA;EACA,oBAAA;EACA,yBAAA;EACA,8CAAA;AAHF;AAKE;EACE,aAAA;EACA,qBAAA;EACA,6CAAA;AAHJ;AAME;EACE,yBAAA;EACA,mBAAA;AAJJ;AAOE;EACE,cAAA;AALJ;AASA;EACE,eAAA;EACA,YAAA;EACA,YAAA;EACA,4DAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,cAAA;EACA,oBAAA;EACA,cAAA;AAPF;AASE;EACE,4DAAA;AAPJ;AAUE;EACE,YAAA;AARJ;AAaA;EACE,WAAA;EACA,YAAA;AAXF;AAcA;EACE,eAAA;EACA,gBAAA;AAZF;AAeA;EACE,eAAA;EACA,YAAA;EACA,yBAAA;EACA,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,cAAA;EACA,oBAAA;EACA,cAAA;AAbF;AAeE;EACE,yBAAA;EACA,WAAA;AAbJ;AAiBA;EACE,eAAA;EACA,gBAAA;AAfF;AAkBA;EACE,eAAA;EACA,YAAA;EACA,YAAA;EACA,4DAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,eAAA;EACA,oBAAA;EACA,cAAA;AAhBF;AAkBE;EACE,4DAAA;AAhBJ;AAmBE;EACE,YAAA;AAjBJ;AAqBA;EACE,eAAA;EACA,gBAAA;AAnBF","sourcesContent":[".footer-container {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 0;\n  background-color: #fafafa;\n  border-top: 1px solid #e0e0e0;\n  height: 36px;\n  width: 100%;\n  box-sizing: border-box;\n  position: sticky;\n  bottom: 0;\n  flex-shrink: 0;\n  \n  &.footer-focused {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 1000;\n    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);\n  }\n\n  &.footer-pc.footer-focused {\n    padding: 0 12px;\n    margin-bottom: 12px;\n  }\n\n  &.footer-without-input {\n    justify-content: flex-end;\n  }\n}\n\n.footer-input {\n  flex: 1;\n  height: 36px;\n  padding: 0 12px;\n  border: 1px solid #d9d9d9;\n  border-radius: 4px;\n  font-size: 14px;\n  font-family: inherit;\n  background-color: #ffffff;\n  transition: border-color 0.2s, box-shadow 0.2s;\n  \n  &:focus {\n    outline: none;\n    border-color: #1890ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n  }\n  \n  &:disabled {\n    background-color: #f5f5f5;\n    cursor: not-allowed;\n  }\n  \n  &::placeholder {\n    color: #bfbfbf;\n  }\n}\n\n.send-icon-btn {\n  min-width: 72px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, rgba(13, 148, 255, 1) 0%, rgba(208, 81, 255, 1) 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n  \n  &:hover:not(:disabled) {\n    background: linear-gradient(90deg, rgba(24, 168, 255, 1) 0%, rgba(228, 101, 255, 1) 100%);\n  }\n  \n  &:active:not(:disabled) {\n    opacity: 0.9;\n  }\n  \n}\n\n.send-icon {\n  width: 16px;\n  height: 16px;\n}\n\n.send-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.stop-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: 1px solid #ff4d4f;\n  background: #fff;\n  color: #ff4d4f;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n  \n  &:hover:not(:disabled) {\n    background-color: #ff4d4f;\n    color: #fff;\n  }\n}\n\n.stop-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.regenerate-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, rgba(13, 148, 255, 1) 0%, rgba(208, 81, 255, 1) 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 12px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n\n  &:hover:not(:disabled) {\n    background: linear-gradient(90deg, rgba(24, 168, 255, 1) 0%, rgba(228, 101, 255, 1) 100%);\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.9;\n  }\n}\n\n.regenerate-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".footer-container {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 0;\n  background-color: #fafafa;\n  border-top: 1px solid #e0e0e0;\n  height: 36px;\n  width: 100%;\n  box-sizing: border-box;\n  position: sticky;\n  bottom: 0;\n  flex-shrink: 0;\n}\n.footer-container.footer-focused {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);\n}\n.footer-container.footer-pc.footer-focused {\n  padding: 0 12px;\n  margin-bottom: 12px;\n}\n.footer-container.footer-without-input {\n  justify-content: flex-end;\n}\n.footer-input {\n  flex: 1;\n  height: 36px;\n  padding: 0 12px;\n  border: 1px solid #d9d9d9;\n  border-radius: 4px;\n  font-size: 14px;\n  font-family: inherit;\n  background-color: #ffffff;\n  transition: border-color 0.2s, box-shadow 0.2s;\n}\n.footer-input:focus {\n  outline: none;\n  border-color: #1890ff;\n  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n}\n.footer-input:disabled {\n  background-color: #f5f5f5;\n  cursor: not-allowed;\n}\n.footer-input::placeholder {\n  color: #bfbfbf;\n}\n.send-icon-btn {\n  min-width: 72px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, #0d94ff 0%, #d051ff 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.send-icon-btn:hover:not(:disabled) {\n  background: linear-gradient(90deg, #18a8ff 0%, #e465ff 100%);\n}\n.send-icon-btn:active:not(:disabled) {\n  opacity: 0.9;\n}\n.send-icon {\n  width: 16px;\n  height: 16px;\n}\n.send-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n.stop-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: 1px solid #ff4d4f;\n  background: #fff;\n  color: #ff4d4f;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.stop-icon-btn:hover:not(:disabled) {\n  background-color: #ff4d4f;\n  color: #fff;\n}\n.stop-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n.regenerate-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, #0d94ff 0%, #d051ff 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 12px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n}\n.regenerate-icon-btn:hover:not(:disabled) {\n  background: linear-gradient(90deg, #18a8ff 0%, #e465ff 100%);\n}\n.regenerate-icon-btn:active:not(:disabled) {\n  opacity: 0.9;\n}\n.regenerate-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n.footer-container.footer-we-agent-cui {\n  height: 40px;\n  padding: 8px 12px;\n  border-top: none;\n  border-radius: 30px;\n  background: #fff;\n  position: static;\n}\n.footer-container.footer-we-agent-cui.footer-focused {\n  position: static;\n  left: auto;\n  right: auto;\n  bottom: auto;\n  box-shadow: none;\n}\n.footer-we-agent-cui .footer-input {\n  height: 24px;\n  padding: 0;\n  border: none;\n  border-radius: 0;\n  background: transparent;\n  box-shadow: none;\n  line-height: 24px;\n}\n.footer-we-agent-cui .footer-input:focus {\n  border: none;\n  box-shadow: none;\n}\n.send-icon-btn.send-icon-btn--we-agent-cui {\n  min-width: 24px;\n  width: 24px;\n  height: 24px;\n  border-radius: 12px;\n  background: transparent;\n  padding: 0;\n}\n.send-icon-btn.send-icon-btn--we-agent-cui:hover:not(:disabled),\n.send-icon-btn.send-icon-btn--we-agent-cui:active:not(:disabled) {\n  background: rgba(0, 0, 0, 0.05);\n}\n.send-icon-btn.send-icon-btn--we-agent-cui:disabled {\n  opacity: 0.4;\n}\n.send-icon--we-agent-cui {\n  width: 20px;\n  height: 20px;\n}\n.footer-we-agent-cui .stop-icon-btn,\n.footer-we-agent-cui .regenerate-icon-btn {\n  min-width: 72px;\n  height: 24px;\n  border-radius: 12px;\n  padding: 0 10px;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/Footer.less"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,mBAAA;EACA,QAAA;EACA,UAAA;EACA,yBAAA;EACA,6BAAA;EACA,YAAA;EACA,WAAA;EACA,sBAAA;EACA,gBAAA;EACA,SAAA;EACA,cAAA;AACF;AACE;EACE,eAAA;EACA,SAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,yCAAA;AACJ;AAEE;EACE,eAAA;EACA,mBAAA;AAAJ;AAGE;EACE,yBAAA;AADJ;AAKA;EACE,OAAA;EACA,YAAA;EACA,eAAA;EACA,yBAAA;EACA,kBAAA;EACA,eAAA;EACA,oBAAA;EACA,yBAAA;EACA,8CAAA;AAHF;AAKE;EACE,aAAA;EACA,qBAAA;EACA,6CAAA;AAHJ;AAME;EACE,yBAAA;EACA,mBAAA;AAJJ;AAOE;EACE,cAAA;AALJ;AASA;EACE,eAAA;EACA,YAAA;EACA,YAAA;EACA,4DAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,cAAA;EACA,oBAAA;EACA,cAAA;AAPF;AASE;EACE,4DAAA;AAPJ;AAUE;EACE,YAAA;AARJ;AAaA;EACE,WAAA;EACA,YAAA;AAXF;AAcA;EACE,eAAA;EACA,gBAAA;AAZF;AAeA;EACE,eAAA;EACA,YAAA;EACA,yBAAA;EACA,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,cAAA;EACA,oBAAA;EACA,cAAA;AAbF;AAeE;EACE,yBAAA;EACA,WAAA;AAbJ;AAiBA;EACE,eAAA;EACA,gBAAA;AAfF;AAkBA;EACE,eAAA;EACA,YAAA;EACA,YAAA;EACA,4DAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,eAAA;EACA,oBAAA;EACA,cAAA;AAhBF;AAkBE;EACE,4DAAA;AAhBJ;AAmBE;EACE,YAAA;AAjBJ;AAqBA;EACE,eAAA;EACA,gBAAA;AAnBF;AAsBA;EACE,YAAA;EACA,iBAAA;EACA,gBAAA;EACA,mBAAA;EACA,gBAAA;EACA,gBAAA;AApBF;AAsBE;EACE,gBAAA;EACA,UAAA;EACA,WAAA;EACA,YAAA;EACA,gBAAA;AApBJ;AAwBA;EACE,YAAA;EACA,UAAA;EACA,YAAA;EACA,gBAAA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;AAtBF;AAyBA;EACE,YAAA;EACA,gBAAA;AAvBF;AA0BA;EACE,eAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,uBAAA;EACA,UAAA;AAxBF;AA2BA;;EAEE,+BAAA;AAzBF;AA4BA;EACE,YAAA;AA1BF;AA6BA;EACE,WAAA;EACA,YAAA;AA3BF;AA8BA;;EAEE,eAAA;EACA,YAAA;EACA,mBAAA;EACA,eAAA;AA5BF","sourcesContent":[".footer-container {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 0;\n  background-color: #fafafa;\n  border-top: 1px solid #e0e0e0;\n  height: 36px;\n  width: 100%;\n  box-sizing: border-box;\n  position: sticky;\n  bottom: 0;\n  flex-shrink: 0;\n  \n  &.footer-focused {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 1000;\n    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);\n  }\n\n  &.footer-pc.footer-focused {\n    padding: 0 12px;\n    margin-bottom: 12px;\n  }\n\n  &.footer-without-input {\n    justify-content: flex-end;\n  }\n}\n\n.footer-input {\n  flex: 1;\n  height: 36px;\n  padding: 0 12px;\n  border: 1px solid #d9d9d9;\n  border-radius: 4px;\n  font-size: 14px;\n  font-family: inherit;\n  background-color: #ffffff;\n  transition: border-color 0.2s, box-shadow 0.2s;\n  \n  &:focus {\n    outline: none;\n    border-color: #1890ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n  }\n  \n  &:disabled {\n    background-color: #f5f5f5;\n    cursor: not-allowed;\n  }\n  \n  &::placeholder {\n    color: #bfbfbf;\n  }\n}\n\n.send-icon-btn {\n  min-width: 72px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, rgba(13, 148, 255, 1) 0%, rgba(208, 81, 255, 1) 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n  \n  &:hover:not(:disabled) {\n    background: linear-gradient(90deg, rgba(24, 168, 255, 1) 0%, rgba(228, 101, 255, 1) 100%);\n  }\n  \n  &:active:not(:disabled) {\n    opacity: 0.9;\n  }\n  \n}\n\n.send-icon {\n  width: 16px;\n  height: 16px;\n}\n\n.send-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.stop-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: 1px solid #ff4d4f;\n  background: #fff;\n  color: #ff4d4f;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 8px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n  \n  &:hover:not(:disabled) {\n    background-color: #ff4d4f;\n    color: #fff;\n  }\n}\n\n.stop-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.regenerate-icon-btn {\n  min-width: 96px;\n  height: 36px;\n  border: none;\n  background: linear-gradient(90deg, rgba(13, 148, 255, 1) 0%, rgba(208, 81, 255, 1) 100%);\n  color: white;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 0 12px;\n  transition: all 0.2s;\n  flex-shrink: 0;\n\n  &:hover:not(:disabled) {\n    background: linear-gradient(90deg, rgba(24, 168, 255, 1) 0%, rgba(228, 101, 255, 1) 100%);\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.9;\n  }\n}\n\n.regenerate-btn-text {\n  font-size: 13px;\n  font-weight: 500;\n}\n\n.footer-container.footer-we-agent-cui {\n  height: 40px;\n  padding: 8px 12px;\n  border-top: none;\n  border-radius: 30px;\n  background: #fff;\n  position: static;\n\n  &.footer-focused {\n    position: static;\n    left: auto;\n    right: auto;\n    bottom: auto;\n    box-shadow: none;\n  }\n}\n\n.footer-we-agent-cui .footer-input {\n  height: 24px;\n  padding: 0;\n  border: none;\n  border-radius: 0;\n  background: transparent;\n  box-shadow: none;\n  line-height: 24px;\n}\n\n.footer-we-agent-cui .footer-input:focus {\n  border: none;\n  box-shadow: none;\n}\n\n.send-icon-btn.send-icon-btn--we-agent-cui {\n  min-width: 24px;\n  width: 24px;\n  height: 24px;\n  border-radius: 12px;\n  background: transparent;\n  padding: 0;\n}\n\n.send-icon-btn.send-icon-btn--we-agent-cui:hover:not(:disabled),\n.send-icon-btn.send-icon-btn--we-agent-cui:active:not(:disabled) {\n  background: rgba(0, 0, 0, 0.05);\n}\n\n.send-icon-btn.send-icon-btn--we-agent-cui:disabled {\n  opacity: 0.4;\n}\n\n.send-icon--we-agent-cui {\n  width: 20px;\n  height: 20px;\n}\n\n.footer-we-agent-cui .stop-icon-btn,\n.footer-we-agent-cui .regenerate-icon-btn {\n  min-width: 72px;\n  height: 24px;\n  border-radius: 12px;\n  padding: 0 10px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
 
@@ -299,7 +299,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  display: flex;\n  align-i
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".switch-assistant {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: #f5f7fa;\n}\n.switch-assistant__content {\n  flex: 1;\n  min-height: 0;\n  padding: 12px 16px;\n  box-sizing: border-box;\n}\n.switch-assistant__list {\n  width: 100%;\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n.switch-assistant__card {\n  width: 100%;\n  height: 72px;\n  border-radius: 8px;\n  padding: 16px 12px;\n  box-sizing: border-box;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n}\n.switch-assistant__avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 12px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.switch-assistant__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.switch-assistant__desc {\n  margin-left: 16px;\n  min-width: 0;\n  flex: 1;\n}\n.switch-assistant__desc-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.switch-assistant__name {\n  color: #333333;\n  font-size: 16px;\n  font-weight: 500;\n  line-height: 24px;\n}\n.switch-assistant__tag {\n  width: 60px;\n  height: 16px;\n  border-radius: 4px;\n  background: #d9e8ff;\n  color: #418eff;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 14px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.switch-assistant__summary {\n  margin: 0;\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.switch-assistant__actions {\n  width: 100%;\n  height: 68px;\n  min-height: 68px;\n  padding: 12px 16px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.switch-assistant__action-btn {\n  width: 156px;\n  height: 44px;\n  border: none;\n  border-radius: 50px;\n  padding: 0;\n  font-size: 14px;\n  line-height: 20px;\n  cursor: pointer;\n}\n.switch-assistant__action-btn--cancel {\n  background: #ffffff;\n  color: #333333;\n}\n.switch-assistant__action-btn--confirm {\n  background: #0d94ff;\n  color: #ffffff;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/SwitchAssistant.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,sBAAA;EACA,mBAAA;AACF;AAEA;EACE,OAAA;EACA,aAAA;EACA,kBAAA;EACA,sBAAA;AAAF;AAGA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;AADF;AAIA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;EACA,kBAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AAFF;AAKA;EACE,WAAA;EACA,YAAA;EACA,mBAAA;EACA,gBAAA;EACA,cAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AAJF;AAOA;EACE,iBAAA;EACA,YAAA;EACA,OAAA;AALF;AAQA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,QAAA;AANF;AASA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAPF;AAUA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;AARF;AAWA;EACE,SAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AATF;AAYA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;EACA,kBAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;AAVF;AAaA;EACE,YAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,eAAA;EACA,iBAAA;EACA,eAAA;AAXF;AAcA;EACE,mBAAA;EACA,cAAA;AAZF;AAeA;EACE,mBAAA;EACA,cAAA;AAbF","sourcesContent":[".switch-assistant {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: rgba(245, 247, 250, 1);\n}\n\n.switch-assistant__content {\n  flex: 1;\n  min-height: 0;\n  padding: 12px 16px;\n  box-sizing: border-box;\n}\n\n.switch-assistant__list {\n  width: 100%;\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n\n.switch-assistant__card {\n  width: 100%;\n  height: 72px;\n  border-radius: 8px;\n  padding: 16px 12px;\n  box-sizing: border-box;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n}\n\n.switch-assistant__avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 12px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n\n.switch-assistant__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n\n.switch-assistant__desc {\n  margin-left: 16px;\n  min-width: 0;\n  flex: 1;\n}\n\n.switch-assistant__desc-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n\n.switch-assistant__name {\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 500;\n  line-height: 24px;\n}\n\n.switch-assistant__tag {\n  width: 60px;\n  height: 16px;\n  border-radius: 4px;\n  background: rgba(217, 232, 255, 1);\n  color: rgba(65, 142, 255, 1);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 14px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n\n.switch-assistant__summary {\n  margin: 0;\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.switch-assistant__actions {\n  width: 100%;\n  height: 68px;\n  min-height: 68px;\n  padding: 12px 16px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.switch-assistant__action-btn {\n  width: 156px;\n  height: 44px;\n  border: none;\n  border-radius: 50px;\n  padding: 0;\n  font-size: 14px;\n  line-height: 20px;\n  cursor: pointer;\n}\n\n.switch-assistant__action-btn--cancel {\n  background: rgba(255, 255, 255, 1);\n  color: rgba(51, 51, 51, 1);\n}\n\n.switch-assistant__action-btn--confirm {\n  background: rgba(13, 148, 255, 1);\n  color: #ffffff;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".switch-assistant {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: linear-gradient(90deg, #f3f8ff, #ffffff 100%);\n}\n.switch-assistant__content {\n  flex: 1;\n  min-height: 0;\n  padding: 12px 16px;\n  box-sizing: border-box;\n}\n.switch-assistant__list {\n  width: 100%;\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n.switch-assistant__list::-webkit-scrollbar {\n  display: none;\n}\n.switch-assistant__card {\n  width: 100%;\n  height: 72px;\n  border: 1px solid transparent;\n  border-radius: 8px;\n  padding: 16px 12px;\n  box-sizing: border-box;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  outline: none;\n  box-shadow: none;\n  -webkit-tap-highlight-color: transparent;\n}\n.switch-assistant__card:focus,\n.switch-assistant__card:focus-visible,\n.switch-assistant__card:active {\n  outline: none;\n  box-shadow: none;\n}\n.switch-assistant__card--selected {\n  border-color: #0d94ff;\n}\n.switch-assistant__avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 12px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.switch-assistant__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.switch-assistant__desc {\n  margin-left: 16px;\n  min-width: 0;\n  flex: 1;\n}\n.switch-assistant__desc-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.switch-assistant__name {\n  color: #333333;\n  font-size: 16px;\n  font-weight: 500;\n  line-height: 24px;\n}\n.switch-assistant__tag {\n  width: fit-content;\n  padding: 2px 4px;\n  border-radius: 4px;\n  background: #d9e8ff;\n  color: #418eff;\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 14px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n  flex-shrink: 0;\n}\n.switch-assistant__summary {\n  margin: 0;\n  color: #666666;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.switch-assistant__actions {\n  width: 100%;\n  height: 68px;\n  min-height: 68px;\n  padding: 12px 16px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.switch-assistant__action-btn {\n  width: 156px;\n  height: 44px;\n  border: none;\n  border-radius: 50px;\n  padding: 0;\n  font-size: 14px;\n  line-height: 20px;\n  cursor: pointer;\n}\n.switch-assistant__action-btn--cancel {\n  background: #ffffff;\n  color: #333333;\n}\n.switch-assistant__action-btn--confirm {\n  background: #0d94ff;\n  color: #ffffff;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/SwitchAssistant.less"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,sBAAA;EACA,yDAAA;AACF;AAEA;EACE,OAAA;EACA,aAAA;EACA,kBAAA;EACA,sBAAA;AAAF;AAGA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,wBAAA;EACA,qBAAA;AADF;AAIA;EACE,aAAA;AAFF;AAKA;EACE,WAAA;EACA,YAAA;EACA,6BAAA;EACA,kBAAA;EACA,kBAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,gBAAA;EACA,wCAAA;AAHF;AAMA;;;EAGE,aAAA;EACA,gBAAA;AAJF;AAOA;EACE,qBAAA;AALF;AAQA;EACE,WAAA;EACA,YAAA;EACA,mBAAA;EACA,gBAAA;EACA,cAAA;AANF;AASA;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AAPF;AAUA;EACE,iBAAA;EACA,YAAA;EACA,OAAA;AARF;AAWA;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,QAAA;AATF;AAYA;EACE,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAVF;AAaA;EACE,kBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;EACA,sBAAA;EACA,cAAA;AAXF;AAcA;EACE,SAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AAZF;AAeA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;EACA,kBAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;AAbF;AAgBA;EACE,YAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,eAAA;EACA,iBAAA;EACA,eAAA;AAdF;AAiBA;EACE,mBAAA;EACA,cAAA;AAfF;AAkBA;EACE,mBAAA;EACA,cAAA;AAhBF","sourcesContent":[".switch-assistant {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  background: linear-gradient(90deg, rgba(243, 248, 255, 1), rgba(255, 255, 255, 1) 100%);\n}\n\n.switch-assistant__content {\n  flex: 1;\n  min-height: 0;\n  padding: 12px 16px;\n  box-sizing: border-box;\n}\n\n.switch-assistant__list {\n  width: 100%;\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n\n.switch-assistant__list::-webkit-scrollbar {\n  display: none;\n}\n\n.switch-assistant__card {\n  width: 100%;\n  height: 72px;\n  border: 1px solid transparent;\n  border-radius: 8px;\n  padding: 16px 12px;\n  box-sizing: border-box;\n  background: #ffffff;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  outline: none;\n  box-shadow: none;\n  -webkit-tap-highlight-color: transparent;\n}\n\n.switch-assistant__card:focus,\n.switch-assistant__card:focus-visible,\n.switch-assistant__card:active {\n  outline: none;\n  box-shadow: none;\n}\n\n.switch-assistant__card--selected {\n  border-color: rgba(13, 148, 255, 1);\n}\n\n.switch-assistant__avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 12px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n\n.switch-assistant__avatar-img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n\n.switch-assistant__desc {\n  margin-left: 16px;\n  min-width: 0;\n  flex: 1;\n}\n\n.switch-assistant__desc-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n\n.switch-assistant__name {\n  color: rgba(51, 51, 51, 1);\n  font-size: 16px;\n  font-weight: 500;\n  line-height: 24px;\n}\n\n.switch-assistant__tag {\n  width: fit-content;\n  padding: 2px 4px;\n  border-radius: 4px;\n  background: rgba(217, 232, 255, 1);\n  color: rgba(65, 142, 255, 1);\n  font-size: 10px;\n  font-weight: 400;\n  line-height: 14px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n  flex-shrink: 0;\n}\n\n.switch-assistant__summary {\n  margin: 0;\n  color: rgba(102, 102, 102, 1);\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.switch-assistant__actions {\n  width: 100%;\n  height: 68px;\n  min-height: 68px;\n  padding: 12px 16px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.switch-assistant__action-btn {\n  width: 156px;\n  height: 44px;\n  border: none;\n  border-radius: 50px;\n  padding: 0;\n  font-size: 14px;\n  line-height: 20px;\n  cursor: pointer;\n}\n\n.switch-assistant__action-btn--cancel {\n  background: rgba(255, 255, 255, 1);\n  color: rgba(51, 51, 51, 1);\n}\n\n.switch-assistant__action-btn--confirm {\n  background: rgba(13, 148, 255, 1);\n  color: #ffffff;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 9191:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1354);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6314);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".app-container--we-agent-cui {\n  padding: 8px 12px;\n  gap: 12px;\n  box-shadow: none;\n  background: linear-gradient(90deg, #f3f8ff, #ffffff 100%);\n}\n.app-container--we-agent-cui .header-wrapper,\n.app-container--we-agent-cui .content-wrapper,\n.app-container--we-agent-cui .footer-wrapper {\n  margin-bottom: 0;\n}\n.app-container--we-agent-cui .content-wrapper {\n  flex: 1;\n  min-height: 0;\n}\n.app-container--we-agent-cui .content--we-agent-cui {\n  padding: 7px 0;\n  background: transparent;\n}\n.app-container--we-agent-cui .messages-container--we-agent-cui {\n  gap: 24px;\n}\n.app-container--we-agent-cui .message-we-agent {\n  padding: 0;\n  border: none;\n  background: transparent;\n}\n.app-container--we-agent-cui .we-agent-message {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n}\n.app-container--we-agent-cui .we-agent-message.we-agent-message--user {\n  align-items: flex-end;\n}\n.app-container--we-agent-cui .we-agent-message.we-agent-message--assistant {\n  align-items: flex-start;\n}\n.app-container--we-agent-cui .we-agent-message__meta {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n}\n.app-container--we-agent-cui .we-agent-message__meta.is-user {\n  justify-content: flex-end;\n}\n.app-container--we-agent-cui .we-agent-message__meta-text {\n  color: #393939;\n  font-size: 12px;\n  font-weight: 400;\n  line-height: 20px;\n}\n.app-container--we-agent-cui .we-agent-message__avatar {\n  width: 24px;\n  height: 24px;\n  border-radius: 12px;\n  object-fit: fill;\n  flex-shrink: 0;\n}\n.app-container--we-agent-cui .we-agent-message__bubble {\n  margin-top: 4px;\n  max-width: calc(100% - 28px);\n  word-break: break-word;\n  overflow-wrap: break-word;\n}\n.app-container--we-agent-cui .we-agent-message__bubble.is-user {\n  border-radius: 24px 0 24px 24px;\n  padding: 10px 20px;\n  background: linear-gradient(270deg, #0d94ff, #1673f6 100%);\n  color: #fff;\n}\n.app-container--we-agent-cui .we-agent-message__bubble.is-assistant {\n  border-radius: 0 24px 24px 24px;\n  padding: 16px;\n  background: #fff;\n}\n.app-container--we-agent-cui .we-agent-message__bubble .message-content {\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n  color: inherit;\n}\n.app-container--we-agent-cui .we-agent-message__bubble p {\n  margin: 0;\n}\n.app-container--we-agent-cui .we-agent-cui-welcome {\n  margin-top: 27px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  text-align: center;\n}\n.app-container--we-agent-cui .we-agent-cui-welcome__avatar-wrap {\n  width: 72px;\n  height: 72px;\n  border-radius: 124px;\n  border: 2px solid #ffffff;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.app-container--we-agent-cui .we-agent-cui-welcome__avatar {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: block;\n}\n.app-container--we-agent-cui .we-agent-cui-welcome__title {\n  color: #191919;\n  font-size: 18px;\n  font-weight: 500;\n  line-height: 26px;\n}\n.app-container--we-agent-cui .we-agent-cui-welcome__subtitle {\n  color: #595959;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 22px;\n}\n.app-container--we-agent-cui.pc-mode {\n  height: 100vh;\n}\n.we-agent-cui-actions {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.we-agent-cui-actions__button {\n  width: 32px;\n  height: 32px;\n  border: none;\n  border-radius: 20px;\n  background: #fff;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.we-agent-cui-actions__icon {\n  width: 16px;\n  height: 16px;\n  object-fit: fill;\n}\n", "",{"version":3,"sources":["webpack://./src/styles/WeAgentCUI.less"],"names":[],"mappings":"AAAA;EACE,iBAAA;EACA,SAAA;EACA,gBAAA;EACA,yDAAA;AACF;AALA;;;EASI,gBAAA;AACJ;AAVA;EAaI,OAAA;EACA,aAAA;AAAJ;AAdA;EAkBI,cAAA;EACA,uBAAA;AADJ;AAlBA;EAuBI,SAAA;AAFJ;AArBA;EA2BI,UAAA;EACA,YAAA;EACA,uBAAA;AAHJ;AA1BA;EAiCI,aAAA;EACA,sBAAA;EACA,eAAA;AAJJ;AAMI;EACE,qBAAA;AAJN;AAOI;EACE,uBAAA;AALN;AArCA;EA+CI,oBAAA;EACA,mBAAA;EACA,QAAA;AAPJ;AASI;EACE,yBAAA;AAPN;AA7CA;EAyDI,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AATJ;AAnDA;EAgEI,WAAA;EACA,YAAA;EACA,mBAAA;EACA,gBAAA;EACA,cAAA;AAVJ;AA1DA;EAwEI,eAAA;EACA,4BAAA;EACA,sBAAA;EACA,yBAAA;AAXJ;AAaI;EACE,+BAAA;EACA,kBAAA;EACA,0DAAA;EACA,WAAA;AAXN;AAcI;EACE,+BAAA;EACA,aAAA;EACA,gBAAA;AAZN;AA3EA;EA4FI,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,cAAA;AAdJ;AAjFA;EAmGI,SAAA;AAfJ;AApFA;EAuGI,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,SAAA;EACA,kBAAA;AAhBJ;AA5FA;EAgHI,WAAA;EACA,YAAA;EACA,oBAAA;EACA,yBAAA;EACA,gBAAA;EACA,sBAAA;AAjBJ;AApGA;EAyHI,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AAlBJ;AA1GA;EAgII,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AAnBJ;AAhHA;EAuII,cAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AApBJ;AAwBA;EACE,aAAA;AAtBF;AAyBA;EACE,aAAA;EACA,mBAAA;EACA,QAAA;AAvBF;AA0BA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,gBAAA;EACA,oBAAA;EACA,mBAAA;EACA,uBAAA;EACA,eAAA;AAxBF;AA2BA;EACE,WAAA;EACA,YAAA;EACA,gBAAA;AAzBF","sourcesContent":[".app-container--we-agent-cui {\n  padding: 8px 12px;\n  gap: 12px;\n  box-shadow: none;\n  background: linear-gradient(90deg, rgba(243, 248, 255, 1), rgba(255, 255, 255, 1) 100%);\n\n  .header-wrapper,\n  .content-wrapper,\n  .footer-wrapper {\n    margin-bottom: 0;\n  }\n\n  .content-wrapper {\n    flex: 1;\n    min-height: 0;\n  }\n\n  .content--we-agent-cui {\n    padding: 7px 0;\n    background: transparent;\n  }\n\n  .messages-container--we-agent-cui {\n    gap: 24px;\n  }\n\n  .message-we-agent {\n    padding: 0;\n    border: none;\n    background: transparent;\n  }\n\n  .we-agent-message {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n\n    &.we-agent-message--user {\n      align-items: flex-end;\n    }\n\n    &.we-agent-message--assistant {\n      align-items: flex-start;\n    }\n  }\n\n  .we-agent-message__meta {\n    display: inline-flex;\n    align-items: center;\n    gap: 4px;\n\n    &.is-user {\n      justify-content: flex-end;\n    }\n  }\n\n  .we-agent-message__meta-text {\n    color: rgba(57, 57, 57, 1);\n    font-size: 12px;\n    font-weight: 400;\n    line-height: 20px;\n  }\n\n  .we-agent-message__avatar {\n    width: 24px;\n    height: 24px;\n    border-radius: 12px;\n    object-fit: fill;\n    flex-shrink: 0;\n  }\n\n  .we-agent-message__bubble {\n    margin-top: 4px;\n    max-width: calc(100% - 28px);\n    word-break: break-word;\n    overflow-wrap: break-word;\n\n    &.is-user {\n      border-radius: 24px 0 24px 24px;\n      padding: 10px 20px;\n      background: linear-gradient(270deg, rgba(13, 148, 255, 1), rgba(22, 115, 246, 1) 100%);\n      color: #fff;\n    }\n\n    &.is-assistant {\n      border-radius: 0 24px 24px 24px;\n      padding: 16px;\n      background: #fff;\n    }\n  }\n\n  .we-agent-message__bubble .message-content {\n    font-size: 14px;\n    font-weight: 400;\n    line-height: 22px;\n    color: inherit;\n  }\n\n  .we-agent-message__bubble p {\n    margin: 0;\n  }\n\n  .we-agent-cui-welcome {\n    margin-top: 27px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 12px;\n    text-align: center;\n  }\n\n  .we-agent-cui-welcome__avatar-wrap {\n    width: 72px;\n    height: 72px;\n    border-radius: 124px;\n    border: 2px solid rgba(255, 255, 255, 1);\n    overflow: hidden;\n    box-sizing: border-box;\n  }\n\n  .we-agent-cui-welcome__avatar {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n\n  .we-agent-cui-welcome__title {\n    color: rgba(25, 25, 25, 1);\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 26px;\n  }\n\n  .we-agent-cui-welcome__subtitle {\n    color: rgba(89, 89, 89, 1);\n    font-size: 14px;\n    font-weight: 400;\n    line-height: 22px;\n  }\n}\n\n.app-container--we-agent-cui.pc-mode {\n  height: 100vh;\n}\n\n.we-agent-cui-actions {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.we-agent-cui-actions__button {\n  width: 32px;\n  height: 32px;\n  border: none;\n  border-radius: 20px;\n  background: #fff;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n\n.we-agent-cui-actions__icon {\n  width: 16px;\n  height: 16px;\n  object-fit: fill;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
 
@@ -1812,8 +1831,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   AIChatViewer: function() { return /* binding */ AppWithMount; },
   App: function() { return /* binding */ AppWithMount; },
-  AssistantDetail: function() { return /* reexport */ assistantDetail_AssistantDetail; },
-  SwitchAssistant: function() { return /* reexport */ switchAssistant_SwitchAssistant; },
+  AssistantDetail: function() { return /* reexport */ assistantDetail; },
+  SwitchAssistant: function() { return /* reexport */ switchAssistant; },
   "default": function() { return /* binding */ lib; },
   mountAIChatViewer: function() { return /* binding */ mountAIChatViewer; },
   unmountAIChatViewer: function() { return /* binding */ unmountAIChatViewer; }
@@ -87692,6 +87711,10 @@ function syncToolCallIdForQuestionParts(parts) {
     };
   });
 }
+;// ./src/imgs/assistant-avatar.svg
+var assistant_avatar_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHJ4PSIxOSIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzFfMSkiLz4KICA8Y2lyY2xlIGN4PSIzNiIgY3k9IjMwIiByPSIxMiIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjg2Ii8+CiAgPHBhdGggZD0iTTIwIDU0QzIxLjc0MjQgNDYuOTgzMyAyOC4wNjg3IDQyIDM2IDQyQzQzLjkzMTMgNDIgNTAuMjU3NiA0Ni45ODMzIDUyIDU0IiBmaWxsPSIjRkZGRkZGIiBmaWxsLW9wYWNpdHk9IjAuODYiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzEiIHgxPSIzNiIgeTE9IjAiIHgyPSIzNiIgeTI9IjcyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNENkVCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkNEOUZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==";
+;// ./src/imgs/switch-assistant-avatar.svg
+var switch_assistant_avatar_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSIxMiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzJfMSkiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjE2LjUiIHI9IjYuNSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KICA8cGF0aCBkPSJNMTAuNSAzMEMxMS44NSAyNS40NjY3IDE1LjU1IDIyLjUgMjAgMjIuNUMyNC40NSAyMi41IDI4LjE1IDI1LjQ2NjcgMjkuNSAzMCIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8yXzEiIHgxPSIyMCIgeTE9IjAiIHgyPSIyMCIgeTI9IjQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNENkVCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkNEOUZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==";
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/katex/dist/katex.min.css
 var katex_min = __webpack_require__(2479);
 ;// ./node_modules/katex/dist/katex.min.css
@@ -87739,20 +87762,33 @@ var katex_min_update = injectStylesIntoStyleTag_default()(katex_min/* default */
 
 
 
+
+
 const roleLabels = {
   user: '你',
   assistant: 'OpenCode',
   system: '系统',
   tool: '工具'
 };
+function formatMessageTime(timestamp) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hour = String(date.getHours()).padStart(2, '0');
+  const minute = String(date.getMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day} ${hour}:${minute}`;
+}
 const MessageBubble = ({
   message,
   welinkSessionId,
   onCopy,
-  onSendToIM
+  onSendToIM,
+  variant = 'default'
 }) => {
   const normalizedRole = normalizeRole(message.role);
   const isUser = normalizedRole === 'user';
+  const isWeAgentCUI = variant === 'weAgentCUI';
   const markdownComponents = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useMemo)(() => ({
     code({
       className,
@@ -87863,6 +87899,44 @@ const MessageBubble = ({
       children: message.content
     });
   };
+  const messageContent = renderContent();
+  if (isWeAgentCUI) {
+    const messageMetaText = `${isUser ? '测试' : '小米'} ${formatMessageTime(message.timestamp)}`;
+    return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      className: `message-block message-we-agent ${isUser ? 'message-user' : 'message-assistant'}`,
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        className: `we-agent-message ${isUser ? 'we-agent-message--user' : 'we-agent-message--assistant'}`,
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+          className: `we-agent-message__meta ${isUser ? 'is-user' : 'is-assistant'}`,
+          children: isUser ? /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              className: "we-agent-message__meta-text",
+              children: messageMetaText
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+              className: "we-agent-message__avatar",
+              src: switch_assistant_avatar_namespaceObject,
+              alt: ""
+            })]
+          }) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+              className: "we-agent-message__avatar",
+              src: assistant_avatar_namespaceObject,
+              alt: ""
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              className: "we-agent-message__meta-text",
+              children: messageMetaText
+            })]
+          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+          className: `we-agent-message__bubble ${isUser ? 'is-user' : 'is-assistant'}`,
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            className: "message-content",
+            children: messageContent
+          })
+        })]
+      })
+    });
+  }
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: `message-block ${isUser ? 'message-user' : 'message-assistant'}`,
     children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -87870,7 +87944,7 @@ const MessageBubble = ({
       children: [!isUser && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         className: "message-role-label",
         children: roleLabels[normalizedRole] ?? message.role
-      }), renderContent()]
+      }), messageContent]
     }), !isUser && !message.isStreaming && message.content && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       className: "message-actions",
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
@@ -87923,6 +87997,7 @@ var Content_update = injectStylesIntoStyleTag_default()(Content/* default */.A, 
 
 
 
+
 const TOP_LOAD_THRESHOLD = 24;
 const Content_Content = ({
   messages,
@@ -87932,8 +88007,10 @@ const Content_Content = ({
   hasMoreHistory,
   onLoadMoreHistory,
   onCopy,
-  onSendToIM
+  onSendToIM,
+  variant = 'default'
 }) => {
+  const isWeAgentCUI = variant === 'weAgentCUI';
   const containerRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useRef)(null);
   const preservingAnchorRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useRef)({
     active: false,
@@ -87985,8 +88062,6 @@ const Content_Content = ({
       return undefined;
     }
     scrollToBottom();
-
-    // Run again in the next frame and a short delay to absorb layout changes.
     const rafId = window.requestAnimationFrame(scrollToBottom);
     const timerId = window.setTimeout(scrollToBottom, 80);
     return () => {
@@ -88002,7 +88077,7 @@ const Content_Content = ({
   }, [isLoadingHistory]);
   if (isLoading) {
     return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-      className: "content",
+      className: `content ${isWeAgentCUI ? 'content--we-agent-cui' : ''}`.trim(),
       children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "loading-container",
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
@@ -88016,8 +88091,31 @@ const Content_Content = ({
     });
   }
   if (messages.length === 0) {
+    if (isWeAgentCUI) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        className: `content ${isWeAgentCUI ? 'content--we-agent-cui' : ''}`.trim(),
+        children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          className: "we-agent-cui-welcome",
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            className: "we-agent-cui-welcome__avatar-wrap",
+            "aria-hidden": "true",
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+              src: assistant_avatar_namespaceObject,
+              alt: "",
+              className: "we-agent-cui-welcome__avatar"
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            className: "we-agent-cui-welcome__title",
+            children: "\u65E9\u4E0A\u597D\uFF0C\u5CF0\u54E5"
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            className: "we-agent-cui-welcome__subtitle",
+            children: "CodeAgent | \u4F60\u7684\u4E13\u5C5E\u7F16\u7A0B\u667A\u80FD\u4F53"
+          })]
+        })
+      });
+    }
     return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-      className: "content",
+      className: `content ${isWeAgentCUI ? 'content--we-agent-cui' : ''}`.trim(),
       children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "empty-container",
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
@@ -88030,11 +88128,11 @@ const Content_Content = ({
     });
   }
   return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    className: "content",
+    className: `content ${isWeAgentCUI ? 'content--we-agent-cui' : ''}`.trim(),
     ref: containerRef,
     onScroll: handleScroll,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-      className: "messages-container",
+      className: `messages-container ${isWeAgentCUI ? 'messages-container--we-agent-cui' : ''}`.trim(),
       children: [isLoadingHistory && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         className: "history-status",
         children: "\u52A0\u8F7D\u5386\u53F2\u6D88\u606F\u4E2D..."
@@ -88047,12 +88145,15 @@ const Content_Content = ({
           message: message,
           welinkSessionId: welinkSessionId,
           onCopy: onCopy,
-          onSendToIM: onSendToIM
+          onSendToIM: onSendToIM,
+          variant: variant
         })
       }, message.id))]
     })
   });
 };
+;// ./src/imgs/icon-we-agent-send.svg
+var icon_we_agent_send_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTcgM0w5LjIgMTAuOCIgc3Ryb2tlPSIjMTY3M0Y2IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik0xNyAzTDEyLjEgMTdMOS4yIDEwLjhMMyA3LjlMMTcgM1oiIHN0cm9rZT0iIzE2NzNGNiIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIC8+Cjwvc3ZnPgo=";
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/Footer.less
 var Footer = __webpack_require__(2932);
 ;// ./src/styles/Footer.less
@@ -88088,17 +88189,20 @@ var Footer_update = injectStylesIntoStyleTag_default()(Footer/* default */.A, Fo
 
 
 
+
 const Footer_Footer = ({
   mode,
   onGenerate,
   onStop,
   onRegenerate,
-  isPc = false
+  isPc = false,
+  variant = 'default'
 }) => {
   const [value, setValue] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)('');
   const [isFocused, setIsFocused] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)(false);
   const inputRef = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useRef)(null);
   const showInput = mode === 'generate';
+  const isWeAgentCUI = variant === 'weAgentCUI';
   (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useEffect)(() => {
     if (!showInput) {
       setIsFocused(false);
@@ -88167,36 +88271,42 @@ const Footer_Footer = ({
         })
       });
     }
-    return /*#__PURE__*/(0,jsx_runtime.jsxs)("button", {
-      className: "send-icon-btn",
+    return /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+      className: `send-icon-btn ${isWeAgentCUI ? 'send-icon-btn--we-agent-cui' : ''}`.trim(),
       onClick: handleGenerate,
       disabled: !value.trim(),
       title: "\u751F\u6210",
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("svg", {
-        className: "send-icon",
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        children: /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
-          d: "M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13",
-          stroke: "currentColor",
-          strokeWidth: "2",
-          strokeLinecap: "round",
-          strokeLinejoin: "round"
-        })
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-        className: "send-btn-text",
-        children: "\u751F\u6210"
-      })]
+      children: isWeAgentCUI ? /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        className: "send-icon send-icon--we-agent-cui",
+        src: icon_we_agent_send_namespaceObject,
+        alt: ""
+      }) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("svg", {
+          className: "send-icon",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
+            d: "M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+          className: "send-btn-text",
+          children: "\u751F\u6210"
+        })]
+      })
     });
   };
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    className: ['footer-container', isPc ? 'footer-pc' : '', showInput ? '' : 'footer-without-input', showInput && isFocused ? 'footer-focused' : ''].filter(Boolean).join(' '),
+    className: ['footer-container', isPc ? 'footer-pc' : '', isWeAgentCUI ? 'footer-we-agent-cui' : '', showInput ? '' : 'footer-without-input', showInput && isFocused ? 'footer-focused' : ''].filter(Boolean).join(' '),
     children: [showInput && /*#__PURE__*/(0,jsx_runtime.jsx)("input", {
       ref: inputRef,
       type: "text",
       className: "footer-input",
-      placeholder: "\u8BF7\u8F93\u5165\u60A8\u7684\u95EE\u9898...",
+      placeholder: isWeAgentCUI ? '有问题尽管问我~' : '请输入您的问题...',
       value: value,
       onChange: e => setValue(e.target.value),
       onKeyDown: handleKeyDown,
@@ -88425,6 +88535,10 @@ function showToast(message, options) {
     window.setTimeout(() => toast.remove(), 300);
   }, duration);
 }
+;// ./src/imgs/icon-we-agent-history.svg
+var icon_we_agent_history_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMi41IDhDMi41IDUuMSA0LjkgMi43IDcuOCAyLjdDMTAuOCAyLjcgMTMuMiA1LjEgMTMuMiA4QzEzLjIgMTAuOSAxMC44IDEzLjMgNy44IDEzLjNDNi4yIDEzLjMgNC44IDEyLjYgMy44IDExLjUiIHN0cm9rZT0iIzE2NzNGNiIgc3Ryb2tlLXdpZHRoPSIxLjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KICA8cGF0aCBkPSJNMi4yIDQuOFY4SDUuNSIgc3Ryb2tlPSIjMTY3M0Y2IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik03LjggNS4yVjguMUw5LjkgOS4zIiBzdHJva2U9IiMxNjczRjYiIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIC8+Cjwvc3ZnPgo=";
+;// ./src/imgs/icon-we-agent-new-session.svg
+var icon_we_agent_new_session_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNi41IiBzdHJva2U9IiMxNjczRjYiIC8+CiAgPHBhdGggZD0iTTggNVYxMSIgc3Ryb2tlPSIjMTY3M0Y2IiBzdHJva2Utd2lkdGg9IjEuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik01IDhIMTEiIHN0cm9rZT0iIzE2NzNGNiIgc3Ryb2tlLXdpZHRoPSIxLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KPC9zdmc+Cg==";
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/App.less
 var App = __webpack_require__(4680);
 ;// ./src/styles/App.less
@@ -88456,7 +88570,41 @@ var App_update = injectStylesIntoStyleTag_default()(App/* default */.A, App_opti
 
        /* harmony default export */ var styles_App = (App/* default */.A && App/* default */.A.locals ? App/* default */.A.locals : undefined);
 
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/WeAgentCUI.less
+var WeAgentCUI = __webpack_require__(9191);
+;// ./src/styles/WeAgentCUI.less
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var WeAgentCUI_options = {};
+
+;
+WeAgentCUI_options.setAttributes = (setAttributesWithoutAttributes_default());
+
+      WeAgentCUI_options.insert = insertBySelector_default().bind(null, "head");
+    
+WeAgentCUI_options.domAPI = (singletonStyleDomAPI_default());
+WeAgentCUI_options.insertStyleElement = (insertStyleElement_default());
+
+var WeAgentCUI_update = injectStylesIntoStyleTag_default()(WeAgentCUI/* default */.A, WeAgentCUI_options);
+
+
+
+
+       /* harmony default export */ var styles_WeAgentCUI = (WeAgentCUI/* default */.A && WeAgentCUI/* default */.A.locals ? WeAgentCUI/* default */.A.locals : undefined);
+
 ;// ./src/App.tsx
+
+
+
 
 
 
@@ -88476,9 +88624,11 @@ function hasMoreHistoryByPage(result) {
   return (result.page + 1) * result.size < result.total;
 }
 function App_App({
-  welinkSessionId: welinkSessionIdProp
+  welinkSessionId: welinkSessionIdProp,
+  variant = 'default'
 }) {
   const isPc = isPcMiniApp();
+  const isWeAgentCUI = variant === 'weAgentCUI';
   const [welinkSessionId, setWelinkSessionId] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)(null);
   const [messages, setMessages] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)([]);
   const [sessionStatus, setSessionStatus] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)('idle');
@@ -88858,9 +89008,15 @@ function App_App({
       showToast('复制失败');
     });
   }, []);
+  const handleCreateSession = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useCallback)(() => {
+    // WeAgentCUI 保留扩展点：新建会话
+  }, []);
+  const handleOpenHistory = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useCallback)(() => {
+    // WeAgentCUI 保留扩展点：历史会话
+  }, []);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    className: `app-container ${isPc ? 'pc-mode' : ''}`.trim(),
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    className: ['app-container', isPc ? 'pc-mode' : '', isWeAgentCUI ? 'app-container--we-agent-cui' : ''].filter(Boolean).join(' '),
+    children: [!isWeAgentCUI && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       className: "header-wrapper",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Header_Header, {
         onMinimize: handleMinimize,
@@ -88876,8 +89032,33 @@ function App_App({
         hasMoreHistory: hasMoreHistory,
         onLoadMoreHistory: loadMoreHistory,
         onCopy: handleCopy,
-        onSendToIM: handleSendToIM
+        onSendToIM: handleSendToIM,
+        variant: variant
       })
+    }), isWeAgentCUI && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      className: "we-agent-cui-actions",
+      "aria-label": "\u591A\u529F\u80FD\u6309\u94AE\u533A",
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "we-agent-cui-actions__button",
+        onClick: handleCreateSession,
+        "aria-label": "\u65B0\u5EFA\u4F1A\u8BDD",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          className: "we-agent-cui-actions__icon",
+          src: icon_we_agent_new_session_namespaceObject,
+          alt: ""
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "we-agent-cui-actions__button",
+        onClick: handleOpenHistory,
+        "aria-label": "\u5386\u53F2\u4F1A\u8BDD",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          className: "we-agent-cui-actions__icon",
+          src: icon_we_agent_history_namespaceObject,
+          alt: ""
+        })
+      })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       className: "footer-wrapper",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Footer_Footer, {
@@ -88885,47 +89066,17 @@ function App_App({
         onGenerate: handleGenerate,
         onStop: handleStop,
         onRegenerate: handleRegenerate,
-        isPc: isPc
+        isPc: isPc,
+        variant: variant
       })
     })]
   });
 }
 /* harmony default export */ var src_App = (App_App);
-;// ./src/imgs/assistant-avatar.svg
-var assistant_avatar_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHJ4PSIxOSIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzFfMSkiLz4KICA8Y2lyY2xlIGN4PSIzNiIgY3k9IjMwIiByPSIxMiIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjg2Ii8+CiAgPHBhdGggZD0iTTIwIDU0QzIxLjc0MjQgNDYuOTgzMyAyOC4wNjg3IDQyIDM2IDQyQzQzLjkzMTMgNDIgNTAuMjU3NiA0Ni45ODMzIDUyIDU0IiBmaWxsPSIjRkZGRkZGIiBmaWxsLW9wYWNpdHk9IjAuODYiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzEiIHgxPSIzNiIgeTE9IjAiIHgyPSIzNiIgeTI9IjcyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNENkVCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkNEOUZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==";
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/AssistantDetail.less
-var AssistantDetail = __webpack_require__(6554);
-;// ./src/styles/AssistantDetail.less
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var AssistantDetail_options = {};
-
-;
-AssistantDetail_options.setAttributes = (setAttributesWithoutAttributes_default());
-
-      AssistantDetail_options.insert = insertBySelector_default().bind(null, "head");
-    
-AssistantDetail_options.domAPI = (singletonStyleDomAPI_default());
-AssistantDetail_options.insertStyleElement = (insertStyleElement_default());
-
-var AssistantDetail_update = injectStylesIntoStyleTag_default()(AssistantDetail/* default */.A, AssistantDetail_options);
-
-
-
-
-       /* harmony default export */ var styles_AssistantDetail = (AssistantDetail/* default */.A && AssistantDetail/* default */.A.locals ? AssistantDetail/* default */.A.locals : undefined);
-
 ;// ./src/imgs/icon-back.svg
 var icon_back_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aAogICAgZD0iTTE0LjUgNUw4IDEyTDE0LjUgMTkiCiAgICBzdHJva2U9IiMxOTE5MTkiCiAgICBzdHJva2Utd2lkdGg9IjIiCiAgICBzdHJva2UtbGluZWNhcD0icm91bmQiCiAgICBzdHJva2UtbGluZWpvaW49InJvdW5kIgogIC8+Cjwvc3ZnPgo=";
+;// ./src/imgs/icon-close.svg
+var icon_close_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNNSA1TDE1IDE1IiBzdHJva2U9IiMxOTE5MTkiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTUgNUw1IDE1IiBzdHJva2U9IiMxOTE5MTkiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==";
 ;// ./src/imgs/icon-service.svg
 var icon_service_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aAogICAgZD0iTTQgMTJDNCA3LjU4MTcyIDcuNTgxNzIgNCAxMiA0QzE2LjQxODMgNCAyMCA3LjU4MTcyIDIwIDEyVjE2QzIwIDE3LjEwNDYgMTkuMTA0NiAxOCAxOCAxOEgxNlYxM0gyMCIKICAgIHN0cm9rZT0iIzE5MTkxOSIKICAgIHN0cm9rZS13aWR0aD0iMS44IgogICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIKICAvPgogIDxwYXRoCiAgICBkPSJNOCAxOFYxM0g0VjE2QzQgMTcuMTA0NiA0Ljg5NTQzIDE4IDYgMThIOFoiCiAgICBzdHJva2U9IiMxOTE5MTkiCiAgICBzdHJva2Utd2lkdGg9IjEuOCIKICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgIHN0cm9rZS1saW5lam9pbj0icm91bmQiCiAgLz4KICA8cGF0aAogICAgZD0iTTE0IDE4QzE0IDE5LjEwNDYgMTMuMTA0NiAyMCAxMiAyMEgxMSIKICAgIHN0cm9rZT0iIzE5MTkxOSIKICAgIHN0cm9rZS13aWR0aD0iMS44IgogICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIKICAvPgo8L3N2Zz4K";
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/AssistantPageHeader.less
@@ -88965,49 +89116,116 @@ var AssistantPageHeader_update = injectStylesIntoStyleTag_default()(AssistantPag
 
 
 
+
 const noop = () => {};
 const AssistantPageHeader_AssistantPageHeader = ({
   title,
+  isPcMiniApp = false,
   onBack = noop,
+  onClose = noop,
   onService = noop
-}) => /*#__PURE__*/(0,jsx_runtime.jsxs)("header", {
-  className: "assistant-page-header",
-  children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    className: "assistant-page-header__side assistant-page-header__side--left",
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
-      type: "button",
-      className: "assistant-page-header__icon-btn",
-      "aria-label": "\u8FD4\u56DE",
-      onClick: onBack,
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: icon_back_namespaceObject,
-        alt: "",
-        className: "assistant-page-header__icon-img",
-        "aria-hidden": "true"
-      })
-    }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
-      type: "button",
-      className: "assistant-page-header__icon-btn",
-      "aria-label": "\u5BA2\u670D",
-      onClick: onService,
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: icon_service_namespaceObject,
-        alt: "",
-        className: "assistant-page-header__icon-img",
-        "aria-hidden": "true"
-      })
+}) => {
+  if (isPcMiniApp) {
+    return /*#__PURE__*/(0,jsx_runtime.jsxs)("header", {
+      className: "assistant-page-header assistant-page-header--pc",
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "assistant-page-header__pc-btn",
+        "aria-label": "\u5173\u95ED",
+        onClick: onClose,
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: icon_close_namespaceObject,
+          alt: "",
+          className: "assistant-page-header__pc-icon",
+          "aria-hidden": "true"
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+        className: "assistant-page-header__title",
+        children: title
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "assistant-page-header__pc-btn",
+        "aria-label": "\u5BA2\u670D",
+        onClick: onService,
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: icon_service_namespaceObject,
+          alt: "",
+          className: "assistant-page-header__pc-icon",
+          "aria-hidden": "true"
+        })
+      })]
+    });
+  }
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("header", {
+    className: "assistant-page-header assistant-page-header--mobile",
+    children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      className: "assistant-page-header__side assistant-page-header__side--left",
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "assistant-page-header__icon-btn",
+        "aria-label": "\u8FD4\u56DE",
+        onClick: onBack,
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: icon_back_namespaceObject,
+          alt: "",
+          className: "assistant-page-header__icon-img",
+          "aria-hidden": "true"
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+        type: "button",
+        className: "assistant-page-header__icon-btn",
+        "aria-label": "\u5BA2\u670D",
+        onClick: onService,
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: icon_service_namespaceObject,
+          alt: "",
+          className: "assistant-page-header__icon-img",
+          "aria-hidden": "true"
+        })
+      })]
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+      className: "assistant-page-header__title",
+      children: title
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      className: "assistant-page-header__side",
+      "aria-hidden": "true"
     })]
-  }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-    className: "assistant-page-header__title",
-    children: title
-  }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    className: "assistant-page-header__side",
-    "aria-hidden": "true"
-  })]
-});
-/* harmony default export */ var assistant_AssistantPageHeader = ((/* unused pure expression or super */ null && (AssistantPageHeader_AssistantPageHeader)));
+  });
+};
+/* harmony default export */ var assistant_AssistantPageHeader = (AssistantPageHeader_AssistantPageHeader);
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/AssistantDetail.less
+var AssistantDetail = __webpack_require__(6554);
+;// ./src/styles/AssistantDetail.less
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var AssistantDetail_options = {};
+
+;
+AssistantDetail_options.setAttributes = (setAttributesWithoutAttributes_default());
+
+      AssistantDetail_options.insert = insertBySelector_default().bind(null, "head");
+    
+AssistantDetail_options.domAPI = (singletonStyleDomAPI_default());
+AssistantDetail_options.insertStyleElement = (insertStyleElement_default());
+
+var AssistantDetail_update = injectStylesIntoStyleTag_default()(AssistantDetail/* default */.A, AssistantDetail_options);
+
+
+
+
+       /* harmony default export */ var styles_AssistantDetail = (AssistantDetail/* default */.A && AssistantDetail/* default */.A.locals ? AssistantDetail/* default */.A.locals : undefined);
 
 ;// ./src/pages/assistantDetail.tsx
+
 
 
 
@@ -89027,10 +89245,12 @@ const DetailInfoRow = ({
   })]
 });
 const assistantDetail_AssistantDetail = () => {
+  const isPc = isPcMiniApp();
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "assistant-detail",
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(AssistantPageHeader_AssistantPageHeader, {
-      title: "\u52A9\u7406\u8BE6\u60C5"
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(assistant_AssistantPageHeader, {
+      title: "\u52A9\u7406\u8BE6\u60C5",
+      isPcMiniApp: isPc
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("main", {
       className: "assistant-detail__content",
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("section", {
@@ -89077,10 +89297,7 @@ const assistantDetail_AssistantDetail = () => {
     })]
   });
 };
-/* harmony default export */ var assistantDetail = ((/* unused pure expression or super */ null && (assistantDetail_AssistantDetail)));
-
-;// ./src/imgs/switch-assistant-avatar.svg
-var switch_assistant_avatar_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSIxMiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzJfMSkiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjE2LjUiIHI9IjYuNSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KICA8cGF0aCBkPSJNMTAuNSAzMEMxMS44NSAyNS40NjY3IDE1LjU1IDIyLjUgMjAgMjIuNUMyNC40NSAyMi41IDI4LjE1IDI1LjQ2NjcgMjkuNSAzMCIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8yXzEiIHgxPSIyMCIgeTE9IjAiIHgyPSIyMCIgeTI9IjQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNENkVCRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkNEOUZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==";
+/* harmony default export */ var assistantDetail = (assistantDetail_AssistantDetail);
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/styles/SwitchAssistant.less
 var SwitchAssistant = __webpack_require__(7499);
 ;// ./src/styles/SwitchAssistant.less
@@ -89112,7 +89329,7 @@ var SwitchAssistant_update = injectStylesIntoStyleTag_default()(SwitchAssistant/
 
        /* harmony default export */ var styles_SwitchAssistant = (SwitchAssistant/* default */.A && SwitchAssistant/* default */.A.locals ? SwitchAssistant/* default */.A.locals : undefined);
 
-;// ./src/pages/switchAssistant.tsx
+;// ./src/components/assistant/AssistantSelectionPage.tsx
 
 
 
@@ -89154,52 +89371,60 @@ const ASSISTANT_LIST = [{
   tag: '某某助手',
   description: '设计师一枚，擅长代码实现与技术方案整理'
 }];
+const AssistantSelectionPage_noop = () => {};
 const SWITCH_ASSISTANT_SELECT_EVENT = 'weAgent:switch-assistant-select';
 const SWITCH_ASSISTANT_CANCEL_EVENT = 'weAgent:switch-assistant-cancel';
 const SWITCH_ASSISTANT_CONFIRM_EVENT = 'weAgent:switch-assistant-confirm';
-const dispatchAssistantEvent = (eventName, detail) => {
+const dispatchAssistantEvent = (eventName, id) => {
   if (typeof window === 'undefined') {
     return;
   }
   window.dispatchEvent(new CustomEvent(eventName, {
-    detail
+    detail: {
+      id
+    }
   }));
 };
-const switchAssistant_SwitchAssistant = ({
-  defaultSelectedAssistantId = (_ASSISTANT_LIST$ => (_ASSISTANT_LIST$ = ASSISTANT_LIST[0]) === null || _ASSISTANT_LIST$ === void 0 ? void 0 : _ASSISTANT_LIST$.id)()
+const AssistantSelectionPage = ({
+  title,
+  isPcMiniApp = false,
+  leftButtonText,
+  rightButtonText,
+  defaultSelectedAssistantId = (_ASSISTANT_LIST$ => (_ASSISTANT_LIST$ = ASSISTANT_LIST[0]) === null || _ASSISTANT_LIST$ === void 0 ? void 0 : _ASSISTANT_LIST$.id)(),
+  onLeftButtonClick = AssistantSelectionPage_noop,
+  onRightButtonClick = AssistantSelectionPage_noop
 }) => {
-  const [selectedAssistantId, setSelectedAssistantId] = external_commonjs_react_commonjs2_react_amd_react_root_React_default().useState(defaultSelectedAssistantId);
+  const [selectedAssistantId, setSelectedAssistantId] = (0,external_commonjs_react_commonjs2_react_amd_react_root_React_.useState)(defaultSelectedAssistantId);
   external_commonjs_react_commonjs2_react_amd_react_root_React_default().useEffect(() => {
     setSelectedAssistantId(defaultSelectedAssistantId);
   }, [defaultSelectedAssistantId]);
-  const selectedAssistant = ASSISTANT_LIST.find(assistant => assistant.id === selectedAssistantId) ?? ASSISTANT_LIST[0];
-  const handleSelectAssistant = assistant => {
-    setSelectedAssistantId(assistant.id);
-    dispatchAssistantEvent(SWITCH_ASSISTANT_SELECT_EVENT, {
-      id: assistant.id
-    });
+  const handleSelectAssistant = assistantId => {
+    setSelectedAssistantId(assistantId);
+    dispatchAssistantEvent(SWITCH_ASSISTANT_SELECT_EVENT, assistantId);
   };
-  const handleCancelSelect = () => {
-    dispatchAssistantEvent(SWITCH_ASSISTANT_CANCEL_EVENT, {
-      id: selectedAssistant.id
-    });
-  };
-  const handleConfirmSwitch = () => {
-    dispatchAssistantEvent(SWITCH_ASSISTANT_CONFIRM_EVENT, {
-      id: selectedAssistant.id
-    });
+  const handleAssistantKeyDown = (event, assistantId) => {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return;
+    }
+    event.preventDefault();
+    handleSelectAssistant(assistantId);
   };
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "switch-assistant",
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(AssistantPageHeader_AssistantPageHeader, {
-      title: "\u5207\u6362\u52A9\u7406"
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(assistant_AssistantPageHeader, {
+      title: title,
+      isPcMiniApp: isPcMiniApp
     }), /*#__PURE__*/(0,jsx_runtime.jsx)("main", {
       className: "switch-assistant__content",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         className: "switch-assistant__list",
         children: ASSISTANT_LIST.map(assistant => /*#__PURE__*/(0,jsx_runtime.jsxs)("article", {
           className: "switch-assistant__card",
-          onClick: () => handleSelectAssistant(assistant),
+          onClick: () => handleSelectAssistant(assistant.id),
+          onKeyDown: event => handleAssistantKeyDown(event, assistant.id),
+          tabIndex: 0,
+          role: "button",
+          "aria-pressed": selectedAssistantId === assistant.id,
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             className: "switch-assistant__avatar",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
@@ -89231,19 +89456,42 @@ const switchAssistant_SwitchAssistant = ({
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)("button", {
         type: "button",
         className: "switch-assistant__action-btn switch-assistant__action-btn--cancel",
-        onClick: handleCancelSelect,
-        children: "\u53D6\u6D88\u9009\u62E9"
+        onClick: () => {
+          dispatchAssistantEvent(SWITCH_ASSISTANT_CANCEL_EVENT, selectedAssistantId);
+          onLeftButtonClick();
+        },
+        children: leftButtonText
       }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
         type: "button",
         className: "switch-assistant__action-btn switch-assistant__action-btn--confirm",
-        onClick: handleConfirmSwitch,
-        children: "\u786E\u8BA4\u5207\u6362"
+        onClick: () => {
+          dispatchAssistantEvent(SWITCH_ASSISTANT_CONFIRM_EVENT, selectedAssistantId);
+          onRightButtonClick();
+        },
+        children: rightButtonText
       })]
     })]
   });
 };
-/* harmony default export */ var switchAssistant = ((/* unused pure expression or super */ null && (switchAssistant_SwitchAssistant)));
+/* harmony default export */ var assistant_AssistantSelectionPage = (AssistantSelectionPage);
+;// ./src/pages/switchAssistant.tsx
 
+
+
+
+const switchAssistant_SwitchAssistant = ({
+  defaultSelectedAssistantId
+}) => {
+  const isPc = isPcMiniApp();
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(assistant_AssistantSelectionPage, {
+    title: "\u5207\u6362\u52A9\u7406",
+    isPcMiniApp: isPc,
+    leftButtonText: "\u53D6\u6D88\u9009\u62E9",
+    rightButtonText: "\u786E\u8BA4\u5207\u6362",
+    defaultSelectedAssistantId: defaultSelectedAssistantId
+  });
+};
+/* harmony default export */ var switchAssistant = (switchAssistant_SwitchAssistant);
 ;// ./src/lib/index.ts
 
 
@@ -89270,8 +89518,8 @@ function unmountAIChatViewer(container) {
 const AppWithMount = Object.assign(src_App, {
   mount: mountAIChatViewer,
   unmount: unmountAIChatViewer,
-  AssistantDetail: assistantDetail_AssistantDetail,
-  SwitchAssistant: switchAssistant_SwitchAssistant
+  AssistantDetail: assistantDetail,
+  SwitchAssistant: switchAssistant
 });
 
 
