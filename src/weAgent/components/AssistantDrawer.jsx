@@ -86,10 +86,7 @@ function AssistantDrawer({
               assistants={assistants}
               selectedAssistantId={selectedAssistantId}
               onSelectAssistant={onSelectAssistant}
-              onCancel={() => {
-                setViewMode('detail');
-                onSelectAssistant(currentAssistant.id);
-              }}
+              onCancel={onBackdropClick}
               onConfirm={onConfirm}
               onBackToDetail={() => setViewMode('detail')}
             />
