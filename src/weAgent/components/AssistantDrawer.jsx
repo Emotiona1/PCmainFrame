@@ -2,7 +2,6 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import AssistantDetailView from './AssistantDetailView';
 import AssistantSelectView from './AssistantSelectView';
-import AssistantDrawerToolbar from './AssistantDrawerToolbar';
 
 function AssistantDrawer({
   open,
@@ -47,13 +46,8 @@ function AssistantDrawer({
           aria-label={viewMode === 'detail' ? '助手简介' : '助手切换'}
           onClick={(event) => event.stopPropagation()}
         >
-          <AssistantDrawerToolbar onClose={onBackdropClick} />
-
           {viewMode === 'detail' ? (
-            <AssistantDetailView
-              currentAssistant={currentAssistant}
-              onSwitchAssistants={() => setViewMode('select')}
-            />
+            <AssistantDetailView />
           ) : (
             <AssistantSelectView
               assistants={assistants}

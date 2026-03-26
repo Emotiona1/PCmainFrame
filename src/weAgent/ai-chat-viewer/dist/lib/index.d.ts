@@ -10,8 +10,6 @@ export declare function unmountAIChatViewer(container: Element): void;
 type AppExport = typeof App & {
     mount: typeof mountAIChatViewer;
     unmount: typeof unmountAIChatViewer;
-    AssistantDetail: typeof AssistantDetail;
-    SwitchAssistant: typeof SwitchAssistant;
 };
 declare const AppWithMount: AppExport;
 export { AppWithMount as App };

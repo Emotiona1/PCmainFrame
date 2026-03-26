@@ -51,7 +51,7 @@ function AssistantSelectView({
   }, [assistantIdMap, assistants, onCancel, onConfirm, onSelectAssistant]);
 
   return (
-    <div className="assistant-select-host">
+    <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
       <SwitchAssistant defaultSelectedAssistantId={selectedAssistantId} />
     </div>
   );
