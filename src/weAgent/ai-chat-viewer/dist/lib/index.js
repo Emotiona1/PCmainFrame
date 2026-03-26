@@ -89419,7 +89419,7 @@ const AssistantSelectionPage = ({
       children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         className: "switch-assistant__list",
         children: ASSISTANT_LIST.map(assistant => /*#__PURE__*/(0,jsx_runtime.jsxs)("article", {
-          className: "switch-assistant__card",
+          className: `switch-assistant__card${selectedAssistantId === assistant.id ? ' switch-assistant__card--selected' : ''}`,
           onClick: () => handleSelectAssistant(assistant.id),
           onKeyDown: event => handleAssistantKeyDown(event, assistant.id),
           tabIndex: 0,
