@@ -7,7 +7,8 @@ const toDataUrl = (html) =>
   `data:text/html;charset=UTF-8,${encodeURIComponent(html)}`;
 
 export const WORKSPACE_BY_ASSISTANT_ID = {
-  xiaomi: toDataUrl(xiaomiHtml),
+  // 小咪助手切换到外部 CUI 产物 HTML，页面内容保持不变，只替换加载来源。
+  xiaomi: 'CUI/xiaomi/index.html',
   'helper-pro': toDataUrl(designHelperHtml),
   'coding-expert': toDataUrl(codingExpertHtml),
   'local-employee': toDataUrl(localEmployeeHtml),

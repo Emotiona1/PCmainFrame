@@ -1,5 +1,24 @@
 const path = require('path');
+const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const cuiSourceDir = path.resolve(__dirname, 'src/CUI');
+const copyPatterns = [
+  {
+    from: path.resolve(__dirname, 'src/weAgent/ai-chat-viewer/dist/lib'),
+    to: path.resolve(__dirname, 'dist/weAgent'),
+    globOptions: {
+      ignore: ['**/index.js', '**/index.js.map', '**/index.d.ts'],
+    },
+  },
+];
+
+if (fs.existsSync(cuiSourceDir)) {
+  copyPatterns.push({
+    from: cuiSourceDir,
+    to: path.resolve(__dirname, 'dist/CUI'),
+  });
+}
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/weAgent/index.jsx'),
@@ -27,15 +46,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/weAgent/ai-chat-viewer/dist/lib'),
-          to: path.resolve(__dirname, 'dist/weAgent'),
-          globOptions: {
-            ignore: ['**/index.js', '**/index.js.map', '**/index.d.ts'],
-          },
-        },
-      ],
+      patterns: copyPatterns,
     }),
   ],
   module: {

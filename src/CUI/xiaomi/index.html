@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小咪 - 产品维护知识</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="chat-page">
+      <div class="history" id="history">
+        <div class="day-divider"><span>今天 10:24</span></div>
+
+        <div class="row row--left">
+          <div class="avatar avatar--left">咪</div>
+          <div class="bubble bubble--left">
+            <p class="bubble__text">你好，我是小咪，可以帮你快速查看产品维护知识。</p>
+            <span class="bubble__meta">10:24</span>
+          </div>
+        </div>
+
+        <div class="row row--right">
+          <div class="bubble bubble--right">
+            <p class="bubble__text">我想查询一下设备日常维护要点。</p>
+            <span class="bubble__meta">10:25</span>
+          </div>
+          <div class="avatar avatar--right">我</div>
+        </div>
+      </div>
+
+      <div class="composer">
+        <div class="toolbar">产品维护知识 · 对话示例</div>
+        <textarea
+          class="input"
+          id="messageInput"
+          rows="4"
+          placeholder="请输入你的问题，Enter 发送，Shift + Enter 换行"
+        ></textarea>
+        <div class="actions">
+          <button class="button" id="sendButton" type="button">发送</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
