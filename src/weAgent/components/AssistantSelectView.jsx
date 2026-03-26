@@ -10,8 +10,8 @@ function AssistantSelectView({
 }) {
   const assistantIdMap = React.useMemo(
     () => ({
-      'assistant-1': assistants[0]?.id,
-      'assistant-2': assistants[1]?.id,
+      'assistant-1': assistants[0]?.partnerAccount,
+      'assistant-2': assistants[1]?.partnerAccount,
     }),
     [assistants],
   );
@@ -20,7 +20,9 @@ function AssistantSelectView({
     const handleSelect = (event) => {
       const assistantId = event?.detail?.id;
       const mappedAssistantId =
-        assistants.some((assistant) => assistant.id === assistantId)
+        assistants.some(
+          (assistant) => assistant.partnerAccount === assistantId,
+        )
           ? assistantId
           : assistantIdMap[assistantId];
 

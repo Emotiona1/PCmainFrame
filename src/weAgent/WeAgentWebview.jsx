@@ -2,37 +2,61 @@ import React from 'react';
 import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
-import { getWorkspaceByAssistantId } from './config/webview';
+import {
+  getWorkspaceByPartnerAccount,
+  shouldInvokeMethodAForPartnerAccount,
+} from './config/webview';
 import { getCachedAssistantId, setCachedAssistantId } from './services/assistantStorage';
 import './styles/global.css';
 import './styles/chat.css';
 
-const assistants = [
-  {
-    id: 'xiaomi',
-    name: '小咪',
-    avatar: '咪',
-    assistantId: 'XM-001',
-    intro: '产品维护知识入口，一站式查看常见问题与处理建议。',
-    product: '产品维护平台',
-    owner: '产品支持团队',
-    accountStatus: '运行中',
-    description: '产品维护知识入口，一站式查看常见问题与处理建议。',
-  },
-  {
-    id: 'base-employee',
-    name: '员工助手',
-    avatar: '基',
-    assistantId: 'BASE-409',
-    intro: '提供基座能力入口与通用员工接入支持。',
-    product: '员工基座平台',
-    owner: '平台基座组',
-    accountStatus: '运行中',
-    description: '提供基座能力入口与通用员工接入支持。',
-  },
-];
+const GET_WE_AGENT_LIST_METHOD = 'method://agentSkillsDiaglog/getWeAgentList';
+
+const parsePedestalResponse = (response) => {
+  let payload = response;
+
+  if (typeof payload === 'string') {
+    try {
+      payload = JSON.parse(payload);
+    } catch (error) {
+      return [];
+    }
+  }
+
+  if (Array.isArray(payload)) {
+    return payload;
+  }
+
+  if (Array.isArray(payload?.data)) {
+    return payload.data;
+  }
+
+  if (typeof payload?.data === 'string') {
+    try {
+      const parsedData = JSON.parse(payload.data);
+      return Array.isArray(parsedData) ? parsedData : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  if (Array.isArray(payload?.content)) {
+    return payload.content;
+  }
+
+  if (Array.isArray(payload?.result?.data)) {
+    return payload.result.data;
+  }
+
+  if (Array.isArray(payload?.result?.content)) {
+    return payload.result.content;
+  }
+
+  return [];
+};
 
 function WeAgentWebview() {
+  const [assistants, setAssistants] = React.useState([]);
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [drawerInitialViewMode, setDrawerInitialViewMode] = React.useState('detail');
   const [currentAssistantId, setCurrentAssistantId] = React.useState(null);
@@ -42,34 +66,70 @@ function WeAgentWebview() {
   const [shellRect, setShellRect] = React.useState(null);
 
   const currentAssistant =
-    assistants.find((assistant) => assistant.id === currentAssistantId) ??
-    assistants[0];
+    assistants.find(
+      (assistant) => assistant.partnerAccount === currentAssistantId,
+    ) ??
+    assistants[0] ??
+    null;
 
   const draftAssistant =
-    assistants.find((assistant) => assistant.id === draftAssistantId) ??
+    assistants.find(
+      (assistant) => assistant.partnerAccount === draftAssistantId,
+    ) ??
     currentAssistant;
 
   React.useEffect(() => {
     let isMounted = true;
 
     const bootstrapAssistant = async () => {
-      const cachedAssistantId = await getCachedAssistantId();
-      const nextAssistantId = assistants.some(
-        (assistant) => assistant.id === cachedAssistantId,
-      )
-        ? cachedAssistantId
-        : assistants[0].id;
+      try {
+        const pedestal = typeof window === 'undefined' ? null : window.Pedestal;
 
-      if (!isMounted) {
-        return;
+        if (!pedestal || typeof pedestal.callMethod !== 'function') {
+          throw new Error('当前环境不支持加载助手列表。');
+        }
+
+        const response = await Promise.resolve(
+          pedestal.callMethod(GET_WE_AGENT_LIST_METHOD, {
+            pageSize: 100,
+            pageNumber: 1,
+          }),
+        );
+        const nextAssistants = parsePedestalResponse(response);
+        const cachedAssistantId = await getCachedAssistantId();
+        const nextAssistantId = nextAssistants.some(
+          (assistant) => assistant.partnerAccount === cachedAssistantId,
+        )
+          ? cachedAssistantId
+          : (nextAssistants[0]?.partnerAccount ?? null);
+
+        if (!isMounted) {
+          return;
+        }
+
+        setAssistants(nextAssistants);
+        setCurrentAssistantId(nextAssistantId);
+        setDraftAssistantId(nextAssistantId);
+      } catch (error) {
+        if (!isMounted) {
+          return;
+        }
+
+        // eslint-disable-next-line no-console
+        console.error('Failed to load weAgent list.', error);
+        setAssistants([]);
+        setCurrentAssistantId(null);
+        setDraftAssistantId(null);
+      } finally {
+        if (!isMounted) {
+          return;
+        }
+
+        setIsAssistantReady(true);
       }
-
-      setCurrentAssistantId(nextAssistantId);
-      setDraftAssistantId(nextAssistantId);
-      setIsAssistantReady(true);
     };
 
-    bootstrapAssistant();
+    void bootstrapAssistant();
 
     return () => {
       isMounted = false;
@@ -79,35 +139,43 @@ function WeAgentWebview() {
   // 预先把所有助手对应的工作区都算出来并常驻，
   // 这样切换助手时只切换显示层，不会销毁已有 webview。
   const workspaces = assistants.map((assistant) => ({
-    id: assistant.id,
-    workspace: getWorkspaceByAssistantId(assistant.id),
+    id: assistant.partnerAccount,
+    workspace: getWorkspaceByPartnerAccount(assistant.partnerAccount),
   }));
 
   const openDrawer = (viewMode = 'detail') => {
-    setDraftAssistantId(currentAssistant.id);
+    if (!currentAssistant) {
+      return;
+    }
+
+    setDraftAssistantId(currentAssistant.partnerAccount);
     setDrawerInitialViewMode(viewMode);
     setIsDrawerOpen(true);
   };
 
   // 员工助手命中时走这里，后续可以替换成真实的业务接入方法。
-  const methodA = React.useCallback(() => {
+  const methodA = React.useCallback((partnerAccount) => {
     // eslint-disable-next-line no-console
-    console.log('methodA: 员工助手已切换');
+    console.log('methodA: 助手已切换', partnerAccount);
   }, []);
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
-    setDraftAssistantId(currentAssistant.id);
+    setDraftAssistantId(currentAssistant?.partnerAccount ?? null);
     setDrawerInitialViewMode('detail');
   };
 
   const confirmSwitch = () => {
-    if (draftAssistant.id === 'base-employee') {
-      methodA();
+    if (!draftAssistant) {
+      return;
     }
 
-    void setCachedAssistantId(draftAssistant.id);
-    setCurrentAssistantId(draftAssistant.id);
+    if (shouldInvokeMethodAForPartnerAccount(draftAssistant.partnerAccount)) {
+      methodA(draftAssistant.partnerAccount);
+    }
+
+    void setCachedAssistantId(draftAssistant.partnerAccount);
+    setCurrentAssistantId(draftAssistant.partnerAccount);
     setIsDrawerOpen(false);
   };
 
@@ -130,9 +198,9 @@ function WeAgentWebview() {
 
     window.addEventListener('resize', updateShellRect);
     return () => window.removeEventListener('resize', updateShellRect);
-  }, [isDrawerOpen]);
+  }, [currentAssistantId, isDrawerOpen]);
 
-  if (!isAssistantReady) {
+  if (!isAssistantReady || !currentAssistant) {
     return null;
   }
 
@@ -142,14 +210,14 @@ function WeAgentWebview() {
         <div ref={shellRef} className="chat-shell">
           <HeaderArtifact
             name={currentAssistant.name}
-            intro={currentAssistant.intro}
+            intro={currentAssistant.description}
             onOpenSwitch={() => openDrawer('select')}
             onOpenSettings={() => openDrawer('detail')}
           />
           <ChatWorkspace
             drawerOpen={isDrawerOpen}
             workspaces={workspaces}
-            activeAssistantId={currentAssistant.id}
+            activeAssistantId={currentAssistant.partnerAccount}
           />
         </div>
         <AssistantDrawer
@@ -157,7 +225,7 @@ function WeAgentWebview() {
           shellRect={shellRect}
           currentAssistant={currentAssistant}
           assistants={assistants}
-          selectedAssistantId={draftAssistant.id}
+          selectedAssistantId={draftAssistant?.partnerAccount ?? null}
           initialViewMode={drawerInitialViewMode}
           onSelectAssistant={setDraftAssistantId}
           onCancel={closeDrawer}

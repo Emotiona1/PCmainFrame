@@ -7,8 +7,8 @@ import localEmployeeHtml from '../webview/local-employee.html';
 const toDataUrl = (html) =>
   `data:text/html;charset=UTF-8,${encodeURIComponent(html)}`;
 
-export const WORKSPACE_BY_ASSISTANT_ID = {
-  // 小咪助手切换到外部 CUI 产物 HTML，页面内容保持不变，只替换加载来源。
+const WORKSPACE_BY_KEY = {
+  // Legacy workspace keys remain stable so partnerAccount mappings can point to them.
   xiaomi: path.join('CUI', 'xiaomi', 'index.html'),
   'helper-pro': toDataUrl(designHelperHtml),
   'coding-expert': toDataUrl(codingExpertHtml),
@@ -21,12 +21,10 @@ export const WORKSPACE_BY_ASSISTANT_ID = {
 
 export const DEFAULT_WORKSPACE = {
   type: 'webview',
-  src: WORKSPACE_BY_ASSISTANT_ID.xiaomi,
+  src: WORKSPACE_BY_KEY.xiaomi,
 };
 
-export const getWorkspaceByAssistantId = (assistantId) => {
-  const workspace = WORKSPACE_BY_ASSISTANT_ID[assistantId];
-
+const normalizeWorkspace = (workspace) => {
   if (!workspace) {
     return DEFAULT_WORKSPACE;
   }
@@ -40,3 +38,11 @@ export const getWorkspaceByAssistantId = (assistantId) => {
 
   return workspace;
 };
+
+export const getWorkspaceByPartnerAccount = (partnerAccount) => {
+  const workspace = partnerAccount ? WORKSPACE_BY_KEY[partnerAccount] : null;
+
+  return normalizeWorkspace(workspace);
+};
+
+export const shouldInvokeMethodAForPartnerAccount = () => false;
