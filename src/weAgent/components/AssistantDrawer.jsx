@@ -23,6 +23,22 @@ function AssistantDrawer({
     }
   }, [open, initialViewMode]);
 
+  React.useEffect(() => {
+    if (!open) {
+      return undefined;
+    }
+
+    const handleClose = () => {
+      onBackdropClick();
+    };
+
+    window.addEventListener('weAgent:assistant-close', handleClose);
+
+    return () => {
+      window.removeEventListener('weAgent:assistant-close', handleClose);
+    };
+  }, [onBackdropClick, open]);
+
   if (!open || typeof document === 'undefined' || !shellRect) {
     return null;
   }

@@ -89569,6 +89569,13 @@ var AssistantPageHeader_update = injectStylesIntoStyleTag_default()(AssistantPag
 
 
 const noop = () => {};
+const ASSISTANT_CLOSE_EVENT = 'weAgent:assistant-close';
+const dispatchAssistantCloseEvent = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  window.dispatchEvent(new CustomEvent(ASSISTANT_CLOSE_EVENT));
+};
 const AssistantPageHeader_AssistantPageHeader = ({
   title,
   isPcMiniApp = false,
@@ -89583,7 +89590,10 @@ const AssistantPageHeader_AssistantPageHeader = ({
         type: "button",
         className: "assistant-page-header__pc-btn",
         "aria-label": "\u5173\u95ED",
-        onClick: onClose,
+        onClick: () => {
+          dispatchAssistantCloseEvent();
+          onClose();
+        },
         children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: icon_close_namespaceObject,
           alt: "",
@@ -89615,7 +89625,10 @@ const AssistantPageHeader_AssistantPageHeader = ({
         type: "button",
         className: "assistant-page-header__icon-btn",
         "aria-label": "\u8FD4\u56DE",
-        onClick: onBack,
+        onClick: () => {
+          dispatchAssistantCloseEvent();
+          onBack();
+        },
         children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: icon_back_namespaceObject,
           alt: "",
@@ -89682,6 +89695,13 @@ var AssistantDetail_update = injectStylesIntoStyleTag_default()(AssistantDetail/
 
 
 
+const assistantDetail_ASSISTANT_CLOSE_EVENT = 'weAgent:assistant-close';
+const assistantDetail_dispatchAssistantCloseEvent = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  window.dispatchEvent(new CustomEvent(assistantDetail_ASSISTANT_CLOSE_EVENT));
+};
 const DetailInfoRow = ({
   label,
   value
@@ -89697,8 +89717,15 @@ const DetailInfoRow = ({
 });
 const assistantDetail_AssistantDetail = () => {
   const isPc = isPcMiniApp();
+  const handleBackgroundClick = event => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+    assistantDetail_dispatchAssistantCloseEvent();
+  };
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "assistant-detail",
+    onClick: handleBackgroundClick,
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(assistant_AssistantPageHeader, {
       title: "\u52A9\u7406\u8BE6\u60C5",
       isPcMiniApp: isPc
@@ -89826,6 +89853,7 @@ const AssistantSelectionPage_noop = () => {};
 const SWITCH_ASSISTANT_SELECT_EVENT = 'weAgent:switch-assistant-select';
 const SWITCH_ASSISTANT_CANCEL_EVENT = 'weAgent:switch-assistant-cancel';
 const SWITCH_ASSISTANT_CONFIRM_EVENT = 'weAgent:switch-assistant-confirm';
+const AssistantSelectionPage_ASSISTANT_CLOSE_EVENT = 'weAgent:assistant-close';
 const dispatchAssistantEvent = (eventName, id) => {
   if (typeof window === 'undefined') {
     return;
@@ -89835,6 +89863,12 @@ const dispatchAssistantEvent = (eventName, id) => {
       id
     }
   }));
+};
+const AssistantSelectionPage_dispatchAssistantCloseEvent = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  window.dispatchEvent(new CustomEvent(AssistantSelectionPage_ASSISTANT_CLOSE_EVENT));
 };
 const AssistantSelectionPage = ({
   title,
@@ -89862,6 +89896,11 @@ const AssistantSelectionPage = ({
   };
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "switch-assistant",
+    onClick: event => {
+      if (event.target === event.currentTarget) {
+        AssistantSelectionPage_dispatchAssistantCloseEvent();
+      }
+    },
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(assistant_AssistantPageHeader, {
       title: title,
       isPcMiniApp: isPcMiniApp
