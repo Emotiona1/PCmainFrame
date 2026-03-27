@@ -1,8 +1,8 @@
 import React from 'react';
 import ChatWebview from './ChatWebview';
 
-function ChatWorkspace({ drawerOpen, activeAssistantId }) {
-  const isContainerActive = activeAssistantId === 'x00_2';
+function ChatWorkspace({ drawerOpen, activeBizRotId }) {
+  const isContainerActive = String(activeBizRotId) === '78679';
 
   return (
     <div className={`chat-panel ${drawerOpen ? 'chat-panel--drawer-open' : ''}`}>

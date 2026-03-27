@@ -70,6 +70,7 @@ function WeAgentWebview() {
     ) ??
     assistants[0] ??
     null;
+  const activeBizRotId = currentAssistant?.bizRotId ?? null;
 
   const draftAssistant =
     assistants.find(
@@ -121,12 +122,6 @@ function WeAgentWebview() {
         setAssistants(nextAssistants);
         setCurrentAssistantId(nextAssistantId);
         setDraftAssistantId(nextAssistantId);
-
-        if (shouldInvokeMethodAForPartnerAccount(nextAssistantId)) {
-          methodA(nextAssistantId);
-        } else {
-          methodB(nextAssistantId);
-        }
       } catch (error) {
         if (!isMounted) {
           return;
@@ -200,6 +195,25 @@ function WeAgentWebview() {
     return () => window.removeEventListener('resize', updateShellRect);
   }, [currentAssistantId, isDrawerOpen]);
 
+  React.useLayoutEffect(() => {
+    if (!isAssistantReady || !currentAssistant) {
+      return;
+    }
+
+    if (shouldInvokeMethodAForPartnerAccount(currentAssistant.partnerAccount)) {
+      methodA(currentAssistant.partnerAccount);
+      return;
+    }
+
+    methodB(currentAssistant.partnerAccount);
+  }, [
+    activeBizRotId,
+    currentAssistant?.partnerAccount,
+    isAssistantReady,
+    methodA,
+    methodB,
+  ]);
+
   if (!isAssistantReady || !currentAssistant) {
     return null;
   }
@@ -216,7 +230,7 @@ function WeAgentWebview() {
           />
           <ChatWorkspace
             drawerOpen={isDrawerOpen}
-            activeAssistantId={currentAssistant.partnerAccount}
+            activeBizRotId={activeBizRotId}
           />
         </div>
         <AssistantDrawer
