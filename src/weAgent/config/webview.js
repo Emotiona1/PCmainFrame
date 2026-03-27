@@ -45,4 +45,5 @@ export const getWorkspaceByPartnerAccount = (partnerAccount) => {
   return normalizeWorkspace(workspace);
 };
 
-export const shouldInvokeMethodAForPartnerAccount = () => false;
+export const shouldInvokeMethodAForPartnerAccount = (partnerAccount) =>
+  partnerAccount === 'base-employee';

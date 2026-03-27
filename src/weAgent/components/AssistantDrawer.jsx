@@ -80,7 +80,7 @@ function AssistantDrawer({
           onClick={(event) => event.stopPropagation()}
         >
           {viewMode === 'detail' ? (
-            <AssistantDetailView />
+            <AssistantDetailView curPartnerAccount={currentAssistant.partnerAccount} />
           ) : (
             <AssistantSelectView
               assistants={assistants}

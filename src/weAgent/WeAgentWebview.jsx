@@ -78,6 +78,18 @@ function WeAgentWebview() {
     ) ??
     currentAssistant;
 
+  // 员工助手命中时走这里，后续可以替换成真实的业务接入方法。
+  const methodA = React.useCallback((partnerAccount) => {
+    // eslint-disable-next-line no-console
+    console.log('methodA: 助手已切换', partnerAccount);
+  }, []);
+
+  // 非员工助手命中时走这里，后续可以替换成真实的业务接入方法。
+  const methodB = React.useCallback((partnerAccount) => {
+    // eslint-disable-next-line no-console
+    console.log('methodB: 非员工助手已进入', partnerAccount);
+  }, []);
+
   React.useEffect(() => {
     let isMounted = true;
 
@@ -110,6 +122,12 @@ function WeAgentWebview() {
         setAssistants(nextAssistants);
         setCurrentAssistantId(nextAssistantId);
         setDraftAssistantId(nextAssistantId);
+
+        if (shouldInvokeMethodAForPartnerAccount(nextAssistantId)) {
+          methodA(nextAssistantId);
+        } else {
+          methodB(nextAssistantId);
+        }
       } catch (error) {
         if (!isMounted) {
           return;
@@ -134,7 +152,7 @@ function WeAgentWebview() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [methodA, methodB]);
 
   // 预先把所有助手对应的工作区都算出来并常驻，
   // 这样切换助手时只切换显示层，不会销毁已有 webview。
@@ -153,12 +171,6 @@ function WeAgentWebview() {
     setIsDrawerOpen(true);
   };
 
-  // 员工助手命中时走这里，后续可以替换成真实的业务接入方法。
-  const methodA = React.useCallback((partnerAccount) => {
-    // eslint-disable-next-line no-console
-    console.log('methodA: 助手已切换', partnerAccount);
-  }, []);
-
   const closeDrawer = () => {
     setIsDrawerOpen(false);
     setDraftAssistantId(currentAssistant?.partnerAccount ?? null);
@@ -168,10 +180,6 @@ function WeAgentWebview() {
   const confirmSwitch = () => {
     if (!draftAssistant) {
       return;
-    }
-
-    if (shouldInvokeMethodAForPartnerAccount(draftAssistant.partnerAccount)) {
-      methodA(draftAssistant.partnerAccount);
     }
 
     void setCachedAssistantId(draftAssistant.partnerAccount);
