@@ -3,7 +3,6 @@ import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
 import {
-  getWorkspaceByPartnerAccount,
   shouldInvokeMethodAForPartnerAccount,
 } from './config/webview';
 import { getCachedAssistantId, setCachedAssistantId } from './services/assistantStorage';
@@ -154,13 +153,6 @@ function WeAgentWebview() {
     };
   }, [methodA, methodB]);
 
-  // 预先把所有助手对应的工作区都算出来并常驻，
-  // 这样切换助手时只切换显示层，不会销毁已有 webview。
-  const workspaces = assistants.map((assistant) => ({
-    id: assistant.partnerAccount,
-    workspace: getWorkspaceByPartnerAccount(assistant.partnerAccount),
-  }));
-
   const openDrawer = (viewMode = 'detail') => {
     if (!currentAssistant) {
       return;
@@ -224,7 +216,6 @@ function WeAgentWebview() {
           />
           <ChatWorkspace
             drawerOpen={isDrawerOpen}
-            workspaces={workspaces}
             activeAssistantId={currentAssistant.partnerAccount}
           />
         </div>
