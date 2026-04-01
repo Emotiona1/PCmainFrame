@@ -10,6 +10,7 @@ import './styles/global.css';
 import './styles/chat.css';
 
 const GET_WE_AGENT_LIST_METHOD = 'method://agentSkillsDiaglog/getWeAgentList';
+const WE_AGENT_HASH = '#/main/weAgent';
 
 const parsePedestalResponse = (response) => {
   let payload = response;
@@ -148,7 +149,7 @@ function WeAgentWebview() {
     };
   }, [methodA, methodB]);
 
-  const openDrawer = (viewMode = 'detail') => {
+  const openDrawer = React.useCallback((viewMode = 'detail') => {
     if (!currentAssistant) {
       return;
     }
@@ -156,13 +157,32 @@ function WeAgentWebview() {
     setDraftAssistantId(currentAssistant.partnerAccount);
     setDrawerInitialViewMode(viewMode);
     setIsDrawerOpen(true);
-  };
+  }, [currentAssistant]);
 
-  const closeDrawer = () => {
+  const closeDrawer = React.useCallback(() => {
     setIsDrawerOpen(false);
     setDraftAssistantId(currentAssistant?.partnerAccount ?? null);
     setDrawerInitialViewMode('detail');
-  };
+  }, [currentAssistant?.partnerAccount]);
+
+  React.useEffect(() => {
+    if (!isDrawerOpen || typeof window === 'undefined') {
+      return undefined;
+    }
+
+    const handleHashChange = () => {
+      if (window.location.hash !== WE_AGENT_HASH) {
+        closeDrawer();
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [closeDrawer, isDrawerOpen]);
 
   const confirmSwitch = () => {
     if (!draftAssistant) {
