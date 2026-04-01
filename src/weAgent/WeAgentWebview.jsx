@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderArtifact } from './integrations/HeaderArtifact';
 import ChatWorkspace from './components/ChatWorkspace';
 import AssistantDrawer from './components/AssistantDrawer';
+import LoadingPage from './components/LoadingPage';
 import {
   shouldInvokeMethodAForPartnerAccount,
 } from './config/webview';
@@ -62,8 +63,10 @@ function WeAgentWebview() {
   const [currentAssistantId, setCurrentAssistantId] = React.useState(null);
   const [draftAssistantId, setDraftAssistantId] = React.useState(null);
   const [isAssistantReady, setIsAssistantReady] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const shellRef = React.useRef(null);
   const [shellRect, setShellRect] = React.useState(null);
+  const loadingTimeoutRef = React.useRef(null);
 
   const currentAssistant =
     assistants.find(
@@ -222,10 +225,12 @@ function WeAgentWebview() {
 
     if (shouldInvokeMethodAForPartnerAccount(currentAssistant.partnerAccount)) {
       methodA(currentAssistant.partnerAccount);
+      setIsLoading(false);
       return;
     }
 
     methodB(currentAssistant.partnerAccount);
+    setIsLoading(false);
   }, [
     activeBizRotId,
     currentAssistant?.partnerAccount,
@@ -234,8 +239,33 @@ function WeAgentWebview() {
     methodB,
   ]);
 
-  if (!isAssistantReady || !currentAssistant) {
-    return null;
+  React.useEffect(() => {
+    if (!isLoading) {
+      if (loadingTimeoutRef.current) {
+        window.clearTimeout(loadingTimeoutRef.current);
+        loadingTimeoutRef.current = null;
+      }
+
+      return undefined;
+    }
+
+    loadingTimeoutRef.current = window.setTimeout(() => {
+      setIsLoading(false);
+      loadingTimeoutRef.current = null;
+    }, 10000);
+
+    return () => {
+      if (!loadingTimeoutRef.current) {
+        return;
+      }
+
+      window.clearTimeout(loadingTimeoutRef.current);
+      loadingTimeoutRef.current = null;
+    };
+  }, [isLoading]);
+
+  if (isLoading || !isAssistantReady || !currentAssistant) {
+    return <LoadingPage />;
   }
 
   return (
