@@ -10,77 +10,80 @@ import { getCachedAssistantId, setCachedAssistantId } from './services/assistant
 import './styles/global.css';
 import './styles/chat.css';
 
-const GET_WE_AGENT_LIST_METHOD = 'method://agentSkillsDiaglog/getWeAgentList';
 const WE_AGENT_HASH = '#/main/weAgent';
 
-const parsePedestalResponse = (response) => {
-  let payload = response;
+const ASSISTANT_FALLBACKS = {
+  xiaomi: {
+    partnerAccount: 'xiaomi',
+    name: '小咪',
+    description: '可一站式获取产品维护知识',
+    bizRotId: '0',
+  },
+  'helper-pro': {
+    partnerAccount: 'helper-pro',
+    name: '设计小助手',
+    description: '设计师一枚，有专业设计能力',
+    bizRotId: '10001',
+  },
+  'coding-expert': {
+    partnerAccount: 'coding-expert',
+    name: '编程专家',
+    description: '专业的 Java 助手，代码编写',
+    bizRotId: '10002',
+  },
+  'local-employee': {
+    partnerAccount: 'local-employee',
+    name: '本地员工助手',
+    description: '本地员工知识和流程问答',
+    bizRotId: '10003',
+  },
+  'base-employee': {
+    partnerAccount: 'base-employee',
+    name: '员工助手',
+    description: '员工统一助手入口',
+    bizRotId: '78679',
+  },
+};
 
-  if (typeof payload === 'string') {
-    try {
-      payload = JSON.parse(payload);
-    } catch (error) {
-      return [];
-    }
+const DEFAULT_ASSISTANT = ASSISTANT_FALLBACKS.xiaomi;
+
+const resolveAssistant = (assistant) => {
+  if (!assistant) {
+    return null;
   }
 
-  if (Array.isArray(payload)) {
-    return payload;
+  if (typeof assistant === 'string') {
+    return ASSISTANT_FALLBACKS[assistant] ?? {
+      partnerAccount: assistant,
+      name: assistant,
+      description: '',
+      bizRotId: '0',
+    };
   }
 
-  if (Array.isArray(payload?.data)) {
-    return payload.data;
+  if (typeof assistant === 'object' && assistant.partnerAccount) {
+    return {
+      ...ASSISTANT_FALLBACKS[assistant.partnerAccount],
+      ...assistant,
+      partnerAccount: assistant.partnerAccount,
+    };
   }
 
-  if (typeof payload?.data === 'string') {
-    try {
-      const parsedData = JSON.parse(payload.data);
-      return Array.isArray(parsedData) ? parsedData : [];
-    } catch (error) {
-      return [];
-    }
-  }
-
-  if (Array.isArray(payload?.content)) {
-    return payload.content;
-  }
-
-  if (Array.isArray(payload?.result?.data)) {
-    return payload.result.data;
-  }
-
-  if (Array.isArray(payload?.result?.content)) {
-    return payload.result.content;
-  }
-
-  return [];
+  return null;
 };
 
 function WeAgentWebview() {
-  const [assistants, setAssistants] = React.useState([]);
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [drawerInitialViewMode, setDrawerInitialViewMode] = React.useState('detail');
-  const [currentAssistantId, setCurrentAssistantId] = React.useState(null);
-  const [draftAssistantId, setDraftAssistantId] = React.useState(null);
+  const [currentAssistant, setCurrentAssistant] = React.useState(null);
+  const [draftAssistant, setDraftAssistant] = React.useState(null);
   const [isAssistantReady, setIsAssistantReady] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
   const shellRef = React.useRef(null);
   const [shellRect, setShellRect] = React.useState(null);
   const loadingTimeoutRef = React.useRef(null);
 
-  const currentAssistant =
-    assistants.find(
-      (assistant) => assistant.partnerAccount === currentAssistantId,
-    ) ??
-    assistants[0] ??
-    null;
   const activeBizRotId = currentAssistant?.bizRotId ?? null;
-
-  const draftAssistant =
-    assistants.find(
-      (assistant) => assistant.partnerAccount === draftAssistantId,
-    ) ??
-    currentAssistant;
 
   // 员工助手命中时走这里，后续可以替换成真实的业务接入方法。
   const methodA = React.useCallback((partnerAccount) => {
@@ -99,43 +102,24 @@ function WeAgentWebview() {
 
     const bootstrapAssistant = async () => {
       try {
-        const pedestal = typeof window === 'undefined' ? null : window.Pedestal;
-
-        if (!pedestal || typeof pedestal.callMethod !== 'function') {
-          throw new Error('当前环境不支持加载助手列表。');
-        }
-
-        const response = await Promise.resolve(
-          pedestal.callMethod(GET_WE_AGENT_LIST_METHOD, {
-            pageSize: 100,
-            pageNumber: 1,
-          }),
-        );
-        const nextAssistants = parsePedestalResponse(response);
-        const cachedAssistantId = await getCachedAssistantId();
-        const nextAssistantId = nextAssistants.some(
-          (assistant) => assistant.partnerAccount === cachedAssistantId,
-        )
-          ? cachedAssistantId
-          : (nextAssistants[0]?.partnerAccount ?? null);
+        const cachedAssistant = await getCachedAssistantId();
+        const nextAssistant = resolveAssistant(cachedAssistant) ?? DEFAULT_ASSISTANT;
 
         if (!isMounted) {
           return;
         }
 
-        setAssistants(nextAssistants);
-        setCurrentAssistantId(nextAssistantId);
-        setDraftAssistantId(nextAssistantId);
+        setCurrentAssistant(nextAssistant);
+        setDraftAssistant(nextAssistant);
       } catch (error) {
         if (!isMounted) {
           return;
         }
 
         // eslint-disable-next-line no-console
-        console.error('Failed to load weAgent list.', error);
-        setAssistants([]);
-        setCurrentAssistantId(null);
-        setDraftAssistantId(null);
+        console.error('Failed to load cached assistant.', error);
+        setCurrentAssistant(DEFAULT_ASSISTANT);
+        setDraftAssistant(DEFAULT_ASSISTANT);
       } finally {
         if (!isMounted) {
           return;
@@ -150,23 +134,23 @@ function WeAgentWebview() {
     return () => {
       isMounted = false;
     };
-  }, [methodA, methodB]);
+  }, []);
 
   const openDrawer = React.useCallback((viewMode = 'detail') => {
     if (!currentAssistant) {
       return;
     }
 
-    setDraftAssistantId(currentAssistant.partnerAccount);
+    setDraftAssistant(currentAssistant);
     setDrawerInitialViewMode(viewMode);
     setIsDrawerOpen(true);
   }, [currentAssistant]);
 
   const closeDrawer = React.useCallback(() => {
     setIsDrawerOpen(false);
-    setDraftAssistantId(currentAssistant?.partnerAccount ?? null);
+    setDraftAssistant(currentAssistant);
     setDrawerInitialViewMode('detail');
-  }, [currentAssistant?.partnerAccount]);
+  }, [currentAssistant]);
 
   React.useEffect(() => {
     if (!isDrawerOpen || typeof window === 'undefined') {
@@ -192,8 +176,9 @@ function WeAgentWebview() {
       return;
     }
 
-    void setCachedAssistantId(draftAssistant.partnerAccount);
-    setCurrentAssistantId(draftAssistant.partnerAccount);
+    void setCachedAssistantId(draftAssistant);
+    setCurrentAssistant(draftAssistant);
+    setDraftAssistant(draftAssistant);
     setIsDrawerOpen(false);
   };
 
@@ -216,7 +201,7 @@ function WeAgentWebview() {
 
     window.addEventListener('resize', updateShellRect);
     return () => window.removeEventListener('resize', updateShellRect);
-  }, [currentAssistantId, isDrawerOpen]);
+  }, [currentAssistant?.partnerAccount, isDrawerOpen]);
 
   React.useLayoutEffect(() => {
     if (!isAssistantReady || !currentAssistant) {
@@ -287,11 +272,9 @@ function WeAgentWebview() {
           open={isDrawerOpen}
           shellRect={shellRect}
           currentAssistant={currentAssistant}
-          assistants={assistants}
           selectedAssistantId={draftAssistant?.partnerAccount ?? null}
           initialViewMode={drawerInitialViewMode}
-          onSelectAssistant={setDraftAssistantId}
-          onCancel={closeDrawer}
+          onSelectAssistant={setDraftAssistant}
           onConfirm={confirmSwitch}
           onBackdropClick={closeDrawer}
         />

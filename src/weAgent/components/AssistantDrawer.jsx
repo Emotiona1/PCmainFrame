@@ -7,11 +7,9 @@ function AssistantDrawer({
   open,
   shellRect,
   currentAssistant,
-  assistants,
   selectedAssistantId,
   initialViewMode = 'detail',
   onSelectAssistant,
-  onCancel,
   onConfirm,
   onBackdropClick,
 }) {
@@ -83,12 +81,10 @@ function AssistantDrawer({
             <AssistantDetailView curPartnerAccount={currentAssistant.partnerAccount} />
           ) : (
             <AssistantSelectView
-              assistants={assistants}
               selectedAssistantId={selectedAssistantId}
               onSelectAssistant={onSelectAssistant}
               onCancel={onBackdropClick}
               onConfirm={onConfirm}
-              onBackToDetail={() => setViewMode('detail')}
             />
           )}
         </aside>

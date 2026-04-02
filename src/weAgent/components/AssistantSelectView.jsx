@@ -2,43 +2,28 @@ import React from 'react';
 import { SwitchAssistant } from '../ai-chat-viewer/dist/lib/index.js';
 
 function AssistantSelectView({
-  assistants,
   selectedAssistantId,
   onSelectAssistant,
   onCancel,
   onConfirm,
 }) {
-  const assistantIdMap = React.useMemo(
-    () => ({
-      'assistant-1': assistants[0]?.partnerAccount,
-      'assistant-2': assistants[1]?.partnerAccount,
-    }),
-    [assistants],
-  );
-
   React.useEffect(() => {
     const handleSelect = (event) => {
-      const assistantId = event?.detail?.id;
-      const mappedAssistantId =
-        assistants.some(
-          (assistant) => assistant.partnerAccount === assistantId,
-        )
-          ? assistantId
-          : assistantIdMap[assistantId];
+      const assistant = event?.detail;
 
-      if (!mappedAssistantId) {
+      if (!assistant || !assistant.partnerAccount) {
         return;
       }
 
-      onSelectAssistant(mappedAssistantId);
+      onSelectAssistant(assistant);
     };
 
-    const handleCancel = () => {
-      onCancel();
+    const handleCancel = (event) => {
+      onCancel(event?.detail ?? null);
     };
 
-    const handleConfirm = () => {
-      onConfirm();
+    const handleConfirm = (event) => {
+      onConfirm(event?.detail ?? null);
     };
 
     window.addEventListener('weAgent:switch-assistant-select', handleSelect);
@@ -50,7 +35,7 @@ function AssistantSelectView({
       window.removeEventListener('weAgent:switch-assistant-cancel', handleCancel);
       window.removeEventListener('weAgent:switch-assistant-confirm', handleConfirm);
     };
-  }, [assistantIdMap, assistants, onCancel, onConfirm, onSelectAssistant]);
+  }, [onCancel, onConfirm, onSelectAssistant]);
 
   return (
     <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>

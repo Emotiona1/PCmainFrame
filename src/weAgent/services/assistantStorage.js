@@ -1,13 +1,25 @@
-let cachedAssistantId = null;
+let cachedAssistant = null;
 
 const asyncReturn = (value) =>
   new Promise((resolve) => {
     globalThis.setTimeout(() => resolve(value), 0);
   });
 
-export const getCachedAssistantId = () => asyncReturn(cachedAssistantId);
+const normalizeAssistant = (assistant) => {
+  if (typeof assistant === 'string') {
+    return { partnerAccount: assistant };
+  }
 
-export const setCachedAssistantId = (assistantId) => {
-  cachedAssistantId = assistantId;
-  return asyncReturn(assistantId);
+  if (assistant && typeof assistant === 'object') {
+    return assistant;
+  }
+
+  return null;
+};
+
+export const getCachedAssistantId = () => asyncReturn(cachedAssistant);
+
+export const setCachedAssistantId = (assistant) => {
+  cachedAssistant = normalizeAssistant(assistant);
+  return asyncReturn(cachedAssistant);
 };
